@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "lib": [
+      "esnext"
+    ],
+    "sourceMap": false,
+    "outDir": "./Migrations/",
+    "strict": true,
+    "declaration": false,
+    "rootDir": "./Migrations",
+    "moduleResolution": "node",
+    "alwaysStrict": true,
+    "strictPropertyInitialization": true,
+    "forceConsistentCasingInFileNames": true,
+    "noUnusedParameters": false,
+    "noUnusedLocals": true,
+    "strictFunctionTypes": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "declarationMap": false,
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+
+    "esModuleInterop": true,
+    "resolveJsonModule": true
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
