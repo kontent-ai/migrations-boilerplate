@@ -18,7 +18,7 @@ Before you run your migrations, you need to add an environment.
 
 ```sh
 # Adds a DEV environment.
-kontent-cli environment add DEV --project-id "<YOUR_PROJECT_GUID>" --api-key "<YOUR_MANAGAMENT_API_KEY>"
+kontent environment add --name DEV --project-id "<YOUR_PROJECT_GUID>" --api-key "<YOUR_MANAGAMENT_API_KEY>"
 ```
 
 ## Usage
