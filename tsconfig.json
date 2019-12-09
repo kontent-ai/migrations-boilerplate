@@ -6,6 +6,7 @@
       "esnext"
     ],
     "sourceMap": false,
+    "allowJs": true,
     "outDir": "./Migrations/",
     "strict": true,
     "declaration": false,
@@ -23,7 +24,6 @@
     "typeRoots": [
       "./node_modules/@types"
     ],
-
     "esModuleInterop": true,
     "resolveJsonModule": true
   },

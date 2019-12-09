@@ -1,48 +1,50 @@
-import { MigrationModule } from "@kentico/kontent-cli";
+import { MigrationModule } from '@kentico/kontent-cli';
 
 /**
-* Creates a sample content item of type Blog.
-*/
+ * Creates a sample content item of type Blog.
+ */
 const migration: MigrationModule = {
     order: 2,
-    run: async (apiClient) => {
+    run: async apiClient => {
         // Create content item
-        const itemResponse = await apiClient.addContentItem()
+        const itemResponse = await apiClient
+            .addContentItem()
             .withData({
-                name: "About coffee",
+                name: 'About coffee',
                 type: {
-                    codename: "blog",
+                    codename: 'blog'
                 }
             })
             .toPromise();
 
         // Create language variant in default language
-        await apiClient.upsertLanguageVariant()
+        await apiClient
+            .upsertLanguageVariant()
             .byItemId(itemResponse.data.id)
-            .byLanguageCodename("default")
-            .withElements(
-                [
-                    {
-                        element: {
-                            codename: "title",
-                        },
-                        value: "About coffee",
+            .byLanguageCodename('default')
+            .withElements([
+                {
+                    element: {
+                        codename: 'title'
                     },
-                    {
-                        element: {
-                            codename: "author",
-                        },
-                        value: "Coffee geek",
+                    value: 'About coffee'
+                },
+                {
+                    element: {
+                        codename: 'author'
                     },
-                    {
-                        element: {
-                            codename: "text",
-                        },
-                        value: "Coffee is a brewed drink prepared from roasted coffee beans, the seeds of berries from certain Coffea species.",
-                    }
-                ])
+                    value: 'Coffee geek'
+                },
+                {
+                    element: {
+                        codename: 'text'
+                    },
+                    value:
+                        'Coffee is a brewed drink prepared from roasted coffee beans, the seeds of berries from certain Coffea species.'
+                }
+            ])
             .toPromise();
-    },
+    }
 };
 
 export default migration;

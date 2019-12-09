@@ -5,7 +5,26 @@
   "main": "index.ts",
   "scripts": {
     "migrate:all": "tsc && kontent migration run --all --environment DEV",
-    "migrate": "tsc && kontent migration run --environment DEV -n"
+    "migrate": "tsc && kontent migration run --environment DEV -n",
+    "lint": "tslint --project tsconfig.json --fix \"Migrations/*.ts\" && prettier --write \"Migrations/**/*.ts\"",
+    "build": "tsc"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "tslint --fix --project tsconfig.json",
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": true,
+    "tabWidth": 4
   },
   "keywords": [
     "migrations",
@@ -20,6 +39,12 @@
     "rxjs": "^6.5.3"
   },
   "devDependencies": {
-    "typescript": "^3.7.3"
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
+    "prettier": "^1.19.1",
+    "tslint": "^5.20.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-config-standard": "^9.0.0",
+    "typescript": "^3.7.2"
   }
 }

@@ -1,27 +1,28 @@
-import { MigrationModule } from "@kentico/kontent-cli";
-import { ContentTypeModels } from "@kentico/kontent-management";
+import { MigrationModule } from '@kentico/kontent-cli';
+import { ContentTypeModels } from '@kentico/kontent-management';
 
 /**
-* Removes the old text element representing author.
-*
-* Note: This final cleanup is recommended but is not strictly necessary.
-*/
+ * Removes the old text element representing author.
+ *
+ * Note: This final cleanup is recommended but is not strictly necessary.
+ */
 const migration: MigrationModule = {
     order: 6,
-    run: async (apiClient) => {
+    run: async apiClient => {
         const modification: ContentTypeModels.IModifyContentTypeData[] = [
             {
-                op: "remove",
-                path: "/elements/codename:author",
-                value: "",
+                op: 'remove',
+                path: '/elements/codename:author',
+                value: ''
             }
         ];
 
-        await apiClient.modifyContentType()
-            .byTypeCodename("blog")
+        await apiClient
+            .modifyContentType()
+            .byTypeCodename('blog')
             .withData(modification)
             .toPromise();
-    },
+    }
 };
 
 export default migration;
