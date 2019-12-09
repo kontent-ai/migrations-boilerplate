@@ -5,7 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "migrate:all": "tsc && kontent migration run --all --environment DEV",
-    "migrate": "kontent migration run --environment DEV -n"
+    "migrate": "tsc && kontent migration run --environment DEV -n"
   },
   "keywords": [
     "migrations",
