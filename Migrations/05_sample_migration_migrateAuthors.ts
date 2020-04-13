@@ -30,7 +30,7 @@ const migration: MigrationModule = {
             .byTypeCodename('blog')
             .toPromise();
 
-        const blogLanguageVariants = blogVariantsResponse.data.variants;
+        const blogLanguageVariants = blogVariantsResponse.data.items;
         const existingAuthors: IAuthorsMap[] = [];
 
         for (const blogLanguageVariant of blogLanguageVariants) {

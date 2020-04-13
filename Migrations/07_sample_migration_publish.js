@@ -9,8 +9,8 @@ const migration = {
         const authorLanguageVariantsResponse = await apiClient.listLanguageVariantsOfContentType()
             .byTypeCodename('author')
             .toPromise();
-
-        for (const variant of authorLanguageVariantsResponse.data.variants) {
+        
+        for (const variant of authorLanguageVariantsResponse.data.items) {
             await apiClient.publishOrScheduleLanguageVariant()
                 .byItemId(variant.item.id)
                 .byLanguageId(variant.language.id)
@@ -22,7 +22,7 @@ const migration = {
             .byTypeCodename('blog')
             .toPromise();
 
-        for (const variant of blogLanguageVariantsResponse.data.variants) {
+        for (const variant of blogLanguageVariantsResponse.data.items) {
             await apiClient.publishOrScheduleLanguageVariant()
                 .byItemId(variant.item.id)
                 .byLanguageId(variant.language.id)
