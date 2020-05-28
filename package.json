@@ -34,7 +34,7 @@
   "author": "Kentico",
   "license": "MIT",
   "dependencies": {
-    "@kentico/kontent-cli": "^0.0.8",
+    "@kentico/kontent-cli": "^0.0.9",
     "@kentico/kontent-management": "^0.3.19",
     "rxjs": "^6.5.5",
     "dotenv": "^8.2.0"
