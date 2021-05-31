@@ -7,7 +7,7 @@ import { ContentTypeModels, ElementModels } from '@kentico/kontent-management';
  */
 const migration: MigrationModule = {
     order: 4,
-    run: async apiClient => {
+    run: async (apiClient) => {
         const modification: ContentTypeModels.IModifyContentTypeData[] = [
             {
                 op: 'addInto',
@@ -16,9 +16,16 @@ const migration: MigrationModule = {
                     name: 'Linked author',
                     codename: 'linked_author',
                     items_count_limit: 1,
-                    type: ElementModels.ElementType.modularContent
-                }
-            }
+                    type: ElementModels.ElementType.modularContent,
+                },
+            },
+            {
+                op: 'addInto',
+                path: '/elements/codename:linked_author/allowed_content_types',
+                value: {
+                    codename: 'author',
+                },
+            },
         ];
 
         await apiClient
@@ -26,7 +33,7 @@ const migration: MigrationModule = {
             .byTypeCodename('blog')
             .withData(modification)
             .toPromise();
-    }
+    },
 };
 
 export default migration;
