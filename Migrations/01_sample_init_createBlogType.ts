@@ -1,7 +1,7 @@
 import { MigrationModule } from '@kentico/kontent-cli';
 import {
     ContentTypeElementsBuilder,
-    ContentTypeModels
+    ContentTypeModels,
 } from '@kentico/kontent-management';
 
 /**
@@ -10,12 +10,12 @@ import {
  */
 const migration: MigrationModule = {
     order: 1,
-    run: async apiClient => {
+    run: async (apiClient) => {
         await apiClient
             .addContentType()
             .withData(BuildBlogPostTypeData)
             .toPromise();
-    }
+    },
 };
 
 const BuildBlogPostTypeData = (
@@ -28,19 +28,19 @@ const BuildBlogPostTypeData = (
             builder.textElement({
                 name: 'Title',
                 codename: 'title',
-                type: 'text'
+                type: 'text',
             }),
             builder.textElement({
                 name: 'Author',
                 codename: 'author',
-                type: 'text'
+                type: 'text',
             }),
             builder.textElement({
                 name: 'Text',
                 codename: 'text',
-                type: 'text'
-            })
-        ]
+                type: 'text',
+            }),
+        ],
     };
 };
 

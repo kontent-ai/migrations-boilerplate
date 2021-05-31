@@ -7,6 +7,7 @@
     "migrate:all": "tsc && kontent migration run --all --environment DEV",
     "migrate": "tsc && kontent migration run --environment DEV -n",
     "lint": "tslint --project tsconfig.json --fix \"Migrations/*.ts\" && prettier --write \"Migrations/**/*.ts\"",
+    "lint-check": "tslint --project tsconfig.json \"Migrations/*.ts\" && prettier --check \"Migrations/**/*.ts\"",
     "build": "tsc"
   },
   "husky": {
