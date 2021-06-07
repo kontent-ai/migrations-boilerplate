@@ -8,7 +8,8 @@
     "migrate": "tsc && kontent migration run --environment DEV -n",
     "lint": "tslint --project tsconfig.json --fix \"Migrations/*.ts\" && prettier --write \"Migrations/**/*.ts\"",
     "lint-check": "tslint --project tsconfig.json \"Migrations/*.ts\" && prettier --check \"Migrations/**/*.ts\"",
-    "build": "tsc"
+    "build": "tsc",
+    "watch": "tsc -w"
   },
   "husky": {
     "hooks": {
@@ -36,7 +37,7 @@
   "license": "MIT",
   "dependencies": {
     "@kentico/kontent-cli": "^0.0.10",
-    "@kentico/kontent-management": "^1.0.0-next.0",
+    "@kentico/kontent-management": "^1.0.0-next.3",
     "dotenv": "^8.2.0"
   },
   "devDependencies": {
