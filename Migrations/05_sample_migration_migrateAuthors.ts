@@ -37,10 +37,10 @@ const migration: MigrationModule = {
             // Find the value of the old author element
             const author = blogLanguageVariant.elements
                 .find((e) => e.element.id === authorElementId)!
-                .value!.toString();
+                .value?.toString();
 
             // If the Author item doesn't exist -> create
-            if (!existingAuthors.find((x) => x.author === author)) {
+            if (!existingAuthors.find((x) => x.author === author) && author) {
                 const authorItem = await apiClient
                     .addContentItem()
                     .withData({
