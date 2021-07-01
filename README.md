@@ -14,19 +14,21 @@ npm install
 
 ## Setup
 
-Before you run your migrations, you need to add an environment.
+Before you run your migrations, you need to store some information about the environment locally. 
+
+The environment is defined as a named pair of values. For example, "DEV" environment can be defined as a pair of a specific project ID and Management API key. This named pair of values is stored within your local repository in a configuration file named .environments.json.
 
 ```sh
-# Adds a DEV environment.
+# Adds a 'DEV' environment reference.
 kontent environment add --name DEV --project-id "<YOUR_PROJECT_GUID>" --api-key "<YOUR_MANAGAMENT_API_KEY>"
 ```
 
 ## Usage
 
-If you've set up an environment, you can use the prepared scripts to run all migrations in the `Migrations` directory.
+If you've set up an environment using the method above, you can use the prepared scripts to run all migrations in the `Migrations` directory.
 
 ```sh
-# Executes all migration scripts in the 'Migrations' folder. 
+# Executes all migration scripts in the 'Migrations' folder to the 'DEV' environment reference within your Kontent project. 
 npm run migrate:all
 ```
 
