@@ -1,19 +1,18 @@
 import { MigrationModule } from '@kentico/kontent-cli';
-
 /**
  * Creates a sample content item of type Blog.
  */
 const migration: MigrationModule = {
     order: 2,
-    run: async apiClient => {
+    run: async (apiClient) => {
         // Create content item
         const itemResponse = await apiClient
             .addContentItem()
             .withData({
                 name: 'About coffee',
                 type: {
-                    codename: 'blog'
-                }
+                    codename: 'blog',
+                },
             })
             .toPromise();
 
@@ -22,29 +21,28 @@ const migration: MigrationModule = {
             .upsertLanguageVariant()
             .byItemId(itemResponse.data.id)
             .byLanguageCodename('default')
-            .withElements([
-                {
+            .withData((builder) => [
+                builder.textElement({
                     element: {
-                        codename: 'title'
+                        codename: 'title',
                     },
-                    value: 'About coffee'
-                },
-                {
+                    value: 'About coffee',
+                }),
+                builder.textElement({
                     element: {
-                        codename: 'author'
+                        codename: 'author',
                     },
-                    value: 'Coffee geek'
-                },
-                {
+                    value: 'Coffee geek',
+                }),
+                builder.textElement({
                     element: {
-                        codename: 'text'
+                        codename: 'text',
                     },
-                    value:
-                        'Coffee is a brewed drink prepared from roasted coffee beans, the seeds of berries from certain Coffea species.'
-                }
+                    value: 'Coffee is a brewed drink prepared from roasted coffee beans, the seeds of berries from certain Coffee species.',
+                }),
             ])
             .toPromise();
-    }
+    },
 };
 
 export default migration;
