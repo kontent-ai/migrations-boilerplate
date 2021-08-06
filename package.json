@@ -1,6 +1,6 @@
 {
   "name": "kontent-migrations-boilerplate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Boilerplate with migration samples",
   "main": "index.ts",
   "scripts": {
@@ -36,8 +36,8 @@
   "author": "Kentico",
   "license": "MIT",
   "dependencies": {
-    "@kentico/kontent-cli": "^0.1.0-next.6",
-    "@kentico/kontent-management": "^1.0.0-next.5",
+    "@kentico/kontent-cli": "^0.1.0",
+    "@kentico/kontent-management": "^1.2.0",
     "dotenv": "^8.2.0"
   },
   "devDependencies": {
