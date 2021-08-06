@@ -8,13 +8,13 @@ import { ContentTypeModels } from '@kentico/kontent-management';
  */
 const migration: MigrationModule = {
     order: 6,
-    run: async apiClient => {
+    run: async (apiClient) => {
         const modification: ContentTypeModels.IModifyContentTypeData[] = [
             {
                 op: 'remove',
                 path: '/elements/codename:author',
-                value: ''
-            }
+                value: '',
+            },
         ];
 
         await apiClient
@@ -22,7 +22,7 @@ const migration: MigrationModule = {
             .byTypeCodename('blog')
             .withData(modification)
             .toPromise();
-    }
+    },
 };
 
 export default migration;

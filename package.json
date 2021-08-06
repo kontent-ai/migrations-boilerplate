@@ -1,13 +1,15 @@
 {
   "name": "kontent-migrations-boilerplate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Boilerplate with migration samples",
   "main": "index.ts",
   "scripts": {
     "migrate:all": "tsc && kontent migration run --all --environment DEV",
     "migrate": "tsc && kontent migration run --environment DEV -n",
     "lint": "tslint --project tsconfig.json --fix \"Migrations/*.ts\" && prettier --write \"Migrations/**/*.ts\"",
-    "build": "tsc"
+    "lint-check": "tslint --project tsconfig.json \"Migrations/*.ts\" && prettier --check \"Migrations/**/*.ts\"",
+    "build": "tsc",
+    "watch": "tsc -w"
   },
   "husky": {
     "hooks": {
@@ -34,10 +36,9 @@
   "author": "Kentico",
   "license": "MIT",
   "dependencies": {
-    "@kentico/kontent-cli": "^0.0.11",
-    "@kentico/kontent-management": "^0.4.10",
-    "dotenv": "^8.2.0",
-    "rxjs": "^6.5.5"
+    "@kentico/kontent-cli": "^0.1.0",
+    "@kentico/kontent-management": "^1.2.0",
+    "dotenv": "^8.2.0"
   },
   "devDependencies": {
     "husky": "^4.2.5",
