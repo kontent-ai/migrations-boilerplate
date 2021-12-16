@@ -37,7 +37,7 @@
   "license": "MIT",
   "dependencies": {
     "@kentico/kontent-cli": "^0.1.0",
-    "@kentico/kontent-management": "^1.2.0",
+    "@kentico/kontent-management": "^1.7.0",
     "dotenv": "^8.2.0"
   },
   "devDependencies": {
