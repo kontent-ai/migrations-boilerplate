@@ -1,5 +1,5 @@
 import { MigrationModule } from '@kentico/kontent-cli';
-import { ContentTypeModels, ElementModels } from '@kentico/kontent-management';
+import { ContentTypeModels } from '@kentico/kontent-management';
 
 /**
  * Adds new linked items element to content type Blog.
@@ -16,7 +16,7 @@ const migration: MigrationModule = {
                     name: 'Linked author',
                     codename: 'linked_author',
                     items_count_limit: 1,
-                    type: ElementModels.ElementType.modularContent,
+                    type: 'modular_content',
                 },
             },
             {
