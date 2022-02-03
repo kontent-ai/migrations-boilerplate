@@ -2,7 +2,7 @@
 
 The Kontent CLI boilerplate aims to help with your first migration code. We've provided sample migration scripts in the `Migrations` folder. These scripts are written in Javascript and Typescript to show you the basic operations.
 
-If you are missing your use case, you might find answers in the [Management API docs](https://docs.kontent.ai/reference/management-api-v2).
+If you are missing your use case, you might find answers in the [Management API reference](https://kontent.ai/learn/reference/management-api-v2).
 
 The Kontent CLI tool supports only Javascript files, so if you write your migrations in Typescript or any other language you have to transpile your code before running.
 
@@ -16,7 +16,7 @@ npm install
 
 Before you run your migrations, you need to store some information about the environment locally. 
 
-The environment is defined as a named pair of values. For example, "DEV" environment can be defined as a pair of a specific project ID and Management API key. This named pair of values is stored within your local repository in a configuration file named .environments.json.
+The environment is defined as a named pair of values. For example, "DEV" environment can be defined as a pair of a specific project ID and Management API key. This named pair of values is stored within your local repository in a configuration file named `.environments.json`.
 
 ```sh
 # Adds a 'DEV' environment reference.
