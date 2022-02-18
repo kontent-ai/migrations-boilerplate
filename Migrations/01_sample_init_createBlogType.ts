@@ -2,6 +2,7 @@ import { MigrationModule } from '@kentico/kontent-cli';
 import {
     ContentTypeElementsBuilder,
     ContentTypeModels,
+    ManagementClient,
 } from '@kentico/kontent-management';
 
 /**
@@ -10,7 +11,7 @@ import {
  */
 const migration: MigrationModule = {
     order: 1,
-    run: async (apiClient) => {
+    run: async (apiClient: ManagementClient) => {
         await apiClient
             .addContentType()
             .withData(BuildBlogPostTypeData)

@@ -1,4 +1,5 @@
 import { MigrationModule } from '@kentico/kontent-cli';
+import { ManagementClient } from '@kentico/kontent-management';
 
 interface IAuthorsMap {
     author: string;
@@ -14,7 +15,7 @@ interface IAuthorsMap {
  */
 const migration: MigrationModule = {
     order: 5,
-    run: async (apiClient) => {
+    run: async (apiClient: ManagementClient) => {
         const contentTypeResponse = await apiClient
             .viewContentType()
             .byTypeCodename('blog')

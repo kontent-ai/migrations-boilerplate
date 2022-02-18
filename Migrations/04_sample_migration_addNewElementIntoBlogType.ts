@@ -1,5 +1,8 @@
 import { MigrationModule } from '@kentico/kontent-cli';
-import { ContentTypeModels } from '@kentico/kontent-management';
+import {
+    ContentTypeModels,
+    ManagementClient,
+} from '@kentico/kontent-management';
 
 /**
  * Adds new linked items element to content type Blog.
@@ -7,7 +10,7 @@ import { ContentTypeModels } from '@kentico/kontent-management';
  */
 const migration: MigrationModule = {
     order: 4,
-    run: async (apiClient) => {
+    run: async (apiClient: ManagementClient) => {
         const modification: ContentTypeModels.IModifyContentTypeData[] = [
             {
                 op: 'addInto',

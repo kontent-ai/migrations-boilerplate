@@ -1,5 +1,8 @@
 import { MigrationModule } from '@kentico/kontent-cli';
-import { ContentTypeModels } from '@kentico/kontent-management';
+import {
+    ContentTypeModels,
+    ManagementClient,
+} from '@kentico/kontent-management';
 
 /**
  * Removes the old text element representing author.
@@ -8,7 +11,7 @@ import { ContentTypeModels } from '@kentico/kontent-management';
  */
 const migration: MigrationModule = {
     order: 6,
-    run: async (apiClient) => {
+    run: async (apiClient: ManagementClient) => {
         const modification: ContentTypeModels.IModifyContentTypeData[] = [
             {
                 op: 'remove',

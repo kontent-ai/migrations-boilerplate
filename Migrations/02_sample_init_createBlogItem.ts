@@ -1,10 +1,11 @@
 import { MigrationModule } from '@kentico/kontent-cli';
+import { ManagementClient } from '@kentico/kontent-management';
 /**
  * Creates a sample content item of type Blog.
  */
 const migration: MigrationModule = {
     order: 2,
-    run: async (apiClient) => {
+    run: async (apiClient: ManagementClient) => {
         // Create content item
         const itemResponse = await apiClient
             .addContentItem()
