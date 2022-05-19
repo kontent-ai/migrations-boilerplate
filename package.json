@@ -5,6 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "migrate:all": "tsc && kontent migration run --all --environment DEV",
+    "migrate:range": "tsc && kontent migration run --environment DEV --range",
     "migrate": "tsc && kontent migration run --environment DEV -n",
     "lint": "tslint --project tsconfig.json --fix \"Migrations/*.ts\" && prettier --write \"Migrations/**/*.ts\"",
     "lint-check": "tslint --project tsconfig.json \"Migrations/*.ts\" && prettier --check \"Migrations/**/*.ts\"",
@@ -36,7 +37,7 @@
   "author": "Kentico",
   "license": "MIT",
   "dependencies": {
-    "@kentico/kontent-cli": "0.3.0",
+    "@kentico/kontent-cli": "0.5.0",
     "@kentico/kontent-management": "^2.0.2",
     "dotenv": "^8.2.0"
   },
