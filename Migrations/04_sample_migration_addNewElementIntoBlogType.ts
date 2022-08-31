@@ -1,8 +1,8 @@
-import { MigrationModule } from '@kentico/kontent-cli';
+import { MigrationModule } from '@kontent-ai/cli';
 import {
     ContentTypeModels,
     ManagementClient,
-} from '@kentico/kontent-management';
+} from '@kontent-ai/management-sdk';
 
 /**
  * Adds new linked items element to content type Blog.

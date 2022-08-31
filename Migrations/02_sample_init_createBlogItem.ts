@@ -1,5 +1,5 @@
-import { MigrationModule } from '@kentico/kontent-cli';
-import { ManagementClient } from '@kentico/kontent-management';
+import { MigrationModule } from '@kontent-ai/cli';
+import { ManagementClient } from '@kontent-ai/management-sdk';
 /**
  * Creates a sample content item of type Blog.
  */

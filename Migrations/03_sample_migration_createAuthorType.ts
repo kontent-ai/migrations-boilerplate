@@ -1,9 +1,9 @@
-import { MigrationModule } from '@kentico/kontent-cli';
+import { MigrationModule } from '@kontent-ai/cli';
 import {
     ContentTypeElementsBuilder,
     ContentTypeModels,
     ManagementClient,
-} from '@kentico/kontent-management';
+} from '@kontent-ai/management-sdk';
 
 /**
  * Creates new content type called Author.

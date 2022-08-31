@@ -34,11 +34,11 @@
     "kontent",
     "cli"
   ],
-  "author": "Kentico",
+  "author": "Kontent s.r.o",
   "license": "MIT",
   "dependencies": {
-    "@kentico/kontent-cli": "0.5.1",
-    "@kentico/kontent-management": "^2.0.2",
+    "@kontent-ai/cli": "^0.6.0-next.2",
+    "@kontent-ai/management-sdk": "^3.1.0",
     "dotenv": "^8.2.0"
   },
   "devDependencies": {
