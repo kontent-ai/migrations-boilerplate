@@ -1,9 +1,9 @@
-import { MigrationModule } from '@kontent-ai/cli';
+import { MigrationModule } from "@kontent-ai/cli";
 import {
-    ContentTypeElementsBuilder,
-    ContentTypeModels,
-    ManagementClient,
-} from '@kontent-ai/management-sdk';
+  ContentTypeElementsBuilder,
+  ContentTypeModels,
+  ManagementClient,
+} from "@kontent-ai/management-sdk";
 
 /**
  * Creates new content type called Author.
@@ -12,34 +12,31 @@ import {
  * Note: This starts the actual migration process.
  */
 const migration: MigrationModule = {
-    order: 3,
-    run: async (apiClient: ManagementClient) => {
-        await apiClient
-            .addContentType()
-            .withData(BuildAuthorTypeData)
-            .toPromise();
-    },
+  order: 3,
+  run: async (apiClient: ManagementClient) => {
+    await apiClient.addContentType().withData(BuildAuthorTypeData).toPromise();
+  },
 };
 
 const BuildAuthorTypeData = (
-    builder: ContentTypeElementsBuilder
+  builder: ContentTypeElementsBuilder
 ): ContentTypeModels.IAddContentTypeData => {
-    return {
-        name: 'Author',
-        codename: 'author',
-        elements: [
-            builder.textElement({
-                name: 'Name',
-                codename: 'name',
-                type: 'text',
-            }),
-            builder.textElement({
-                name: 'Twitter handle',
-                codename: 'twitter_handle',
-                type: 'text',
-            }),
-        ],
-    };
+  return {
+    name: "Author",
+    codename: "author",
+    elements: [
+      builder.textElement({
+        name: "Name",
+        codename: "name",
+        type: "text",
+      }),
+      builder.textElement({
+        name: "Twitter handle",
+        codename: "twitter_handle",
+        type: "text",
+      }),
+    ],
+  };
 };
 
 export default migration;
