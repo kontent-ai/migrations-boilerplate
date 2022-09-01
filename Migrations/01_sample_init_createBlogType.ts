@@ -1,48 +1,48 @@
-import { MigrationModule } from '@kentico/kontent-cli';
+import { MigrationModule } from "@kontent-ai/cli";
 import {
-    ContentTypeElementsBuilder,
-    ContentTypeModels,
-    ManagementClient,
-} from '@kentico/kontent-management';
+  ContentTypeElementsBuilder,
+  ContentTypeModels,
+  ManagementClient,
+} from "@kontent-ai/management-sdk";
 
 /**
  * Creates content type called Blog.
  * This content type has three text elements: title, author and text.
  */
 const migration: MigrationModule = {
-    order: 1,
-    run: async (apiClient: ManagementClient) => {
-        await apiClient
-            .addContentType()
-            .withData(BuildBlogPostTypeData)
-            .toPromise();
-    },
+  order: 1,
+  run: async (apiClient: ManagementClient) => {
+    await apiClient
+      .addContentType()
+      .withData(BuildBlogPostTypeData)
+      .toPromise();
+  },
 };
 
 const BuildBlogPostTypeData = (
-    builder: ContentTypeElementsBuilder
+  builder: ContentTypeElementsBuilder
 ): ContentTypeModels.IAddContentTypeData => {
-    return {
-        name: 'Blog',
-        codename: 'blog',
-        elements: [
-            builder.textElement({
-                name: 'Title',
-                codename: 'title',
-                type: 'text',
-            }),
-            builder.textElement({
-                name: 'Author',
-                codename: 'author',
-                type: 'text',
-            }),
-            builder.textElement({
-                name: 'Text',
-                codename: 'text',
-                type: 'text',
-            }),
-        ],
-    };
+  return {
+    name: "Blog",
+    codename: "blog",
+    elements: [
+      builder.textElement({
+        name: "Title",
+        codename: "title",
+        type: "text",
+      }),
+      builder.textElement({
+        name: "Author",
+        codename: "author",
+        type: "text",
+      }),
+      builder.textElement({
+        name: "Text",
+        codename: "text",
+        type: "text",
+      }),
+    ],
+  };
 };
 
 export default migration;

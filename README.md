@@ -39,7 +39,7 @@ If you want to run a specific migration you can use also script defined in ```pa
 npm run migrate "my_migration"
 ```
 
-**Tip**: For more information about Kontent migrations, see the [Kontent CLI documentation](https://github.com/Kentico/kontent-cli/blob/master/README.md).
+**Tip**: For more information about Kontent migrations, see the [Kontent CLI documentation](https://github.com/kontent-ai/cli/blob/master/README.md).
 
 ## Feedback & Contribution
 
