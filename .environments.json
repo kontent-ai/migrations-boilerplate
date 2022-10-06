@@ -1,10 +1,10 @@
 {
-  "DEV": {
-    "projectId": "your-project-id",
-    "apiKey": "your-management-API-key"
-  },
-  "PROD": {
-    "projectId": "your-project-id",
-    "apiKey": "your-management-API-key"
-  }
+	"DEV": {
+		"projectId": "2701e664-a38b-005b-44ce-e3149941d56f",
+		"apiKey": "ew0KICAiYWxnIjogIkhTMjU2IiwNCiAgInR5cCI6ICJKV1QiDQp9.ew0KICAianRpIjogIjJhYjQ4MGZiN2U5ZDQzYzJhNjBjYzZkNWVlZGUxYzI0IiwNCiAgImlhdCI6ICIxNjY0OTY5Njk3IiwNCiAgImV4cCI6ICIyMDEwNTY5Njk3IiwNCiAgInZlciI6ICIyLjEuMCIsDQogICJ1aWQiOiAic3NvXzg3NDlhMmIxLWUwOTEtNDg5Zi1iOTYwLTY2Y2UxZDk3ZDhlZCIsDQogICJwcm9qZWN0X2lkIjogIjI3MDFlNjY0YTM4YjAwNWI0NGNlZTMxNDk5NDFkNTZmIiwNCiAgImF1ZCI6ICJtYW5hZ2Uua2VudGljb2Nsb3VkLmNvbSINCn0.NmjwopchohUgbGVaPfVcA_tWUihaaIVk3QM8jtJqXNQ"
+	},
+	"PROD": {
+		"projectId": "your-project-id",
+		"apiKey": "your-management-API-key"
+	}
 }

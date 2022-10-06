@@ -5,3 +5,4 @@
 /Migrations/*.d.ts
 status.json
 .env
+/dist/

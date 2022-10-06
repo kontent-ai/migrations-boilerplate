@@ -2,11 +2,10 @@ import * as dotenv from "dotenv";
 import path from "path";
 import fs from "fs";
 import { MigrationModule } from "@kontent-ai/cli";
-import {
-	ContentTypeModels,
-	ManagementClient,
-} from "@kontent-ai/management-sdk";
+import { ManagementClient } from "@kontent-ai/management-sdk";
 import KontentService from "../services/KontentService";
+import { BlogPostModel, BlogTopicModel, contentTypes } from "../models";
+import { getElementsParamCodename } from "../utils/kontentUtils";
 
 const PUBLISHED = "published";
 const ARCHIVED = "archived_32a589a";
@@ -164,4 +163,9 @@ const migrateTopics = async () => {
 	});
 };
 
-migrateTopics();
+const migration: MigrationModule = {
+	order: 8,
+	run: async () => await migrateTopics(),
+};
+
+export default migration;
