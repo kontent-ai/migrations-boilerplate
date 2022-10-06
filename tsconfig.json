@@ -5,10 +5,10 @@
 		"lib": ["esnext", "DOM"],
 		"sourceMap": false,
 		"allowJs": true,
-		"outDir": "./dist",
+		"outDir": "./Migrations",
 		"strict": false,
 		"declaration": false,
-		"rootDir": "./",
+		"rootDir": "./src",
 		"moduleResolution": "node",
 		"alwaysStrict": true,
 		"forceConsistentCasingInFileNames": true,
@@ -22,5 +22,5 @@
 		"esModuleInterop": true,
 		"resolveJsonModule": true
 	},
-	"exclude": ["node_modules", "Migrations/*.js"]
+	"exclude": ["node_modules", "src/Migrations/*.js"]
 }

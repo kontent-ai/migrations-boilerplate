@@ -3,9 +3,9 @@ import path from "path";
 import fs from "fs";
 import { MigrationModule } from "@kontent-ai/cli";
 import { ManagementClient } from "@kontent-ai/management-sdk";
-import KontentService from "../services/KontentService";
-import { BlogPostModel, BlogTopicModel, contentTypes } from "../models";
-import { getElementsParamCodename } from "../utils/kontentUtils";
+import KontentService from "./services/KontentService";
+import { BlogPostModel, BlogTopicModel, contentTypes } from "./models";
+import { getElementsParamCodename } from "./utils/kontentUtils";
 
 const PUBLISHED = "published";
 const ARCHIVED = "archived_32a589a";
@@ -17,9 +17,7 @@ dotenv.config();
 
 const managementClient = new ManagementClient({
 	projectId: process.env.KONTENT_PROJECT_ID,
-	apiKey: process.env.KONTENT_MANAGEMENT_API
-		? process.env.KONTENT_MANAGEMENT_API
-		: "",
+	apiKey: process.env.KONTENT_PREVIEW_API_KEY ?? "",
 	retryStrategy: {
 		maxAttempts: 1000,
 	},
