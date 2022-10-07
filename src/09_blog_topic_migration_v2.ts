@@ -1,27 +1,13 @@
-import * as dotenv from "dotenv";
-import path from "path";
-import fs from "fs";
 import { MigrationModule } from "@kontent-ai/cli";
 import { ManagementClient } from "@kontent-ai/management-sdk";
+import { BlogPostModel, BlogTopicModel } from "./models";
+import { contentTypes } from "./models/project/contentTypes";
 import KontentService from "./services/KontentService";
-import { BlogPostModel, BlogTopicModel, contentTypes } from "./models";
 import { getElementsParamCodename } from "./utils/kontentUtils";
 
 const PUBLISHED = "published";
 const ARCHIVED = "archived_32a589a";
 const ARCHIVED_2 = "archived";
-const INCOMPLETE_ITEM_ERROR_MSG =
-	"Publishing item failed because some of its elements are incomplete.";
-
-dotenv.config();
-
-const managementClient = new ManagementClient({
-	projectId: process.env.KONTENT_PROJECT_ID ?? "",
-	apiKey: process.env.KONTENT_PREVIEW_API_KEY ?? "",
-	retryStrategy: {
-		maxAttempts: 1000,
-	},
-});
 
 const getAllBlogPosts = async (): Promise<BlogPostModel[]> => {
 	try {
@@ -58,12 +44,13 @@ const getAllTopics = async (): Promise<BlogTopicModel[]> => {
 };
 
 const upsertBlogPostLangVariant = async (
+	apiClient: ManagementClient,
 	blogPost: BlogPostModel,
 	blogTopic: BlogTopicModel,
 	topicCodename: string
 ) => {
 	try {
-		return await managementClient
+		return await apiClient
 			.upsertLanguageVariant()
 			.byItemCodename(blogPost.system.codename)
 			.byLanguageCodename("default")
@@ -85,9 +72,12 @@ const upsertBlogPostLangVariant = async (
 	}
 };
 
-const createNewVersionOfBlogPost = async (blogPost: BlogPostModel) => {
+const createNewVersionOfBlogPost = async (
+	apiClient: ManagementClient,
+	blogPost: BlogPostModel
+) => {
 	try {
-		return await managementClient
+		return await apiClient
 			.createNewVersionOfLanguageVariant()
 			.byItemCodename(blogPost.system.codename)
 			.byLanguageCodename("default")
@@ -98,73 +88,64 @@ const createNewVersionOfBlogPost = async (blogPost: BlogPostModel) => {
 };
 
 const publishNewVersionOfBlogPost = async (
-	blogPost: BlogPostModel,
-	inCompletePostsFilePath
+	apiClient: ManagementClient,
+	blogPost: BlogPostModel
 ) => {
 	try {
-		return await managementClient
+		return await apiClient
 			.publishLanguageVariant()
 			.byItemCodename(blogPost.system.codename)
 			.byLanguageCodename("default")
 			.withoutData()
 			.toPromise();
 	} catch (error) {
-		if (error.message === INCOMPLETE_ITEM_ERROR_MSG) {
-			const data = `Blog post https://kontent.ai/${blogPost.elements.urlSlug.value} is incomplete and cannot be published. \n`;
-
-			await fs.promises.appendFile(inCompletePostsFilePath, data);
-
-			return;
-		}
+		console.error(error);
 	}
-};
-
-const migrateTopics = async () => {
-	const topics = await getAllTopics();
-	const blogPosts = await getAllBlogPosts();
-	const inCompletePostsFile = path.join(
-		process.cwd(),
-		"public",
-		"incomplete-posts.txt"
-	);
-
-	if (fs.existsSync(inCompletePostsFile)) {
-		await fs.promises.unlink(inCompletePostsFile);
-	}
-
-	blogPosts.forEach((post) => {
-		const taxonomyTopicCodename = post.elements.topic.value[0].codename;
-		const workflowStep = post.system.workflowStep;
-		const topic = topics.find(
-			(t) => t.elements.topic.value[0].codename === taxonomyTopicCodename
-		);
-		const topicCodename =
-			contentTypes.blog_post.elements.topic_c2ebd37.codename;
-
-		const asyncSwitch = async (step) => {
-			switch (step) {
-				case ARCHIVED:
-					break;
-				case ARCHIVED_2:
-					break;
-				case PUBLISHED:
-					await createNewVersionOfBlogPost(post);
-					await upsertBlogPostLangVariant(post, topic, topicCodename);
-					await publishNewVersionOfBlogPost(post, inCompletePostsFile);
-					break;
-				default:
-					await upsertBlogPostLangVariant(post, topic, topicCodename);
-			}
-		};
-
-		asyncSwitch(workflowStep);
-	});
 };
 
 const migration: MigrationModule = {
-	order: 8,
-	run: async () => {
-		await migrateTopics();
+	order: 9,
+	run: async (apiClient: ManagementClient) => {
+		const topics = await getAllTopics();
+		const blogPosts = await getAllBlogPosts();
+
+		blogPosts.forEach((post) => {
+			const taxonomyTopicCodename = post.elements.topic.value[0].codename;
+			const workflowStep = post.system.workflowStep;
+			const topic = topics.find(
+				(t) => t.elements.topic.value[0].codename === taxonomyTopicCodename
+			);
+			const topicCodename =
+				contentTypes.blog_post.elements.topic_c2ebd37.codename;
+
+			const asyncSwitch = async (step) => {
+				switch (step) {
+					case ARCHIVED:
+						break;
+					case ARCHIVED_2:
+						break;
+					case PUBLISHED:
+						await createNewVersionOfBlogPost(apiClient, post);
+						await upsertBlogPostLangVariant(
+							apiClient,
+							post,
+							topic,
+							topicCodename
+						);
+						await publishNewVersionOfBlogPost(apiClient, post);
+						break;
+					default:
+						await upsertBlogPostLangVariant(
+							apiClient,
+							post,
+							topic,
+							topicCodename
+						);
+				}
+			};
+
+			asyncSwitch(workflowStep);
+		});
 	},
 };
 
