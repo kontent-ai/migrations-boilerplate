@@ -1,3 +1,4 @@
+import * as dotenv from "dotenv";
 import {
 	camelCasePropertyNameResolver,
 	DeliveryClient,
@@ -5,6 +6,8 @@ import {
 } from "@kontent-ai/delivery-sdk";
 import { HttpService, IHeader } from "@kontent-ai/core-sdk";
 import https from "https";
+
+dotenv.config();
 
 export default class KontentService {
 	private static _instance: KontentService;

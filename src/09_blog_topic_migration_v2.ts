@@ -109,7 +109,7 @@ const migration: MigrationModule = {
 		const topics = await getAllTopics();
 		const blogPosts = await getAllBlogPosts();
 
-		blogPosts.forEach((post) => {
+		for (const post of blogPosts) {
 			const taxonomyTopicCodename = post.elements.topic.value[0].codename;
 			const workflowStep = post.system.workflowStep;
 			const topic = topics.find(
@@ -118,34 +118,30 @@ const migration: MigrationModule = {
 			const topicCodename =
 				contentTypes.blog_post.elements.topic_c2ebd37.codename;
 
-			const asyncSwitch = async (step) => {
-				switch (step) {
-					case ARCHIVED:
-						break;
-					case ARCHIVED_2:
-						break;
-					case PUBLISHED:
-						await createNewVersionOfBlogPost(apiClient, post);
-						await upsertBlogPostLangVariant(
-							apiClient,
-							post,
-							topic,
-							topicCodename
-						);
-						await publishNewVersionOfBlogPost(apiClient, post);
-						break;
-					default:
-						await upsertBlogPostLangVariant(
-							apiClient,
-							post,
-							topic,
-							topicCodename
-						);
-				}
-			};
-
-			asyncSwitch(workflowStep);
-		});
+			switch (workflowStep) {
+				case ARCHIVED:
+					break;
+				case ARCHIVED_2:
+					break;
+				case PUBLISHED:
+					await createNewVersionOfBlogPost(apiClient, post);
+					await upsertBlogPostLangVariant(
+						apiClient,
+						post,
+						topic,
+						topicCodename
+					);
+					await publishNewVersionOfBlogPost(apiClient, post);
+					break;
+				default:
+					await upsertBlogPostLangVariant(
+						apiClient,
+						post,
+						topic,
+						topicCodename
+					);
+			}
+		}
 	},
 };
 
