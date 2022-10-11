@@ -1,35 +1,26 @@
 {
-  "compilerOptions": {
-    "target": "es6",
-    "module": "commonjs",
-    "lib": [
-      "esnext",
-      "DOM"
-    ],
-    "sourceMap": false,
-    "allowJs": true,
-    "outDir": "./Migrations/",
-    "strict": true,
-    "declaration": false,
-    "rootDir": "./Migrations",
-    "moduleResolution": "node",
-    "alwaysStrict": true,
-    "strictPropertyInitialization": true,
-    "forceConsistentCasingInFileNames": true,
-    "noUnusedParameters": false,
-    "noUnusedLocals": true,
-    "strictFunctionTypes": true,
-    "noImplicitAny": true,
-    "noImplicitReturns": true,
-    "declarationMap": false,
-    "typeRoots": [
-      "./node_modules/@types"
-    ],
-    "esModuleInterop": true,
-    "resolveJsonModule": true
-  },
-  "exclude": [
-    "node_modules",
-    "Migrations/*.js"
-  ]
+	"compilerOptions": {
+		"target": "es6",
+		"module": "commonjs",
+		"lib": ["esnext", "DOM"],
+		"sourceMap": false,
+		"allowJs": true,
+		"outDir": "./Migrations",
+		"strict": false,
+		"declaration": false,
+		"rootDir": "./src",
+		"moduleResolution": "node",
+		"alwaysStrict": true,
+		"forceConsistentCasingInFileNames": true,
+		"noUnusedParameters": false,
+		"noUnusedLocals": true,
+		"strictFunctionTypes": false,
+		"noImplicitAny": false,
+		"noImplicitReturns": false,
+		"declarationMap": false,
+		"typeRoots": ["./node_modules/@types"],
+		"esModuleInterop": true,
+		"resolveJsonModule": true
+	},
+	"exclude": ["node_modules", "src/Migrations/*.js"]
 }

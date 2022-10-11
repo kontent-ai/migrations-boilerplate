@@ -1,6 +1,9 @@
 /node_modules/
 /.idea/
+/Migrations/
 /Migrations/*.map
 /Migrations/0[1-6]*.js
 /Migrations/*.d.ts
 status.json
+.env
+/dist/
