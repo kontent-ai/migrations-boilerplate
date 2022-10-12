@@ -228,11 +228,25 @@ export const updateWebinarTopicContentType = async (
 					op: "addInto",
 					path: "/elements",
 					value: {
+						name: "URL slug custom value",
+						type: "text",
+						guidelines:
+							"Custom url slug value from which the slug will be generated e.g. some-random-slug",
+						codename: "url_slug_custom_value",
+						content_group: {
+							codename: "urls",
+						},
+					},
+				},
+				{
+					op: "addInto",
+					path: "/elements",
+					value: {
 						name: "URL Slug",
 						type: "url_slug",
 						depends_on: {
 							element: {
-								codename: contentTypes.webinar_topic.elements.title.codename,
+								codename: "url_slug_custom_value",
 							},
 						},
 						is_required: true,
@@ -436,11 +450,25 @@ export const updateEventContentType = async (apiClient: ManagementClient) => {
 					op: "addInto",
 					path: "/elements",
 					value: {
+						name: "URL slug custom value",
+						type: "text",
+						guidelines:
+							"Custom value from which the URL Slug will be generated e.g. random-slug-value",
+						codename: "url_slug_custom_value",
+						content_group: {
+							codename: "urls",
+						},
+					},
+				},
+				{
+					op: "addInto",
+					path: "/elements",
+					value: {
 						name: "URL Slug",
 						type: "url_slug",
 						depends_on: {
 							element: {
-								codename: contentTypes.event.elements.title.codename,
+								codename: "url_slug_custom_value",
 							},
 						},
 						is_required: true,
@@ -497,13 +525,11 @@ export const updateWebinarSlugs = async (apiClient: ManagementClient) => {
 						.byItemCodename(topic.system.codename)
 						.byLanguageCodename("default")
 						.withData((builder) => [
-							builder.urlSlugElement({
+							builder.textElement({
 								element: {
 									// Casting to any to avoid build errors due to outdated models
-									codename: (contentTypes as any).webinar_topic.elements
-										.url_slug.codename,
+									codename: "url_slug_custom_value",
 								},
-								mode: "custom",
 								value: slug,
 							}),
 						])
@@ -523,13 +549,11 @@ export const updateWebinarSlugs = async (apiClient: ManagementClient) => {
 						.byItemCodename(topic.system.codename)
 						.byLanguageCodename("default")
 						.withData((builder) => [
-							builder.urlSlugElement({
+							builder.textElement({
 								element: {
 									// Casting to any to avoid build errors due to outdated models
-									codename: (contentTypes as any).webinar_topic.elements
-										.url_slug.codename,
+									codename: "url_slug_custom_value",
 								},
-								mode: "custom",
 								value: slug,
 							}),
 						])
