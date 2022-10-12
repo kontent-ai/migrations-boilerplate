@@ -1,5 +1,8 @@
 import { ManagementClient } from "@kontent-ai/management-sdk";
-import { contentTypes } from "../models";
+import KontentService from "../services/KontentService";
+import { contentTypes, WebinarTopicModel } from "../models";
+import { getElementsParamCodename } from "../utils/kontentUtils";
+import { ARCHIVED, ARCHIVED_2, PUBLISHED } from "../constants";
 
 export const updateWebinarsPageContentType = async (
 	apiClient: ManagementClient
@@ -130,6 +133,7 @@ export const updateWebinarTopicContentType = async (
 					path: "/content_groups",
 					value: {
 						name: "URLs",
+						codename: "urls",
 					},
 				},
 				{
@@ -300,7 +304,8 @@ export const updateWebinarDateContentType = async (
 					op: "remove",
 					path: `/elements/codename:${contentTypes.webinar_date.elements.description.codename}`,
 				},
-			]);
+			])
+			.toPromise();
 	} catch (error) {
 		throw new Error(`Error in updateWebinarDateContentType - ${error.message}`);
 	}
@@ -326,7 +331,8 @@ export const updateEventDateContentType = async (
 					op: "remove",
 					path: `/elements/codename:${contentTypes.event_date.elements.description.codename}`,
 				},
-			]);
+			])
+			.toPromise();
 	} catch (error) {
 		throw new Error(`Error in updateWebinarDateContentType - ${error.message}`);
 	}
@@ -341,13 +347,6 @@ export const updateEventContentType = async (apiClient: ManagementClient) => {
 				{
 					op: "remove",
 					path: `/elements/codename:${contentTypes.event.elements.sticky.codename}`,
-				},
-				{
-					op: "addInto",
-					path: "/content_groups",
-					value: {
-						name: "URLs",
-					},
 				},
 				{
 					op: "addInto",
@@ -414,6 +413,14 @@ export const updateEventContentType = async (apiClient: ManagementClient) => {
 				},
 				{
 					op: "addInto",
+					path: "/content_groups",
+					value: {
+						name: "URLs",
+						codename: "urls",
+					},
+				},
+				{
+					op: "addInto",
 					path: "/elements",
 					value: {
 						name: "Registration URL",
@@ -443,8 +450,93 @@ export const updateEventContentType = async (apiClient: ManagementClient) => {
 						},
 					},
 				},
-			]);
+			])
+			.toPromise();
 	} catch (error) {
 		throw new Error(`Error in updateEventContentType - ${error.message}`);
+	}
+};
+
+export const updateWebinarSlugs = async (apiClient: ManagementClient) => {
+	try {
+		// Get all topics with dates
+		const topicsResponse = await KontentService.Instance()
+			.deliveryClient.items<WebinarTopicModel>()
+			.type(contentTypes.webinar_topic.codename)
+			.notEmptyFilter(
+				getElementsParamCodename(
+					contentTypes.webinar_topic.elements.webinar_dates.codename
+				)
+			)
+			.toPromise();
+
+		const topics = topicsResponse.data.items;
+
+		// Loop through the topics and update the topic slug with slug of the first date
+		for (const topic of topics) {
+			const slug =
+				topic.elements.webinarDates.linkedItems[0].elements.urlSlug.value;
+			const workflowStep = topic.system.workflowStep;
+
+			switch (workflowStep) {
+				case ARCHIVED:
+					break;
+				case ARCHIVED_2:
+					break;
+				case PUBLISHED:
+					// Create a new version of the topic
+					await apiClient
+						.createNewVersionOfLanguageVariant()
+						.byItemCodename(topic.system.codename)
+						.byLanguageCodename("default")
+						.toPromise();
+
+					// Add a slug to it
+					await apiClient
+						.upsertLanguageVariant()
+						.byItemCodename(topic.system.codename)
+						.byLanguageCodename("default")
+						.withData((builder) => [
+							builder.urlSlugElement({
+								element: {
+									// Casting to any to avoid build errors due to outdated models
+									codename: (contentTypes as any).webinar_topic.elements
+										.url_slug.codename,
+								},
+								mode: "custom",
+								value: slug,
+							}),
+						])
+						.toPromise();
+
+					// Re-publish the new version
+					await apiClient
+						.publishLanguageVariant()
+						.byItemCodename(topic.system.codename)
+						.byLanguageCodename("default")
+						.withoutData()
+						.toPromise();
+					break;
+				default:
+					await apiClient
+						.upsertLanguageVariant()
+						.byItemCodename(topic.system.codename)
+						.byLanguageCodename("default")
+						.withData((builder) => [
+							builder.urlSlugElement({
+								element: {
+									// Casting to any to avoid build errors due to outdated models
+									codename: (contentTypes as any).webinar_topic.elements
+										.url_slug.codename,
+								},
+								mode: "custom",
+								value: slug,
+							}),
+						])
+						.toPromise();
+			}
+		}
+	} catch (error) {
+		throw new Error(`Error in updateWebinarSlugs - ${error.message}`);
 	}
 };

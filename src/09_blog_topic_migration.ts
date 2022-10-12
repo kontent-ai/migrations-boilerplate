@@ -1,13 +1,10 @@
 import { MigrationModule } from "@kontent-ai/cli";
 import { ManagementClient } from "@kontent-ai/management-sdk";
+import { ARCHIVED, ARCHIVED_2, PUBLISHED } from "./constants";
 import { BlogPostModel, BlogTopicModel } from "./models";
 import { contentTypes } from "./models/project/contentTypes";
 import KontentService from "./services/KontentService";
 import { getElementsParamCodename } from "./utils/kontentUtils";
-
-const PUBLISHED = "published";
-const ARCHIVED = "archived_32a589a";
-const ARCHIVED_2 = "archived";
 
 const getAllBlogPosts = async (): Promise<BlogPostModel[]> => {
 	try {
