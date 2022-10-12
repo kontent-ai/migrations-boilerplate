@@ -232,7 +232,8 @@ export const updateWebinarTopicContentType = async (
 							},
 						},
 						is_required: true,
-						guidelines: "URL slug for this webinar (e.g. /horizons-2022)",
+						guidelines:
+							"URL slug for this webinar (e.g. /content-modeling-1-on-1)",
 						content_group: {
 							codename: "urls",
 						},
@@ -328,5 +329,122 @@ export const updateEventDateContentType = async (
 			]);
 	} catch (error) {
 		throw new Error(`Error in updateWebinarDateContentType - ${error.message}`);
+	}
+};
+
+export const updateEventContentType = async (apiClient: ManagementClient) => {
+	try {
+		await apiClient
+			.modifyContentType()
+			.byTypeCodename(contentTypes.event.codename)
+			.withData([
+				{
+					op: "remove",
+					path: `/elements/codename:${contentTypes.event.elements.sticky.codename}`,
+				},
+				{
+					op: "addInto",
+					path: "/content_groups",
+					value: {
+						name: "URLs",
+					},
+				},
+				{
+					op: "addInto",
+					path: "/elements",
+					value: {
+						name: "Wrap Up",
+						type: "rich_text",
+						guidelines: "Post-event wrap-up",
+						content_group: {
+							codename: "general",
+						},
+					},
+				},
+				{
+					op: "addInto",
+					path: "/elements",
+					value: {
+						name: "Overview",
+						type: "rich_text",
+						guidelines:
+							"Short summary of the event (displayed on the event card)",
+						content_group: {
+							codename: "general",
+						},
+					},
+				},
+				{
+					op: "addInto",
+					path: "/elements",
+					value: {
+						name: "Partnership",
+						type: "modular_content",
+						guidelines: "Partner for this event",
+						item_count_limit: {
+							condition: "at_most",
+							value: 1,
+						},
+						allowed_content_types: [
+							{
+								codename: contentTypes.partner.codename,
+							},
+						],
+						content_group: {
+							codename: "general",
+						},
+					},
+				},
+				{
+					op: "addInto",
+					path: "/elements",
+					value: {
+						name: "Speakers",
+						type: "modular_content",
+						guidelines: "Speakers for this event",
+						allowed_content_types: [
+							{
+								codename: contentTypes.author.codename,
+							},
+						],
+						content_group: {
+							codename: "general",
+						},
+					},
+				},
+				{
+					op: "addInto",
+					path: "/elements",
+					value: {
+						name: "Registration URL",
+						type: "text",
+						guidelines:
+							"Used for attending webinars where we're not collecting registrations",
+						content_group: {
+							codename: "urls",
+						},
+					},
+				},
+				{
+					op: "addInto",
+					path: "/elements",
+					value: {
+						name: "URL Slug",
+						type: "url_slug",
+						depends_on: {
+							element: {
+								codename: contentTypes.event.elements.title.codename,
+							},
+						},
+						is_required: true,
+						guidelines: "URL slug for this webinar (e.g. /horizons-2022)",
+						content_group: {
+							codename: "urls",
+						},
+					},
+				},
+			]);
+	} catch (error) {
+		throw new Error(`Error in updateEventContentType - ${error.message}`);
 	}
 };
