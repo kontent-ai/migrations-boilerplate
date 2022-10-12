@@ -304,3 +304,29 @@ export const updateWebinarDateContentType = async (
 		throw new Error(`Error in updateWebinarDateContentType - ${error.message}`);
 	}
 };
+
+export const updateEventDateContentType = async (
+	apiClient: ManagementClient
+) => {
+	try {
+		await apiClient
+			.modifyContentType()
+			.byTypeCodename(contentTypes.event_date.codename)
+			.withData([
+				{
+					op: "remove",
+					path: `/elements/codename:${contentTypes.event_date.elements.consent.codename}`,
+				},
+				{
+					op: "remove",
+					path: `/elements/codename:${contentTypes.event_date.elements.url_slug.codename}`,
+				},
+				{
+					op: "remove",
+					path: `/elements/codename:${contentTypes.event_date.elements.description.codename}`,
+				},
+			]);
+	} catch (error) {
+		throw new Error(`Error in updateWebinarDateContentType - ${error.message}`);
+	}
+};
