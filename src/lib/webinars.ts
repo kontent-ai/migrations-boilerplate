@@ -266,3 +266,41 @@ export const updateWebinarTopicContentType = async (
 		);
 	}
 };
+
+export const updateWebinarDateContentType = async (
+	apiClient: ManagementClient
+) => {
+	try {
+		await apiClient
+			.modifyContentType()
+			.byTypeCodename(contentTypes.webinar_date.codename)
+			.withData([
+				{
+					op: "remove",
+					path: `/elements/codename:${contentTypes.webinar_date.elements.is_external.codename}`,
+				},
+				{
+					op: "remove",
+					path: `/elements/codename:${contentTypes.webinar_date.elements.url_slug.codename}`,
+				},
+				{
+					op: "remove",
+					path: `/elements/codename:${contentTypes.webinar_date.elements.url_slug_value.codename}`,
+				},
+				{
+					op: "remove",
+					path: `/elements/codename:${contentTypes.webinar_date.elements.webinar_registration_url.codename}`,
+				},
+				{
+					op: "remove",
+					path: `/elements/codename:${contentTypes.webinar_date.elements.time_zone.codename}`,
+				},
+				{
+					op: "remove",
+					path: `/elements/codename:${contentTypes.webinar_date.elements.description.codename}`,
+				},
+			]);
+	} catch (error) {
+		throw new Error(`Error in updateWebinarDateContentType - ${error.message}`);
+	}
+};
