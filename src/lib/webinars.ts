@@ -1,6 +1,6 @@
 import { ManagementClient } from "@kontent-ai/management-sdk";
 import KontentService from "../services/KontentService";
-import { contentTypes, WebinarTopicModel } from "../models";
+import { contentTypes, EventModel, WebinarTopicModel } from "../models";
 import { getElementsParamCodename } from "../utils/kontentUtils";
 import { ARCHIVED, ARCHIVED_2, PUBLISHED } from "../constants";
 
@@ -562,5 +562,82 @@ export const updateWebinarSlugs = async (apiClient: ManagementClient) => {
 		}
 	} catch (error) {
 		throw new Error(`Error in updateWebinarSlugs - ${error.message}`);
+	}
+};
+
+export const updateEventSlugs = async (apiClient: ManagementClient) => {
+	try {
+		// Get all events with dates
+		const eventsResponse = await KontentService.Instance()
+			.deliveryClient.items<EventModel>()
+			.type(contentTypes.event.codename)
+			.notEmptyFilter(
+				getElementsParamCodename(contentTypes.event.elements.dates.codename)
+			)
+			.toPromise();
+
+		const events = eventsResponse.data.items;
+
+		// Loop through the events and update the event slug with slug of the first date
+		for (const event of events) {
+			const slug = event.elements.dates.linkedItems[0].elements.urlSlug.value;
+			const workflowStep = event.system.workflowStep;
+
+			switch (workflowStep) {
+				case ARCHIVED:
+					break;
+				case ARCHIVED_2:
+					break;
+				case PUBLISHED:
+					// Create a new version of the event
+					await apiClient
+						.createNewVersionOfLanguageVariant()
+						.byItemCodename(event.system.codename)
+						.byLanguageCodename("default")
+						.toPromise();
+
+					// Add a slug to it
+					await apiClient
+						.upsertLanguageVariant()
+						.byItemCodename(event.system.codename)
+						.byLanguageCodename("default")
+						.withData((builder) => [
+							builder.textElement({
+								element: {
+									// Casting to any to avoid build errors due to outdated models
+									codename: "url_slug_custom_value",
+								},
+								value: slug,
+							}),
+						])
+						.toPromise();
+
+					// Re-publish the new version
+					await apiClient
+						.publishLanguageVariant()
+						.byItemCodename(event.system.codename)
+						.byLanguageCodename("default")
+						.withoutData()
+						.toPromise();
+					break;
+				default:
+					await apiClient
+						.upsertLanguageVariant()
+						.byItemCodename(event.system.codename)
+						.byLanguageCodename("default")
+						.withData((builder) => [
+							builder.textElement({
+								element: {
+									// Casting to any to avoid build errors due to outdated models
+									codename: "url_slug_custom_value",
+								},
+								value: slug,
+							}),
+						])
+						.toPromise();
+			}
+		}
+	} catch (error) {
+		throw new Error(`Error in updateEventSlugs - ${error.message}`);
 	}
 };
