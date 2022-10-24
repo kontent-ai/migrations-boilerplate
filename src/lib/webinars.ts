@@ -12,66 +12,66 @@ export const updateWebinarsPageContentType = async (
 			.modifyContentType()
 			.byTypeCodename(contentTypes.webinars_page.codename)
 			.withData([
-				{
-					op: "remove",
-					path: `/elements/codename:${contentTypes.webinars_page.elements.hero_perex.codename}`,
-				},
-				{
-					op: "remove",
-					path: `/elements/codename:${contentTypes.webinars_page.elements.hero_image.codename}`,
-				},
-				{
-					op: "remove",
-					path: `/elements/codename:${contentTypes.webinars_page.elements.release_projects.codename}`,
-				},
-				{
-					op: "remove",
-					path: `/elements/codename:${contentTypes.webinars_page.elements.live_webinars_heading.codename}`,
-				},
-				{
-					op: "remove",
-					path: `/elements/codename:${contentTypes.webinars_page.elements.on_demand_webinars_heading.codename}`,
-				},
-				{
-					op: "remove",
-					path: `/elements/codename:${contentTypes.webinars_page.elements.emea_title.codename}`,
-				},
-				{
-					op: "remove",
-					path: `/elements/codename:${contentTypes.webinars_page.elements.americas_title.codename}`,
-				},
-				{
-					op: "remove",
-					path: `/elements/codename:${contentTypes.webinars_page.elements.apac_title.codename}`,
-				},
-				{
-					op: "remove",
-					path: `/elements/codename:${contentTypes.webinars_page.elements.topic_card_title.codename}`,
-				},
-				{
-					op: "remove",
-					path: `/elements/codename:${contentTypes.webinars_page.elements.reservation_form_title.codename}`,
-				},
-				{
-					op: "remove",
-					path: `/elements/codename:${contentTypes.webinars_page.elements.related_dates_title.codename}`,
-				},
-				{
-					op: "remove",
-					path: `/elements/codename:${contentTypes.webinars_page.elements.consent_elements.codename}`,
-				},
-				{
-					op: "remove",
-					path: `/elements/codename:${contentTypes.webinars_page.elements.webinar_topics.codename}`,
-				},
-				{
-					op: "remove",
-					path: `/elements/codename:${contentTypes.webinars_page.elements.on_demand_webinars.codename}`,
-				},
-				{
-					op: "remove",
-					path: `/elements/codename:${contentTypes.webinars_page.elements.on_demand_thank_you___title.codename}`,
-				},
+				// {
+				// 	op: "remove",
+				// 	path: `/elements/codename:${contentTypes.webinars_page.elements.hero_perex.codename}`,
+				// },
+				// {
+				// 	op: "remove",
+				// 	path: `/elements/codename:${contentTypes.webinars_page.elements.hero_image.codename}`,
+				// },
+				// {
+				// 	op: "remove",
+				// 	path: `/elements/codename:${contentTypes.webinars_page.elements.release_projects.codename}`,
+				// },
+				// {
+				// 	op: "remove",
+				// 	path: `/elements/codename:${contentTypes.webinars_page.elements.live_webinars_heading.codename}`,
+				// },
+				// {
+				// 	op: "remove",
+				// 	path: `/elements/codename:${contentTypes.webinars_page.elements.on_demand_webinars_heading.codename}`,
+				// },
+				// {
+				// 	op: "remove",
+				// 	path: `/elements/codename:${contentTypes.webinars_page.elements.emea_title.codename}`,
+				// },
+				// {
+				// 	op: "remove",
+				// 	path: `/elements/codename:${contentTypes.webinars_page.elements.americas_title.codename}`,
+				// },
+				// {
+				// 	op: "remove",
+				// 	path: `/elements/codename:${contentTypes.webinars_page.elements.apac_title.codename}`,
+				// },
+				// {
+				// 	op: "remove",
+				// 	path: `/elements/codename:${contentTypes.webinars_page.elements.topic_card_title.codename}`,
+				// },
+				// {
+				// 	op: "remove",
+				// 	path: `/elements/codename:${contentTypes.webinars_page.elements.reservation_form_title.codename}`,
+				// },
+				// {
+				// 	op: "remove",
+				// 	path: `/elements/codename:${contentTypes.webinars_page.elements.related_dates_title.codename}`,
+				// },
+				// {
+				// 	op: "remove",
+				// 	path: `/elements/codename:${contentTypes.webinars_page.elements.consent_elements.codename}`,
+				// },
+				// {
+				// 	op: "remove",
+				// 	path: `/elements/codename:${contentTypes.webinars_page.elements.webinar_topics.codename}`,
+				// },
+				// {
+				// 	op: "remove",
+				// 	path: `/elements/codename:${contentTypes.webinars_page.elements.on_demand_webinars.codename}`,
+				// },
+				// {
+				// 	op: "remove",
+				// 	path: `/elements/codename:${contentTypes.webinars_page.elements.on_demand_thank_you___title.codename}`,
+				// },
 				{
 					op: "addInto",
 					path: "/elements",
@@ -115,156 +115,240 @@ export const updateWebinarTopicContentType = async (
 			.modifyContentType()
 			.byTypeCodename(contentTypes.webinar_topic.codename)
 			.withData([
-				{ op: "replace", path: "/name", value: "Webinar" },
-				{
-					op: "remove",
-					path: `/elements/codename:${contentTypes.webinar_topic.elements.subtitle.codename}`,
-				},
-				{
-					op: "remove",
-					path: `/elements/codename:${contentTypes.webinar_topic.elements.sticky.codename}`,
-				},
-				{
-					op: "remove",
-					path: `/elements/codename:${contentTypes.webinar_topic.elements.type.codename}`,
-				},
+				// { op: "replace", path: "/name", value: "Webinar" },
+				// {
+				// 	op: "remove",
+				// 	path: `/elements/codename:${contentTypes.webinar_topic.elements.subtitle.codename}`,
+				// },
+				// {
+				// 	op: "remove",
+				// 	path: `/elements/codename:${contentTypes.webinar_topic.elements.sticky.codename}`,
+				// },
+				// {
+				// 	op: "remove",
+				// 	path: `/elements/codename:${contentTypes.webinar_topic.elements.type.codename}`,
+				// },
+				// {
+				// 	op: "remove",
+				// 	path: `/elements/codename:${contentTypes.webinar_topic.elements.header_image.codename}`,
+				// },
+				// {
+				// 	op: "addInto",
+				// 	path: "/content_groups",
+				// 	value: {
+				// 		name: "URLs",
+				// 		codename: "urls",
+				// 	},
+				// },
 				{
 					op: "addInto",
 					path: "/content_groups",
+					after: {
+						codename: "general",
+					},
 					value: {
-						name: "URLs",
-						codename: "urls",
+						name: "Images",
+						codename: "images",
 					},
 				},
 				{
 					op: "addInto",
 					path: "/elements",
 					value: {
-						name: "Registration URL",
-						type: "text",
-						guidelines:
-							"Used for attending webinars where we're not collecting registrations",
-						content_group: {
-							codename: "urls",
-						},
-					},
-				},
-				{
-					op: "addInto",
-					path: "/elements",
-					value: {
-						name: "Recording URL",
-						type: "text",
-						guidelines: "URL of a webinar recording (YouTube)",
-						content_group: {
-							codename: "urls",
-						},
-					},
-				},
-				{
-					op: "addInto",
-					path: "/elements",
-					value: {
-						name: "Partnership",
-						type: "modular_content",
-						guidelines: "Partner for this webinar",
-						item_count_limit: {
-							condition: "at_most",
-							value: 1,
-						},
-						allowed_content_types: [
-							{
-								codename: contentTypes.partner.codename,
-							},
-						],
-						content_group: {
-							codename: "general",
-						},
-					},
-				},
-				{
-					op: "addInto",
-					path: "/elements",
-					value: {
-						name: "Speakers",
-						type: "modular_content",
-						guidelines: "Speakers for this webinar",
-						allowed_content_types: [
-							{
-								codename: contentTypes.author.codename,
-							},
-						],
-						content_group: {
-							codename: "general",
-						},
-					},
-				},
-				{
-					op: "addInto",
-					path: "/elements",
-					value: {
-						name: "Wrap Up",
-						type: "rich_text",
-						guidelines: "Post-webinar wrap-up",
-						content_group: {
-							codename: "general",
-						},
-					},
-				},
-				{
-					op: "addInto",
-					path: "/elements",
-					value: {
-						name: "Overview",
-						type: "rich_text",
-						guidelines:
-							"Short summary of the webinar (displayed on the webinar card)",
-						content_group: {
-							codename: "general",
-						},
-					},
-				},
-				{
-					op: "addInto",
-					path: "/elements",
-					value: {
-						name: "URL slug custom value",
-						type: "text",
-						guidelines:
-							"Custom url slug value from which the slug will be generated e.g. some-random-slug",
-						codename: "url_slug_custom_value",
-						content_group: {
-							codename: "urls",
-						},
-					},
-				},
-				{
-					op: "addInto",
-					path: "/elements",
-					value: {
-						name: "URL Slug",
-						type: "url_slug",
-						depends_on: {
-							element: {
-								codename: "url_slug_custom_value",
-							},
-						},
+						name: "Card image",
+						type: "asset",
 						is_required: true,
+						asset_count_limit: {
+							value: 1,
+							condition: "exactly",
+						},
 						guidelines:
-							"URL slug for this webinar (e.g. /content-modeling-1-on-1)",
+							"A smaller image used for the card on the webinars page",
 						content_group: {
-							codename: "urls",
+							codename: "images",
 						},
 					},
 				},
 				{
-					op: "replace",
-					path: `/elements/codename:${contentTypes.webinar_topic.elements.webinar_dates.codename}/item_count_limit`,
+					op: "addInto",
+					path: "/elements",
 					value: {
-						condition: "at_most",
-						value: 3,
+						name: "Image strip image",
+						type: "asset",
+						asset_count_limit: {
+							value: 1,
+							condition: "at_most",
+						},
+						guidelines:
+							"Optional full-width image black and white image used on the webinar detail page.",
+						content_group: {
+							codename: "images",
+						},
 					},
 				},
+				{
+					op: "addInto",
+					path: "/elements",
+					value: {
+						name: "Hero image",
+						type: "asset",
+						asset_count_limit: {
+							value: 1,
+							condition: "at_most",
+						},
+						guidelines:
+							"Optional hero image used on the webinar detail page with a petal (if there's no image strip). If no image strip or hero image is provided, only the petal will be shown.",
+						content_group: {
+							codename: "images",
+						},
+					},
+				},
+				{
+					op: "addInto",
+					path: "/elements",
+					value: {
+						name: "Recording poster",
+						type: "asset",
+						asset_count_limit: {
+							value: 1,
+							condition: "at_most",
+						},
+						guidelines:
+							"Poster image for the webinar video iframe. If no poster is provided, the video will be shown without a poster (default YouTube iframe behaviour).",
+						content_group: {
+							codename: "images",
+						},
+					},
+				},
+				// {
+				// 	op: "addInto",
+				// 	path: "/elements",
+				// 	value: {
+				// 		name: "Registration URL",
+				// 		type: "text",
+				// 		guidelines:
+				// 			"Used for attending webinars where we're not collecting registrations",
+				// 		content_group: {
+				// 			codename: "urls",
+				// 		},
+				// 	},
+				// },
+				// {
+				// 	op: "addInto",
+				// 	path: "/elements",
+				// 	value: {
+				// 		name: "Recording URL",
+				// 		type: "text",
+				// 		guidelines: "URL of a webinar recording (YouTube)",
+				// 		content_group: {
+				// 			codename: "urls",
+				// 		},
+				// 	},
+				// },
+				// {
+				// 	op: "addInto",
+				// 	path: "/elements",
+				// 	value: {
+				// 		name: "Partnership",
+				// 		type: "modular_content",
+				// 		guidelines: "Partner for this webinar",
+				// 		item_count_limit: {
+				// 			condition: "at_most",
+				// 			value: 1,
+				// 		},
+				// 		allowed_content_types: [
+				// 			{
+				// 				codename: contentTypes.partner.codename,
+				// 			},
+				// 		],
+				// 		content_group: {
+				// 			codename: "general",
+				// 		},
+				// 	},
+				// },
+				// {
+				// 	op: "addInto",
+				// 	path: "/elements",
+				// 	value: {
+				// 		name: "Speakers",
+				// 		type: "modular_content",
+				// 		guidelines: "Speakers for this webinar",
+				// 		allowed_content_types: [
+				// 			{
+				// 				codename: contentTypes.author.codename,
+				// 			},
+				// 		],
+				// 		content_group: {
+				// 			codename: "general",
+				// 		},
+				// 	},
+				// },
+				// {
+				// 	op: "addInto",
+				// 	path: "/elements",
+				// 	value: {
+				// 		name: "Wrap Up",
+				// 		type: "rich_text",
+				// 		guidelines: "Post-webinar wrap-up",
+				// 		content_group: {
+				// 			codename: "general",
+				// 		},
+				// 	},
+				// },
+				// {
+				// 	op: "addInto",
+				// 	path: "/elements",
+				// 	value: {
+				// 		name: "Overview",
+				// 		type: "rich_text",
+				// 		guidelines:
+				// 			"Short summary of the webinar (displayed on the webinar card)",
+				// 		content_group: {
+				// 			codename: "general",
+				// 		},
+				// 	},
+				// },
+				// {
+				// 	op: "addInto",
+				// 	path: "/elements",
+				// 	value: {
+				// 		name: "URL slug custom value",
+				// 		type: "text",
+				// 		guidelines:
+				// 			"Custom url slug value from which the slug will be generated e.g. some-random-slug",
+				// 		codename: "url_slug_custom_value",
+				// 		content_group: {
+				// 			codename: "urls",
+				// 		},
+				// 	},
+				// },
+				// {
+				// 	op: "addInto",
+				// 	path: "/elements",
+				// 	value: {
+				// 		name: "URL Slug",
+				// 		type: "url_slug",
+				// 		depends_on: {
+				// 			element: {
+				// 				codename: "url_slug_custom_value",
+				// 			},
+				// 		},
+				// 		is_required: true,
+				// 		guidelines:
+				// 			"URL slug for this webinar (e.g. /content-modeling-1-on-1)",
+				// 		content_group: {
+				// 			codename: "urls",
+				// 		},
+				// 	},
+				// },
+				// {
+				// 	op: "replace",
+				// 	path: `/elements/codename:${contentTypes.webinar_topic.elements.webinar_dates.codename}/item_count_limit`,
+				// 	value: {
+				// 		condition: "at_most",
+				// 		value: 3,
+				// 	},
+				// },
 				// {
 				// 	op: "addInto",
 				// 	path: "/elements",
@@ -295,29 +379,54 @@ export const updateWebinarDateContentType = async (
 			.byTypeCodename(contentTypes.webinar_date.codename)
 			.withData([
 				{
-					op: "remove",
-					path: `/elements/codename:${contentTypes.webinar_date.elements.is_external.codename}`,
+					op: "addInto",
+					path: "/elements",
+					value: {
+						name: "Registration open",
+						type: "multiple_choice",
+						is_required: true,
+						mode: "single",
+						options: [
+							{
+								name: "Yes",
+								codename: "yes",
+							},
+						],
+						default: {
+							global: {
+								value: [
+									{
+										codename: "yes",
+									},
+								],
+							},
+						},
+					},
 				},
-				{
-					op: "remove",
-					path: `/elements/codename:${contentTypes.webinar_date.elements.url_slug.codename}`,
-				},
-				{
-					op: "remove",
-					path: `/elements/codename:${contentTypes.webinar_date.elements.url_slug_value.codename}`,
-				},
-				{
-					op: "remove",
-					path: `/elements/codename:${contentTypes.webinar_date.elements.webinar_registration_url.codename}`,
-				},
-				{
-					op: "remove",
-					path: `/elements/codename:${contentTypes.webinar_date.elements.time_zone.codename}`,
-				},
-				{
-					op: "remove",
-					path: `/elements/codename:${contentTypes.webinar_date.elements.description.codename}`,
-				},
+				// {
+				// 	op: "remove",
+				// 	path: `/elements/codename:${contentTypes.webinar_date.elements.is_external.codename}`,
+				// },
+				// {
+				// 	op: "remove",
+				// 	path: `/elements/codename:${contentTypes.webinar_date.elements.url_slug.codename}`,
+				// },
+				// {
+				// 	op: "remove",
+				// 	path: `/elements/codename:${contentTypes.webinar_date.elements.url_slug_value.codename}`,
+				// },
+				// {
+				// 	op: "remove",
+				// 	path: `/elements/codename:${contentTypes.webinar_date.elements.webinar_registration_url.codename}`,
+				// },
+				// {
+				// 	op: "remove",
+				// 	path: `/elements/codename:${contentTypes.webinar_date.elements.time_zone.codename}`,
+				// },
+				// {
+				// 	op: "remove",
+				// 	path: `/elements/codename:${contentTypes.webinar_date.elements.description.codename}`,
+				// },
 			])
 			.toPromise();
 	} catch (error) {
@@ -334,17 +443,45 @@ export const updateEventDateContentType = async (
 			.byTypeCodename(contentTypes.event_date.codename)
 			.withData([
 				{
-					op: "remove",
-					path: `/elements/codename:${contentTypes.event_date.elements.consent.codename}`,
+					op: "addInto",
+					path: "/elements",
+					value: {
+						name: "Registration open",
+						type: "multiple_choice",
+						is_required: true,
+						mode: "single",
+						content_group: {
+							codename: "basic_info",
+						},
+						options: [
+							{
+								name: "Yes",
+								codename: "yes",
+							},
+						],
+						default: {
+							global: {
+								value: [
+									{
+										codename: "yes",
+									},
+								],
+							},
+						},
+					},
 				},
-				{
-					op: "remove",
-					path: `/elements/codename:${contentTypes.event_date.elements.url_slug.codename}`,
-				},
-				{
-					op: "remove",
-					path: `/elements/codename:${contentTypes.event_date.elements.description.codename}`,
-				},
+				// {
+				// 	op: "remove",
+				// 	path: `/elements/codename:${contentTypes.event_date.elements.consent.codename}`,
+				// },
+				// {
+				// 	op: "remove",
+				// 	path: `/elements/codename:${contentTypes.event_date.elements.url_slug.codename}`,
+				// },
+				// {
+				// 	op: "remove",
+				// 	path: `/elements/codename:${contentTypes.event_date.elements.description.codename}`,
+				// },
 			])
 			.toPromise();
 	} catch (error) {
@@ -358,123 +495,190 @@ export const updateEventContentType = async (apiClient: ManagementClient) => {
 			.modifyContentType()
 			.byTypeCodename(contentTypes.event.codename)
 			.withData([
-				{
-					op: "remove",
-					path: `/elements/codename:${contentTypes.event.elements.sticky.codename}`,
-				},
-				{
-					op: "addInto",
-					path: "/elements",
-					value: {
-						name: "Wrap Up",
-						type: "rich_text",
-						guidelines: "Post-event wrap-up",
-						content_group: {
-							codename: "general",
-						},
-					},
-				},
-				{
-					op: "addInto",
-					path: "/elements",
-					value: {
-						name: "Overview",
-						type: "rich_text",
-						guidelines:
-							"Short summary of the event (displayed on the event card)",
-						content_group: {
-							codename: "general",
-						},
-					},
-				},
-				{
-					op: "addInto",
-					path: "/elements",
-					value: {
-						name: "Partnership",
-						type: "modular_content",
-						guidelines: "Partner for this event",
-						item_count_limit: {
-							condition: "at_most",
-							value: 1,
-						},
-						allowed_content_types: [
-							{
-								codename: contentTypes.partner.codename,
-							},
-						],
-						content_group: {
-							codename: "general",
-						},
-					},
-				},
-				{
-					op: "addInto",
-					path: "/elements",
-					value: {
-						name: "Speakers",
-						type: "modular_content",
-						guidelines: "Speakers for this event",
-						allowed_content_types: [
-							{
-								codename: contentTypes.author.codename,
-							},
-						],
-						content_group: {
-							codename: "general",
-						},
-					},
-				},
+				// {
+				// 	op: "remove",
+				// 	path: `/elements/codename:${contentTypes.event.elements.sticky.codename}`,
+				// },
+				// {
+				// 	op: "remove",
+				// 	path: `/elements/codename:${contentTypes.event.elements.header_image.codename}`,
+				// },
+				// {
+				// 	op: "addInto",
+				// 	path: "/elements",
+				// 	value: {
+				// 		name: "Wrap Up",
+				// 		type: "rich_text",
+				// 		guidelines: "Post-event wrap-up",
+				// 		content_group: {
+				// 			codename: "general",
+				// 		},
+				// 	},
+				// },
+				// {
+				// 	op: "addInto",
+				// 	path: "/elements",
+				// 	value: {
+				// 		name: "Overview",
+				// 		type: "rich_text",
+				// 		guidelines:
+				// 			"Short summary of the event (displayed on the event card)",
+				// 		content_group: {
+				// 			codename: "general",
+				// 		},
+				// 	},
+				// },
+				// {
+				// 	op: "addInto",
+				// 	path: "/elements",
+				// 	value: {
+				// 		name: "Partnership",
+				// 		type: "modular_content",
+				// 		guidelines: "Partner for this event",
+				// 		item_count_limit: {
+				// 			condition: "at_most",
+				// 			value: 1,
+				// 		},
+				// 		allowed_content_types: [
+				// 			{
+				// 				codename: contentTypes.partner.codename,
+				// 			},
+				// 		],
+				// 		content_group: {
+				// 			codename: "general",
+				// 		},
+				// 	},
+				// },
+				// {
+				// 	op: "addInto",
+				// 	path: "/elements",
+				// 	value: {
+				// 		name: "Speakers",
+				// 		type: "modular_content",
+				// 		guidelines: "Speakers for this event",
+				// 		allowed_content_types: [
+				// 			{
+				// 				codename: contentTypes.author.codename,
+				// 			},
+				// 		],
+				// 		content_group: {
+				// 			codename: "general",
+				// 		},
+				// 	},
+				// },
+				// {
+				// 	op: "addInto",
+				// 	path: "/content_groups",
+				// 	value: {
+				// 		name: "URLs",
+				// 		codename: "urls",
+				// 	},
+				// },
+				// {
+				// 	op: "addInto",
+				// 	path: "/elements",
+				// 	value: {
+				// 		name: "Registration URL",
+				// 		type: "text",
+				// 		guidelines:
+				// 			"Used for attending webinars where we're not collecting registrations",
+				// 		content_group: {
+				// 			codename: "urls",
+				// 		},
+				// 	},
+				// },
+				// {
+				// 	op: "addInto",
+				// 	path: "/elements",
+				// 	value: {
+				// 		name: "URL slug custom value",
+				// 		type: "text",
+				// 		guidelines:
+				// 			"Custom value from which the URL Slug will be generated e.g. random-slug-value",
+				// 		codename: "url_slug_custom_value",
+				// 		content_group: {
+				// 			codename: "urls",
+				// 		},
+				// 	},
+				// },
+				// {
+				// 	op: "addInto",
+				// 	path: "/elements",
+				// 	value: {
+				// 		name: "URL Slug",
+				// 		type: "url_slug",
+				// 		depends_on: {
+				// 			element: {
+				// 				codename: "url_slug_custom_value",
+				// 			},
+				// 		},
+				// 		is_required: true,
+				// 		guidelines: "URL slug for this webinar (e.g. /horizons-2022)",
+				// 		content_group: {
+				// 			codename: "urls",
+				// 		},
+				// 	},
+				// },
 				{
 					op: "addInto",
 					path: "/content_groups",
+					after: {
+						codename: "general",
+					},
 					value: {
-						name: "URLs",
-						codename: "urls",
+						name: "Images",
+						codename: "images",
 					},
 				},
 				{
 					op: "addInto",
 					path: "/elements",
 					value: {
-						name: "Registration URL",
-						type: "text",
-						guidelines:
-							"Used for attending webinars where we're not collecting registrations",
-						content_group: {
-							codename: "urls",
-						},
-					},
-				},
-				{
-					op: "addInto",
-					path: "/elements",
-					value: {
-						name: "URL slug custom value",
-						type: "text",
-						guidelines:
-							"Custom value from which the URL Slug will be generated e.g. random-slug-value",
-						codename: "url_slug_custom_value",
-						content_group: {
-							codename: "urls",
-						},
-					},
-				},
-				{
-					op: "addInto",
-					path: "/elements",
-					value: {
-						name: "URL Slug",
-						type: "url_slug",
-						depends_on: {
-							element: {
-								codename: "url_slug_custom_value",
-							},
-						},
+						name: "Card image",
+						type: "asset",
 						is_required: true,
-						guidelines: "URL slug for this webinar (e.g. /horizons-2022)",
+						asset_count_limit: {
+							value: 1,
+							condition: "exactly",
+						},
+						guidelines:
+							"A smaller image used for the card on the webinars page",
 						content_group: {
-							codename: "urls",
+							codename: "images",
+						},
+					},
+				},
+				{
+					op: "addInto",
+					path: "/elements",
+					value: {
+						name: "Image strip image",
+						type: "asset",
+						asset_count_limit: {
+							value: 1,
+							condition: "at_most",
+						},
+						guidelines:
+							"Optional full-width image black and white image used on the webinar detail page.",
+						content_group: {
+							codename: "images",
+						},
+					},
+				},
+				{
+					op: "addInto",
+					path: "/elements",
+					value: {
+						name: "Hero image",
+						type: "asset",
+						asset_count_limit: {
+							value: 1,
+							condition: "at_most",
+						},
+						guidelines:
+							"Optional hero image used on the webinar detail page with a petal (if there's no image strip). If no image strip or hero image is provided, only the petal will be shown.",
+						content_group: {
+							codename: "images",
 						},
 					},
 				},
@@ -639,5 +843,100 @@ export const updateEventSlugs = async (apiClient: ManagementClient) => {
 		}
 	} catch (error) {
 		throw new Error(`Error in updateEventSlugs - ${error.message}`);
+	}
+};
+
+export const migrateHeaderImageToCardImage = async (
+	apiClient: ManagementClient
+) => {
+	// Webinars & Events with header image
+	const events = (
+		await KontentService.Instance()
+			.deliveryClient.items<EventModel>()
+			.type(contentTypes.event.codename)
+			.notEmptyFilter(
+				getElementsParamCodename(
+					contentTypes.event.elements.header_image.codename
+				)
+			)
+			.toPromise()
+	).data.items;
+
+	const webinars = (
+		await KontentService.Instance()
+			.deliveryClient.items<WebinarTopicModel>()
+			.type(contentTypes.webinar_topic.codename)
+			.notEmptyFilter(
+				getElementsParamCodename(
+					contentTypes.webinar_topic.elements.header_image.codename
+				)
+			)
+			.toPromise()
+	).data.items;
+
+	const combinedEventsAndWebianrs: (EventModel | WebinarTopicModel)[] = [
+		...webinars,
+		...events,
+	];
+
+	for (const item of combinedEventsAndWebianrs) {
+		const workflowStep = item.system.workflowStep;
+
+		switch (workflowStep) {
+			case ARCHIVED:
+				break;
+			case ARCHIVED_2:
+				break;
+			case PUBLISHED:
+				await apiClient
+					.createNewVersionOfLanguageVariant()
+					.byItemCodename(item.system.codename)
+					.byLanguageCodename("default")
+					.toPromise();
+
+				await apiClient
+					.upsertLanguageVariant()
+					.byItemCodename(item.system.codename)
+					.byLanguageCodename("default")
+					.withData((builder) => [
+						builder.assetElement({
+							element: {
+								codename: "card_image",
+							},
+							value: [
+								{
+									id: "Asset ID goes here - not sure where to grab it",
+								},
+							],
+						}),
+					])
+					.toPromise();
+
+				await apiClient
+					.publishLanguageVariant()
+					.byItemCodename(item.system.codename)
+					.byLanguageCodename("default")
+					.withoutData()
+					.toPromise();
+				break;
+			default:
+				await apiClient
+					.upsertLanguageVariant()
+					.byItemCodename(item.system.codename)
+					.byLanguageCodename("default")
+					.withData((builder) => [
+						builder.assetElement({
+							element: {
+								codename: "card_image",
+							},
+							value: [
+								{
+									id: "Asset ID goes here - not sure where to grab it",
+								},
+							],
+						}),
+					])
+					.toPromise();
+		}
 	}
 };
