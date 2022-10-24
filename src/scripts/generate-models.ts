@@ -16,7 +16,7 @@ const runAsync = async () => {
 	mkdirSync("../models");
 
 	// change working directory to models
-	process.chdir("./models");
+	process.chdir("./src/models");
 
 	await generateModelsAsync({
 		sdkType: "delivery",

@@ -8,7 +8,7 @@
 		"migrate:all": "npm run clean && tsc && kontent migration run --all --environment DEV",
 		"migrate:range": "npm run clean && tsc && kontent migration run --environment DEV --range",
 		"migrate": "npm run clean && tsc && kontent migration run --environment DEV -n",
-		"generate:models": "ts-node ./scripts/generate-models.ts",
+		"generate:models": "ts-node ./src/scripts/generate-models.ts",
 		"lint": "eslint --fix \"Migrations/*.ts\" && prettier --write \"Migrations/**/*.ts\"",
 		"lint-check": "eslint \"Migrations/*.ts\" && prettier --check \"Migrations/**/*.ts\"",
 		"build": "tsc",
