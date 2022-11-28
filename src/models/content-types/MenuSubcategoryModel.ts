@@ -34,4 +34,14 @@ export type MenuSubcategoryModel = IContentItem<{
    * place where you want to display the category on desktop
    */
   display: Elements.MultipleChoiceElement;
+
+  /**
+   * Href (text)
+   * Required: false
+   * Id: ed613279-5a36-4da7-8cf9-290148cf1f00
+   * Codename: href
+   *
+   * Optional href (link url) for category headings (used e.g. for hubs /solutions etc.)
+   */
+  href: Elements.TextElement;
 }>;

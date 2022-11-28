@@ -27,7 +27,7 @@ export type OfficeModel = IContentItem<{
 
   /**
    * Photo (asset)
-   * Required: true
+   * Required: false
    * Id: 83dc1472-9ad6-497c-8a3b-9866063355f6
    * Codename: photo
    */

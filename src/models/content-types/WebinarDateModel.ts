@@ -10,34 +10,6 @@ import { TimeZoneModel } from './TimeZoneModel';
  */
 export type WebinarDateModel = IContentItem<{
   /**
-   * URL Slug value (text)
-   * Required: true
-   * Id: 2cd17fc6-05c2-474e-a630-b747e8e8ce94
-   * Codename: url_slug_value
-   */
-  urlSlugValue: Elements.TextElement;
-
-  /**
-   * Description (rich_text)
-   * Required: false
-   * Id: e5615c8c-a489-4455-87cf-1eea45d597b6
-   * Codename: description
-   *
-   * Optional field - if not entered the description of parent webinar topic is used
-   */
-  description: Elements.RichTextElement;
-
-  /**
-   * Webinar Registration URL (text)
-   * Required: true
-   * Id: 72ca4c2b-988d-4246-9eec-bf9ab95a6cf3
-   * Codename: webinar_registration_url
-   *
-   * Url format: https://register.gotowebinar.com/register/12345
-   */
-  webinarRegistrationUrl: Elements.TextElement;
-
-  /**
    * Pardot URL (text)
    * Required: true
    * Id: 1dc69fca-42a2-4bc5-b99e-4d15c8e5fb5f
@@ -64,14 +36,6 @@ export type WebinarDateModel = IContentItem<{
   endDateAndTime: Elements.DateTimeElement;
 
   /**
-   * Time Zone (multiple_choice)
-   * Required: true
-   * Id: c4565a46-e8ae-4471-96ff-f8b3f66a4300
-   * Codename: time_zone
-   */
-  timeZone: Elements.MultipleChoiceElement;
-
-  /**
    * Timezone (modular_content)
    * Required: true
    * Id: 903449dc-cb6d-47fd-b9e9-c4f6d2be348e
@@ -88,18 +52,10 @@ export type WebinarDateModel = IContentItem<{
   showInsuranceVideo: Elements.MultipleChoiceElement;
 
   /**
-   * Is External (multiple_choice)
+   * Registration open (multiple_choice)
    * Required: false
-   * Id: 004a43ab-19ee-403e-968f-5491fd582cea
-   * Codename: is_external
+   * Id: 0a7f6558-e606-408d-abd5-9c94467b151a
+   * Codename: registration_open
    */
-  isExternal: Elements.MultipleChoiceElement;
-
-  /**
-   * URL Slug (url_slug)
-   * Required: true
-   * Id: 97d494a3-6360-41de-ba74-505f30040bec
-   * Codename: url_slug
-   */
-  urlSlug: Elements.UrlSlugElement;
+  registrationOpen: Elements.MultipleChoiceElement;
 }>;

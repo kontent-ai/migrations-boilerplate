@@ -358,64 +358,74 @@ export type PricingPlanModel = IContentItem<{
   support: Elements.TextElement;
 
   /**
-   * Service Availability (text)
+   * Service Availability (multiple_choice)
    * Required: true
-   * Id: 228ef6d1-bb1d-458a-b23e-ece14c9b8866
+   * Id: 0ecb7048-71be-487b-8133-c2c1cdc9f0e5
    * Codename: service_availability
    */
-  serviceAvailability: Elements.TextElement;
+  serviceAvailability: Elements.MultipleChoiceElement;
 
   /**
-   * E-learning Portal Access (multiple_choice)
+   * Service Availability Text (text)
+   * Required: false
+   * Id: 228ef6d1-bb1d-458a-b23e-ece14c9b8866
+   * Codename: service_availability_text
+   *
+   * This element will be used if "Service Availability" is set to "text"
+   */
+  serviceAvailabilityText: Elements.TextElement;
+
+  /**
+   * E-learning (multiple_choice)
    * Required: true
    * Id: c114af46-5f45-4f34-93cb-588b071c87d7
-   * Codename: e_learning_portal_access
+   * Codename: e_learning
    */
-  eLearningPortalAccess: Elements.MultipleChoiceElement;
+  eLearning: Elements.MultipleChoiceElement;
 
   /**
-   * E-learning Portal Access Text (text)
+   * E-learning Text (text)
    * Required: false
    * Id: a5a1c69f-273a-4154-ae8e-b1e51a63e81f
-   * Codename: e_learning_portal_access_text
+   * Codename: e_learning_text
    *
-   * This element will be used if "E-learning Portal Access" is set to "text"
+   * This element will be used if "E-learning" is set to "text"
    */
-  eLearningPortalAccessText: Elements.TextElement;
+  eLearningText: Elements.TextElement;
 
   /**
-   * Professional Services (multiple_choice)
+   * Guaranteed first response time (multiple_choice)
    * Required: true
    * Id: 05924a82-993f-4035-9320-ab7ac8c629d4
-   * Codename: professional_services
+   * Codename: guaranteed_first_response_time
    */
-  professionalServices: Elements.MultipleChoiceElement;
+  guaranteedFirstResponseTime: Elements.MultipleChoiceElement;
 
   /**
-   * Professional Services Text (text)
+   * Guaranteed first response time Text (text)
    * Required: false
    * Id: e2803fb4-beee-4424-b6e7-91ddac5a8082
-   * Codename: professional_services_text
+   * Codename: guaranteed_first_response_time_text
    *
-   * This element will be used if "Professional Services" is set to "text"
+   * This element will be used if "Guaranteed first response time" is set to "text"
    */
-  professionalServicesText: Elements.TextElement;
+  guaranteedFirstResponseTimeText: Elements.TextElement;
 
   /**
-   * Premium Support (multiple_choice)
+   * Customer Success Manager and consultations (multiple_choice)
    * Required: true
    * Id: 5c0be48b-2d75-42a8-9ce4-9039c61220c4
-   * Codename: premium_support
+   * Codename: customer_success_manager
    */
-  premiumSupport: Elements.MultipleChoiceElement;
+  customerSuccessManager: Elements.MultipleChoiceElement;
 
   /**
-   * Premium Support Text (text)
+   * Customer Success Manager and consultations Text (text)
    * Required: false
    * Id: 37422858-5834-4c40-be42-086121c1a7f3
-   * Codename: premium_support_text
+   * Codename: customer_success_manager_text
    *
-   * This element will be used if "Premium Support" is set to "text"
+   * This element will be used if "Customer Success Manager and consultations" is set to "text"
    */
-  premiumSupportText: Elements.TextElement;
+  customerSuccessManagerText: Elements.TextElement;
 }>;

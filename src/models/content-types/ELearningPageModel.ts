@@ -104,6 +104,22 @@ export type ELearningPageModel = IContentItem<{
   bubbles3: Elements.LinkedItemsElement<BubbleModel>;
 
   /**
+   * Heading (text)
+   * Required: true
+   * Id: 42598604-047d-4cb1-8979-33fe1a6dfc52
+   * Codename: heading_4259860
+   */
+  heading4259860: Elements.TextElement;
+
+  /**
+   * Text (rich_text)
+   * Required: true
+   * Id: 9fd2eb5f-d097-4d86-b2ae-e43e4551dbb7
+   * Codename: text
+   */
+  text: Elements.RichTextElement;
+
+  /**
    * CTA Banner (modular_content)
    * Required: false
    * Id: 5d948ca1-76c4-4b58-8b94-07c982d1987d

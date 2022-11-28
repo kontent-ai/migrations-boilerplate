@@ -56,6 +56,23 @@ import { UmlpElementRelatedResourcesModel } from './UmlpElementRelatedResourcesM
 import { UmlpElementHeroSimpleModel } from './UmlpElementHeroSimpleModel';
 import { UmlpElementResourceCardsSectionModel } from './UmlpElementResourceCardsSectionModel';
 import { UmlpElementProductRoadmapModel } from './UmlpElementProductRoadmapModel';
+import { UmlpElementTwitterModel } from './UmlpElementTwitterModel';
+import { UmlpElementLinkedinModel } from './UmlpElementLinkedinModel';
+import { UmlpElementCardColumnsModel } from './UmlpElementCardColumnsModel';
+import { UmlpElementContentBlockGridModel } from './UmlpElementContentBlockGridModel';
+import { UmlpElementContentFlowInfographicModel } from './UmlpElementContentFlowInfographicModel';
+import { UmlpElementDoubleTestimonialSectionModel } from './UmlpElementDoubleTestimonialSectionModel';
+import { UmlpElementFeaturedCustomerSuccessStoriesModel } from './UmlpElementFeaturedCustomerSuccessStoriesModel';
+import { UmlpElementIntegrationShowcaseModel } from './UmlpElementIntegrationShowcaseModel';
+import { UmlpElementKontentAiFeatureShowcaseModel } from './UmlpElementKontentAiFeatureShowcaseModel';
+import { UmlpElementLargeCardGridModel } from './UmlpElementLargeCardGridModel';
+import { UmlpElementLogoStripModel } from './UmlpElementLogoStripModel';
+import { UmlpElementSelectedCustomerSuccessStoriesModel } from './UmlpElementSelectedCustomerSuccessStoriesModel';
+import { UmlpElementTextBubblesBlockModel } from './UmlpElementTextBubblesBlockModel';
+import { UmlpElementAchievementsV2Model } from './UmlpElementAchievementsV2Model';
+import { UmlpElementFullWidthImageModel } from './UmlpElementFullWidthImageModel';
+import { UmlpElementPartnerSuccessStoriesShowcaseModel } from './UmlpElementPartnerSuccessStoriesShowcaseModel';
+import { UmlpElementVideoModel } from './UmlpElementVideoModel';
 import { Metadata } from '../content-type-snippets/metadata';
 import { SitemapMetadata } from '../content-type-snippets/sitemap_metadata';
 
@@ -147,6 +164,23 @@ export type UmlpModel = IContentItem<{
     | UmlpElementHeroSimpleModel
     | UmlpElementResourceCardsSectionModel
     | UmlpElementProductRoadmapModel
+    | UmlpElementTwitterModel
+    | UmlpElementLinkedinModel
+    | UmlpElementCardColumnsModel
+    | UmlpElementContentBlockGridModel
+    | UmlpElementContentFlowInfographicModel
+    | UmlpElementDoubleTestimonialSectionModel
+    | UmlpElementFeaturedCustomerSuccessStoriesModel
+    | UmlpElementIntegrationShowcaseModel
+    | UmlpElementKontentAiFeatureShowcaseModel
+    | UmlpElementLargeCardGridModel
+    | UmlpElementLogoStripModel
+    | UmlpElementSelectedCustomerSuccessStoriesModel
+    | UmlpElementTextBubblesBlockModel
+    | UmlpElementAchievementsV2Model
+    | UmlpElementFullWidthImageModel
+    | UmlpElementPartnerSuccessStoriesShowcaseModel
+    | UmlpElementVideoModel
   >;
 
   /**
