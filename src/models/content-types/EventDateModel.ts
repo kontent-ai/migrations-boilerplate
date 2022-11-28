@@ -1,6 +1,5 @@
 import { IContentItem, Elements } from '@kontent-ai/delivery-sdk';
 import { TimeZoneModel } from './TimeZoneModel';
-import { ConsentElementModel } from './ConsentElementModel';
 import { EventTalkModel } from './EventTalkModel';
 
 /**
@@ -20,16 +19,6 @@ export type EventDateModel = IContentItem<{
   location: Elements.TextElement;
 
   /**
-   * Description (rich_text)
-   * Required: false
-   * Id: d2a2efc1-2418-44f3-b563-7b130e907ea1
-   * Codename: description
-   *
-   * Optional field - if not entered the description of parent webinar topic is used
-   */
-  description: Elements.RichTextElement;
-
-  /**
    * Start Date and Time (date_time)
    * Required: true
    * Id: b2254252-bf98-4be2-990f-5863b5087c18
@@ -46,14 +35,6 @@ export type EventDateModel = IContentItem<{
   timeZone: Elements.LinkedItemsElement<TimeZoneModel>;
 
   /**
-   * Consent (modular_content)
-   * Required: false
-   * Id: b272fcfc-1abc-4fdf-bec6-395218c526f3
-   * Codename: consent
-   */
-  consent: Elements.LinkedItemsElement<ConsentElementModel>;
-
-  /**
    * Agenda (modular_content)
    * Required: false
    * Id: 02010363-dac4-4854-be86-0682137ac8bb
@@ -63,7 +44,7 @@ export type EventDateModel = IContentItem<{
 
   /**
    * Pardot URL (text)
-   * Required: true
+   * Required: false
    * Id: 64f93c18-f857-4972-b348-78b12af9d778
    * Codename: pardot_url
    *
@@ -72,10 +53,10 @@ export type EventDateModel = IContentItem<{
   pardotUrl: Elements.TextElement;
 
   /**
-   * URL slug (url_slug)
+   * Registration open (multiple_choice)
    * Required: true
-   * Id: 184cb0f0-f26a-4375-9acb-28614219d3a6
-   * Codename: url_slug
+   * Id: bf62face-9d75-4dc2-b17a-516e26cf8f80
+   * Codename: registration_open
    */
-  urlSlug: Elements.UrlSlugElement;
+  registrationOpen: Elements.MultipleChoiceElement;
 }>;

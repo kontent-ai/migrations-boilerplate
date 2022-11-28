@@ -1,5 +1,7 @@
 import { IContentItem, Elements } from '@kontent-ai/delivery-sdk';
 import { EventDateModel } from './EventDateModel';
+import { AuthorModel } from './AuthorModel';
+import { PartnerModel } from './PartnerModel';
 import { Metadata } from '../content-type-snippets/metadata';
 
 /**
@@ -19,22 +21,22 @@ export type EventModel = IContentItem<{
   title: Elements.TextElement;
 
   /**
-   * Description (rich_text)
+   * Overview (rich_text)
    * Required: true
+   * Id: e24ea59f-12e8-488b-ba7a-c2bc12e5fd35
+   * Codename: overview
+   *
+   * Short summary of the event (displayed on the event card)
+   */
+  overview: Elements.RichTextElement;
+
+  /**
+   * Description (rich_text)
+   * Required: false
    * Id: 2617b0ad-a391-42de-8bb3-41fbf22c0737
    * Codename: description
    */
   description: Elements.RichTextElement;
-
-  /**
-   * Header Image (asset)
-   * Required: false
-   * Id: f82d8089-9b74-45c3-90e2-b7ce5836a2df
-   * Codename: header_image
-   *
-   * Ideal size: 1165x280
-   */
-  headerImage: Elements.AssetsElement;
 
   /**
    * Dates (modular_content)
@@ -45,14 +47,62 @@ export type EventModel = IContentItem<{
   dates: Elements.LinkedItemsElement<EventDateModel>;
 
   /**
-   * Sticky (multiple_choice)
-   * Required: true
-   * Id: 3eb39339-d0d0-4d8e-8e1f-0383ce79e20f
-   * Codename: sticky
+   * Speakers (modular_content)
+   * Required: false
+   * Id: 11550580-9e14-4659-9c54-1a3c02bfe50d
+   * Codename: speakers
    *
-   * Moves this particular event to the top of the list at /webinars
+   * Speakers for this event
    */
-  sticky: Elements.MultipleChoiceElement;
+  speakers: Elements.LinkedItemsElement<AuthorModel>;
+
+  /**
+   * Partnership (modular_content)
+   * Required: false
+   * Id: 66f6bea7-5d85-4e25-87bb-e0e40856b3d8
+   * Codename: partnership
+   *
+   * Partner for this event
+   */
+  partnership: Elements.LinkedItemsElement<PartnerModel>;
+
+  /**
+   * Wrap Up (rich_text)
+   * Required: false
+   * Id: b10493c2-1822-44e7-ad29-c63138ff6955
+   * Codename: wrap_up
+   *
+   * Post-event wrap-up
+   */
+  wrapUp: Elements.RichTextElement;
+
+  /**
+   * Registration URL (text)
+   * Required: false
+   * Id: b269ac44-2ca2-44a6-8497-2f9547b2dc7e
+   * Codename: registration_url
+   *
+   * Used for external webinars
+   */
+  registrationUrl: Elements.TextElement;
+
+  /**
+   * URL Slug (url_slug)
+   * Required: true
+   * Id: f80bdae2-ad52-4a59-a4d7-882b77f7f53d
+   * Codename: url_slug
+   *
+   * URL slug for this webinar (e.g. /horizons-2022)
+   */
+  urlSlug: Elements.UrlSlugElement;
+
+  /**
+   * Previously used URL slugs (custom)
+   * Required: false
+   * Id: fe03bffd-0f33-4503-bac6-836dad82d8b9
+   * Codename: previously_used_url_slugs
+   */
+  previouslyUsedUrlSlugs: Elements.CustomElement;
 
   /**
    * Schema.org description (text)
@@ -61,5 +111,35 @@ export type EventModel = IContentItem<{
    * Codename: schema_org_description
    */
   schemaOrgDescription: Elements.TextElement;
+
+  /**
+   * Card image (asset)
+   * Required: true
+   * Id: c8227e44-8129-44b4-87e3-cafe9663bdde
+   * Codename: card_image
+   *
+   * A smaller image used for the card on the webinars page
+   */
+  cardImage: Elements.AssetsElement;
+
+  /**
+   * Image strip image (asset)
+   * Required: false
+   * Id: 51c67211-7995-41a4-b5bd-f3316c38acff
+   * Codename: image_strip_image
+   *
+   * Optional full-width image black and white image used on the webinar detail page.
+   */
+  imageStripImage: Elements.AssetsElement;
+
+  /**
+   * Hero image (asset)
+   * Required: false
+   * Id: 52432d81-fdae-49fe-bc82-6b522e6da05a
+   * Codename: hero_image
+   *
+   * Optional hero image used on the webinar detail page with a petal (if there's no image strip). If no image strip or hero image is provided, only the petal will be shown.
+   */
+  heroImage: Elements.AssetsElement;
 }> &
   Metadata;

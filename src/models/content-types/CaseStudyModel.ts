@@ -1,6 +1,8 @@
 import { IContentItem, Elements } from '@kontent-ai/delivery-sdk';
+import { UmlpElementFullWidthImageModel } from './UmlpElementFullWidthImageModel';
 import { CaseStudyHighlightedResultModel } from './CaseStudyHighlightedResultModel';
 import { RichTestimonialModel } from './RichTestimonialModel';
+import { UmlpElementSelectedCustomerSuccessStoriesModel } from './UmlpElementSelectedCustomerSuccessStoriesModel';
 import { PartnerModel } from './PartnerModel';
 import { ReleaseProjects } from '../taxonomies/release_projects';
 import { Regions } from '../taxonomies/regions';
@@ -27,7 +29,7 @@ export type CaseStudyModel = IContentItem<{
 
   /**
    * Logo (asset)
-   * Required: false
+   * Required: true
    * Id: c2473bad-f86c-4962-a570-d0b4974826c3
    * Codename: logo
    */
@@ -44,12 +46,30 @@ export type CaseStudyModel = IContentItem<{
   websiteUrl: Elements.TextElement;
 
   /**
-   * Direct to the Website URL (multiple_choice)
+   * Project URL (text)
+   * Required: false
+   * Id: 9c570ab8-c73e-4025-82c1-2915a09dff24
+   * Codename: project_url
+   *
+   * URL for a project built with Kontent.ai. Used for customer with no customer success story.
+   */
+  projectUrl: Elements.TextElement;
+
+  /**
+   * Project Image (modular_content)
+   * Required: false
+   * Id: 8c6c9491-b0e0-4b85-9100-8db8ead769ec
+   * Codename: project_image
+   */
+  projectImage: Elements.LinkedItemsElement<UmlpElementFullWidthImageModel>;
+
+  /**
+   * Customer Overview mode (multiple_choice)
    * Required: true
    * Id: 3fddd235-88a5-4212-9316-1d2bbcd34baf
    * Codename: direct_to_the_website_url
    *
-   * No - The case study has a standard detail page. Yes - The case study has no standard detail page. When clicked in a case study list, user is directed to the Website URL.
+   * No - Full blown customer story filled out. Yes - No story yet, basic information about the customer and project.
    */
   directToTheWebsiteUrl: Elements.MultipleChoiceElement;
 
@@ -154,6 +174,14 @@ export type CaseStudyModel = IContentItem<{
    * Select 1 item
    */
   richTestimonial: Elements.LinkedItemsElement<RichTestimonialModel>;
+
+  /**
+   * Other success stories (modular_content)
+   * Required: false
+   * Id: adcdd64d-31da-473a-9dfd-8e79b7e81a96
+   * Codename: other_success_stories
+   */
+  otherSuccessStories: Elements.LinkedItemsElement<UmlpElementSelectedCustomerSuccessStoriesModel>;
 
   /**
    * Project Category (multiple_choice)
@@ -454,5 +482,25 @@ export type CaseStudyModel = IContentItem<{
    * !OBSOLETE!
    */
   screenshots: Elements.AssetsElement;
+
+  /**
+   * Text 1 (text)
+   * Required: false
+   * Id: c236bd3f-0130-45f4-9d36-25ef83aba083
+   * Codename: text_1
+   *
+   * Lead green text (1 word, percentage, number)
+   */
+  text1: Elements.TextElement;
+
+  /**
+   * Text 2 (text)
+   * Required: false
+   * Id: 8df6277f-a807-4b38-b077-12234557dfc9
+   * Codename: text_2
+   *
+   * Line below (1 - 5 words)
+   */
+  text2: Elements.TextElement;
 }> &
   SitemapMetadata;

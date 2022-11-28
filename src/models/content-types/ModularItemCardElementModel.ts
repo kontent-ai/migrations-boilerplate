@@ -58,8 +58,6 @@ export type ModularItemCardElementModel = IContentItem<{
    * Required: false
    * Id: 3e4a6cd5-96c2-4bf9-8e14-e324c3674dd8
    * Codename: link
-   *
-   * DISCLAIMER: Only use either Link or CTA never both! Differences - Link will make the whole card clickable, whereas CTA will add a dedicated button to the bottom of the card.
    */
   link: Elements.LinkedItemsElement<LinkModel>;
 
@@ -68,8 +66,6 @@ export type ModularItemCardElementModel = IContentItem<{
    * Required: false
    * Id: 6fde468d-b610-4f31-b5f0-9f974dac17fb
    * Codename: cta
-   *
-   * DISCLAIMER: Only use either Link or CTA never both! Differences - Link will make the whole card clickable, whereas CTA will add a dedicated button to the bottom of the card.
    */
   cta: Elements.LinkedItemsElement<SharedContentModel>;
 
