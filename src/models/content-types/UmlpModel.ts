@@ -73,6 +73,33 @@ import { UmlpElementAchievementsV2Model } from './UmlpElementAchievementsV2Model
 import { UmlpElementFullWidthImageModel } from './UmlpElementFullWidthImageModel';
 import { UmlpElementPartnerSuccessStoriesShowcaseModel } from './UmlpElementPartnerSuccessStoriesShowcaseModel';
 import { UmlpElementVideoModel } from './UmlpElementVideoModel';
+import { UmlpElementG2BadgesModel } from './UmlpElementG2BadgesModel';
+import { UmlpElementResourceTileGridModel } from './UmlpElementResourceTileGridModel';
+import { UmlpElementFormSectionModel } from './UmlpElementFormSectionModel';
+import { HorizonsHeroSectionModel } from './HorizonsHeroSectionModel';
+import { HorizonsSocialFeedModel } from './HorizonsSocialFeedModel';
+import { HorizonsSponsorsModel } from './HorizonsSponsorsModel';
+import { HorizonsVideoSectionModel } from './HorizonsVideoSectionModel';
+import { HorizonsSpeakersModel } from './HorizonsSpeakersModel';
+import { HorizonsLocationsModel } from './HorizonsLocationsModel';
+import { HorizonsVenueSectionModel } from './HorizonsVenueSectionModel';
+import { HorizonsRegisterModel } from './HorizonsRegisterModel';
+import { HorizonsAgendaModel } from './HorizonsAgendaModel';
+import { UmlpElementStatBubblesModel } from './UmlpElementStatBubblesModel';
+import { UmlpElementContentBubblesGridModel } from './UmlpElementContentBubblesGridModel';
+import { UmlpElementHighlightBoxModel } from './UmlpElementHighlightBoxModel';
+import { UmlpElementCtaStripWithImageModel } from './UmlpElementCtaStripWithImageModel';
+import { UmlpElementIntegrationsListingModel } from './UmlpElementIntegrationsListingModel';
+import { UmlpElementPlainBubblesGridModel } from './UmlpElementPlainBubblesGridModel';
+import { UmlpElementFeatureLinksListModel } from './UmlpElementFeatureLinksListModel';
+import { UmlpElementDownloadModel } from './UmlpElementDownloadModel';
+import { UmlpElementContactCardsModel } from './UmlpElementContactCardsModel';
+import { UmlpElementOfficeLocationsInfoModel } from './UmlpElementOfficeLocationsInfoModel';
+import { UmlpElementShiftedBubblesGridModel } from './UmlpElementShiftedBubblesGridModel';
+import { UmlpElementBasicTableModel } from './UmlpElementBasicTableModel';
+import { UmlpElementKontentAiFeaturesCardsModel } from './UmlpElementKontentAiFeaturesCardsModel';
+import { UmlpElementCompareWithCompetitorModel } from './UmlpElementCompareWithCompetitorModel';
+import { UmlpElementContentManagementAndDevRundownModel } from './UmlpElementContentManagementAndDevRundownModel';
 import { Metadata } from '../content-type-snippets/metadata';
 import { SitemapMetadata } from '../content-type-snippets/sitemap_metadata';
 
@@ -181,6 +208,33 @@ export type UmlpModel = IContentItem<{
     | UmlpElementFullWidthImageModel
     | UmlpElementPartnerSuccessStoriesShowcaseModel
     | UmlpElementVideoModel
+    | UmlpElementG2BadgesModel
+    | UmlpElementResourceTileGridModel
+    | UmlpElementFormSectionModel
+    | HorizonsHeroSectionModel
+    | HorizonsSocialFeedModel
+    | HorizonsSponsorsModel
+    | HorizonsVideoSectionModel
+    | HorizonsSpeakersModel
+    | HorizonsLocationsModel
+    | HorizonsVenueSectionModel
+    | HorizonsRegisterModel
+    | HorizonsAgendaModel
+    | UmlpElementStatBubblesModel
+    | UmlpElementContentBubblesGridModel
+    | UmlpElementHighlightBoxModel
+    | UmlpElementCtaStripWithImageModel
+    | UmlpElementIntegrationsListingModel
+    | UmlpElementPlainBubblesGridModel
+    | UmlpElementFeatureLinksListModel
+    | UmlpElementDownloadModel
+    | UmlpElementContactCardsModel
+    | UmlpElementOfficeLocationsInfoModel
+    | UmlpElementShiftedBubblesGridModel
+    | UmlpElementBasicTableModel
+    | UmlpElementKontentAiFeaturesCardsModel
+    | UmlpElementCompareWithCompetitorModel
+    | UmlpElementContentManagementAndDevRundownModel
   >;
 
   /**

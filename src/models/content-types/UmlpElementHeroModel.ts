@@ -34,10 +34,22 @@ export type UmlpElementHeroModel = IContentItem<{
   cta: Elements.LinkedItemsElement<SharedContentModel>;
 
   /**
+   * Button divider text (text)
+   * Required: false
+   * Id: b150fe25-95c7-451d-ba60-219c0dd63f87
+   * Codename: button_divider_text
+   *
+   * If there is more than 1 CTA button used, this field will be used as a divider between the two btns e.g. "or", "and" etc. Defaults to "or".
+   */
+  buttonDividerText: Elements.TextElement;
+
+  /**
    * Image (asset)
    * Required: false
    * Id: 17b27beb-468e-4da7-a103-47ade635bde9
    * Codename: image
+   *
+   * Use 928x626 image resolution. If the image is bigger, it will get cropped.
    */
   image: Elements.AssetsElement;
 

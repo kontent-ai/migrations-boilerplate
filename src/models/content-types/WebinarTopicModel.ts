@@ -100,7 +100,7 @@ export type WebinarTopicModel = IContentItem<{
    * Id: e62166bb-fd4f-46cc-a80a-7dffef3ca095
    * Codename: recording_url
    *
-   * URL of a webinar recording (YouTube)
+   * URL of a webinar recording (YouTube). Use this format: https://www.youtube.com/watch?v=J3XRGtUeGXc
    */
   recordingUrl: Elements.TextElement;
 
@@ -144,7 +144,7 @@ export type WebinarTopicModel = IContentItem<{
    * Id: f265c7c3-b8da-4ae7-926c-8b9383577145
    * Codename: card_image
    *
-   * A smaller image used for the card on the webinars page
+   * A smaller image used for the card on the webinars page.DISCLAIMER: If the webinar is used in the featured section at /events-and-webinars as the HORIZONTAL card - you need to use 2 images. 1st image will be used for a standard card (on smaller viewports and in the standard listing) and the 2nd image (narrower) will be used for the horizontal card.
    */
   cardImage: Elements.AssetsElement;
 

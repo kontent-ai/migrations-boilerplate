@@ -78,4 +78,12 @@ export type UmlpElementThreeTextPiecesModel = IContentItem<{
    * Codename: icon_3
    */
   icon3: Elements.CustomElement;
+
+  /**
+   * Theme (multiple_choice)
+   * Required: true
+   * Id: 3f9b3692-deff-4944-b17f-bbf56324f0de
+   * Codename: theme
+   */
+  theme: Elements.MultipleChoiceElement;
 }>;

@@ -1,6 +1,5 @@
 import { IContentItem, Elements } from '@kontent-ai/delivery-sdk';
 import { FeatureModel } from './FeatureModel';
-import { ConsentElementModel } from './ConsentElementModel';
 import { OptInUnlessOptOutFormElementModel } from './OptInUnlessOptOutFormElementModel';
 import { ReleaseProjects } from '../taxonomies/release_projects';
 import { SitemapMetadata } from '../content-type-snippets/sitemap_metadata';
@@ -134,14 +133,6 @@ export type HeadlessCmsEbookPageModel = IContentItem<{
    * Codename: highlights_image
    */
   highlightsImage: Elements.AssetsElement;
-
-  /**
-   * Consent elements (modular_content)
-   * Required: false
-   * Id: cbccf728-7c40-4cff-a9c7-b9388c81e770
-   * Codename: consent_elements
-   */
-  consentElements: Elements.LinkedItemsElement<ConsentElementModel>;
 
   /**
    * Opt in unless opt out form element (modular_content)

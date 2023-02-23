@@ -8,6 +8,14 @@ import { IContentItem, Elements } from '@kontent-ai/delivery-sdk';
  */
 export type SolutionHighlightModel = IContentItem<{
   /**
+   * Tag text (text)
+   * Required: false
+   * Id: 432ecf20-5ef3-46b9-96b2-d2a95a719e9c
+   * Codename: tag_text
+   */
+  tagText: Elements.TextElement;
+
+  /**
    * Heading (text)
    * Required: false
    * Id: 7bf2836d-1980-42c8-88bc-8607fb314f52

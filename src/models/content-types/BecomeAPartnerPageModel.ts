@@ -5,7 +5,6 @@ import { ModularItemCardElementModel } from './ModularItemCardElementModel';
 import { PartnerPlanModel } from './PartnerPlanModel';
 import { TestimonialModel } from './TestimonialModel';
 import { RichTestimonialModel } from './RichTestimonialModel';
-import { ConsentElementModel } from './ConsentElementModel';
 import { Metadata } from '../content-type-snippets/metadata';
 import { ReleaseProjects } from '../taxonomies/release_projects';
 import { SitemapMetadata } from '../content-type-snippets/sitemap_metadata';
@@ -181,14 +180,6 @@ export type BecomeAPartnerPageModel = IContentItem<{
    * Codename: thank_you_message
    */
   thankYouMessage: Elements.TextElement;
-
-  /**
-   * Consent Elements (modular_content)
-   * Required: false
-   * Id: 9e26fa90-3bc3-46ee-8cf7-5f66cea1bcba
-   * Codename: consent_elements
-   */
-  consentElements: Elements.LinkedItemsElement<ConsentElementModel>;
 
   /**
    * Form next step info (rich_text)

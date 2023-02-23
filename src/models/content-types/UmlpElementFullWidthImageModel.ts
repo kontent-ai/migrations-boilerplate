@@ -24,4 +24,12 @@ export type UmlpElementFullWidthImageModel = IContentItem<{
    * Background of the section containing the image
    */
   theme: Elements.MultipleChoiceElement;
+
+  /**
+   * Image size (multiple_choice)
+   * Required: true
+   * Id: 233f97c8-64d9-4fb5-a09d-3861b6d49175
+   * Codename: image_size
+   */
+  imageSize: Elements.MultipleChoiceElement;
 }>;

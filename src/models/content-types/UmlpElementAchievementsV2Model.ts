@@ -24,4 +24,14 @@ export type UmlpElementAchievementsV2Model = IContentItem<{
    * Codename: achievements
    */
   achievements: Elements.LinkedItemsElement<AchievementModel>;
+
+  /**
+   * Theme (multiple_choice)
+   * Required: true
+   * Id: f55191fb-905c-49e5-9747-ebf6433de3c2
+   * Codename: theme
+   *
+   * We have 2 visuals available for this component. Have a look at our visual guide under *UMLP element - Achievements v2* and pick accordingly to your preference.Guide URL: https://kontent-ai.atlassian.net/wiki/spaces/KMT/pages/24871043/Kontent.ai+UMLP+Components+overview
+   */
+  theme: Elements.MultipleChoiceElement;
 }>;

@@ -28,6 +28,16 @@ export type UmlpElementFeaturesModel = IContentItem<{
   displayType: Elements.MultipleChoiceElement;
 
   /**
+   * Text size (multiple_choice)
+   * Required: false
+   * Id: cfbd9e1f-e46d-43d5-bd13-4f36c6240d50
+   * Codename: text_size
+   *
+   * Font size of the column elements. Defaults to standard h3 + paragraph (32px + 18px) typography. Lead Increases the font size to h2 (with line above) + lead paragraph (56px + 22px)
+   */
+  textSize: Elements.MultipleChoiceElement;
+
+  /**
    * Headline (rich_text)
    * Required: false
    * Id: a0c5e061-e2d6-4be6-9260-6ca3c01f699f

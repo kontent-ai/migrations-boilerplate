@@ -10,6 +10,14 @@ import { CodeExampleModel } from './CodeExampleModel';
  */
 export type UmlpElementTechnologyModel = IContentItem<{
   /**
+   * Heading (text)
+   * Required: false
+   * Id: c95bca04-7aaf-4709-b0e1-d4232a28ff50
+   * Codename: heading
+   */
+  heading: Elements.TextElement;
+
+  /**
    * Headline (rich_text)
    * Required: false
    * Id: 0f979c0d-cfb1-473a-a007-1468aca14548

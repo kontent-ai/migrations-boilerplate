@@ -1,5 +1,4 @@
 import { IContentItem, Elements } from '@kontent-ai/delivery-sdk';
-import { PartnerBadgeModel } from './PartnerBadgeModel';
 import { AddressModel } from './AddressModel';
 import { CaseStudyModel } from './CaseStudyModel';
 import { PartnerProjectModel } from './PartnerProjectModel';
@@ -41,12 +40,12 @@ export type PartnerModel = IContentItem<{
   partnerLevel: Elements.MultipleChoiceElement;
 
   /**
-   * Badges (modular_content)
-   * Required: false
-   * Id: 8c07b7e6-b687-4226-840a-3e41e0e55d14
-   * Codename: badges
+   * Content Modeling Certified (multiple_choice)
+   * Required: true
+   * Id: 7253c2a6-30ad-482b-b60b-a974945349f3
+   * Codename: content_modeling_certified
    */
-  badges: Elements.LinkedItemsElement<PartnerBadgeModel>;
+  contentModelingCertified: Elements.MultipleChoiceElement;
 
   /**
    * Logo (asset)

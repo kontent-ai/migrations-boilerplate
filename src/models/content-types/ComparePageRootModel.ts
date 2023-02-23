@@ -33,6 +33,14 @@ export type ComparePageRootModel = IContentItem<{
   introText: Elements.RichTextElement;
 
   /**
+   * Image (asset)
+   * Required: false
+   * Id: e45bef25-251d-44e6-96cc-ea606dc69dca
+   * Codename: image
+   */
+  image: Elements.AssetsElement;
+
+  /**
    * Heading (text)
    * Required: false
    * Id: c4f56411-232b-4a69-ba1e-5cf8ebd04c6b

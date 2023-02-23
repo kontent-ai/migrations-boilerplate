@@ -1,4 +1,5 @@
 import { IContentItem, Elements } from '@kontent-ai/delivery-sdk';
+import { UmlpElementFaqModel } from './UmlpElementFaqModel';
 import { CtaBannerComponentModel } from './CtaBannerComponentModel';
 import { ContentBrief } from '../content-type-snippets/content_brief';
 import { ReleaseProjects } from '../taxonomies/release_projects';
@@ -45,6 +46,16 @@ export type BlogPostModel = IContentItem<{
   body: Elements.RichTextElement;
 
   /**
+   * FAQs (modular_content)
+   * Required: false
+   * Id: a6f1af9c-35e8-456e-bd0d-28c48b20cbd7
+   * Codename: faqs
+   *
+   * Optional FAQ element
+   */
+  faqs: Elements.LinkedItemsElement<UmlpElementFaqModel>;
+
+  /**
    * CTA Banner (modular_content)
    * Required: false
    * Id: 903d9d20-08be-4d52-85b9-a6b6225803d3
@@ -69,6 +80,16 @@ export type BlogPostModel = IContentItem<{
    * Codename: date
    */
   date: Elements.DateTimeElement;
+
+  /**
+   * Update date (date_time)
+   * Required: false
+   * Id: beb2ee66-d267-4930-b241-5bddb9963986
+   * Codename: update_date
+   *
+   * Fill out this field when there has been a content update of the blog post (SEO purposes)
+   */
+  updateDate: Elements.DateTimeElement;
 
   /**
    * Author (modular_content)

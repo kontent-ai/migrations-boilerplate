@@ -1,5 +1,4 @@
 import { IContentItem, Elements } from '@kontent-ai/delivery-sdk';
-import { ConsentElementModel } from './ConsentElementModel';
 import { OptInUnlessOptOutFormElementModel } from './OptInUnlessOptOutFormElementModel';
 import { Metadata } from '../content-type-snippets/metadata';
 
@@ -66,14 +65,6 @@ export type HeadlessCmsSurveyLandingPageBModel = IContentItem<{
    * Codename: subscribe_to_newsletter
    */
   subscribeToNewsletter: Elements.TextElement;
-
-  /**
-   * Consent elements (modular_content)
-   * Required: false
-   * Id: df6607a5-a8b6-45d8-ab2c-a834536f36e6
-   * Codename: consent_elements
-   */
-  consentElements: Elements.LinkedItemsElement<ConsentElementModel>;
 
   /**
    * Opt in unless opt out form element (modular_content)

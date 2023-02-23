@@ -23,6 +23,14 @@ export type WebinarsPageModel = IContentItem<{
   heroTitle: Elements.TextElement;
 
   /**
+   * Display featured section (multiple_choice)
+   * Required: true
+   * Id: 64f38e08-d96a-4f23-a3a8-5f730dab1623
+   * Codename: display_featured_section
+   */
+  displayFeaturedSection: Elements.MultipleChoiceElement;
+
+  /**
    * CTA Banner (modular_content)
    * Required: false
    * Id: 9329fcf7-47ac-4cb4-93e6-4569421a710e

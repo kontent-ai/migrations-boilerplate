@@ -11,11 +11,11 @@ import { TimeZoneModel } from './TimeZoneModel';
 export type WebinarDateModel = IContentItem<{
   /**
    * Pardot URL (text)
-   * Required: true
+   * Required: false
    * Id: 1dc69fca-42a2-4bc5-b99e-4d15c8e5fb5f
    * Codename: pardot_url
    *
-   * Pardot iframe URL, ie. https://tracker.kontent.ai/l/849473/2020-03-04/2kny
+   * Pardot iframe URL, ie. https://tracker.kontent.ai/l/849473/2020-03-04/2knyDISCLAIMER:If the field is empty, the website will assume this is an Attending Webinar (meaning no dedicated landing page and registration will be handled by a 3rd party website e.g. one of our partners). In that case, please fill out the Registration URL in the Webinar content type (parent of Webinar date). Leaving both fields empty will lead to unexpected/undesired behavior.
    */
   pardotUrl: Elements.TextElement;
 

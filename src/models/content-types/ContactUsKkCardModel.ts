@@ -10,12 +10,12 @@ import { SharedContentModel } from './SharedContentModel';
  */
 export type ContactUsKkCardModel = IContentItem<{
   /**
-   * Icon (asset)
-   * Required: false
-   * Id: d7dff7b3-c1d7-4056-b6b4-2489cd42efc4
-   * Codename: icon
+   * Image (asset)
+   * Required: true
+   * Id: 6dd51a05-8aa5-40aa-b36e-73aa6475a754
+   * Codename: image
    */
-  icon: Elements.AssetsElement;
+  image: Elements.AssetsElement;
 
   /**
    * Headline (text)
@@ -35,7 +35,7 @@ export type ContactUsKkCardModel = IContentItem<{
 
   /**
    * Button (modular_content)
-   * Required: false
+   * Required: true
    * Id: c5a4830d-07f8-4994-8dfe-3d24b346ea2f
    * Codename: button
    */
@@ -50,18 +50,18 @@ export type ContactUsKkCardModel = IContentItem<{
   hoverText: Elements.TextElement;
 
   /**
-   * Hover icon (asset)
-   * Required: false
-   * Id: fad3131a-5310-4cfd-b79f-173737780528
-   * Codename: hover_icon
-   */
-  hoverIcon: Elements.AssetsElement;
-
-  /**
    * Email (text)
    * Required: false
    * Id: eba9102f-6df2-440b-a453-c685c3369f70
    * Codename: email
    */
   email: Elements.TextElement;
+
+  /**
+   * Additional info (text)
+   * Required: false
+   * Id: c8425794-d6e0-486d-8fdd-9c66f3280f7c
+   * Codename: additional_info
+   */
+  additionalInfo: Elements.TextElement;
 }>;

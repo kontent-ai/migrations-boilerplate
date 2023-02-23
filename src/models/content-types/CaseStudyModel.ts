@@ -19,7 +19,7 @@ import { TestimonialModel } from './TestimonialModel';
 export type CaseStudyModel = IContentItem<{
   /**
    * Header image (asset)
-   * Required: true
+   * Required: false
    * Id: 5b627bba-78f4-15ea-3383-2fb7f372d46e
    * Codename: header_image
    *
@@ -37,7 +37,7 @@ export type CaseStudyModel = IContentItem<{
 
   /**
    * Website URL (text)
-   * Required: true
+   * Required: false
    * Id: 065db596-54e3-edaf-bc29-05db87b6c6b9
    * Codename: website_url
    *

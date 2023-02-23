@@ -87,6 +87,16 @@ export type EventModel = IContentItem<{
   registrationUrl: Elements.TextElement;
 
   /**
+   * Recording URL (text)
+   * Required: false
+   * Id: a14016b0-4592-4071-9209-864ad4686f4f
+   * Codename: recording_url
+   *
+   * Recording/video from a past event. Use this format: https://www.youtube.com/watch?v=J3XRGtUeGXc
+   */
+  recordingUrl: Elements.TextElement;
+
+  /**
    * URL Slug (url_slug)
    * Required: true
    * Id: f80bdae2-ad52-4a59-a4d7-882b77f7f53d
@@ -118,7 +128,7 @@ export type EventModel = IContentItem<{
    * Id: c8227e44-8129-44b4-87e3-cafe9663bdde
    * Codename: card_image
    *
-   * A smaller image used for the card on the webinars page
+   * A smaller image used for the card on the webinars page.DISCLAIMER: If the event is used in the featured section at /events-and-webinars as the HORIZONTAL card - you need to use 2 images. 1st image will be used for a standard card (on smaller viewports and in the standard listing) and the 2nd image (narrower) will be used for the horizontal card.
    */
   cardImage: Elements.AssetsElement;
 
@@ -141,5 +151,13 @@ export type EventModel = IContentItem<{
    * Optional hero image used on the webinar detail page with a petal (if there's no image strip). If no image strip or hero image is provided, only the petal will be shown.
    */
   heroImage: Elements.AssetsElement;
+
+  /**
+   * Recording poster (asset)
+   * Required: false
+   * Id: 13b5858c-27bf-4418-b79e-f942ed777099
+   * Codename: recording_poster
+   */
+  recordingPoster: Elements.AssetsElement;
 }> &
   Metadata;

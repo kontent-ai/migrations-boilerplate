@@ -25,10 +25,18 @@ export type AddressModel = IContentItem<{
    * Required: true
    * Id: 60f106d7-c7dc-45ef-aa47-7d58d8ab1e0b
    * Codename: street
-   *
-   * Street and optionally additional info, e.g:15 Constitution Dr.Suite 2G
    */
   street: Elements.TextElement;
+
+  /**
+   * Building (text)
+   * Required: false
+   * Id: 1cdebdc5-24ec-4fc3-9fe6-26745a81addb
+   * Codename: building
+   *
+   * If street number is not enough and we want to be more specific e.g. Suite 2G, Chrystler building etc.
+   */
+  building: Elements.TextElement;
 
   /**
    * Postal code (text)
@@ -42,7 +50,7 @@ export type AddressModel = IContentItem<{
 
   /**
    * City (text)
-   * Required: false
+   * Required: true
    * Id: 6174ffbc-e0d4-380d-01c4-58e92f6869d6
    * Codename: city
    */
@@ -59,4 +67,32 @@ export type AddressModel = IContentItem<{
   countryAndState: Elements.LinkedItemsElement<
     CountryAndStateModel | CountryModel
   >;
+
+  /**
+   * VAT number (text)
+   * Required: false
+   * Id: f17febfc-744f-4718-a3ab-806250579dcf
+   * Codename: vat_number
+   */
+  vatNumber: Elements.TextElement;
+
+  /**
+   * Photo (asset)
+   * Required: false
+   * Id: 8f58348e-ea7e-440c-8f74-01cd3a1a7742
+   * Codename: photo
+   *
+   * Used on Horizons page:Card image (424x337) used as the card image in the 'location' section on /horizons
+   */
+  photo: Elements.AssetsElement;
+
+  /**
+   * Description (rich_text)
+   * Required: false
+   * Id: ecd25383-64ba-4c8d-a814-03b9e196096e
+   * Codename: description
+   *
+   * Short description of the venue (used on the Horizons subpage for example)
+   */
+  description: Elements.RichTextElement;
 }>;

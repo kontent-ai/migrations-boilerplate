@@ -90,4 +90,20 @@ export type CompanyInfoModel = IContentItem<{
    * Codename: discord_url
    */
   discordUrl: Elements.TextElement;
+
+  /**
+   * Default metadata title (text)
+   * Required: true
+   * Id: eceb4a40-36de-4e30-8938-18821c3a1764
+   * Codename: default_metadata_title
+   */
+  defaultMetadataTitle: Elements.TextElement;
+
+  /**
+   * Default metadata description (text)
+   * Required: true
+   * Id: 485622fe-5499-4975-a51c-ec9629cfc276
+   * Codename: default_metadata_description
+   */
+  defaultMetadataDescription: Elements.TextElement;
 }>;

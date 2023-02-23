@@ -1,7 +1,6 @@
 import { IContentItem, Elements } from '@kontent-ai/delivery-sdk';
 import { Metadata } from '../content-type-snippets/metadata';
 import { Hero } from '../content-type-snippets/hero';
-import { ConsentElementModel } from './ConsentElementModel';
 import { RichTestimonialModel } from './RichTestimonialModel';
 import { SitemapMetadata } from '../content-type-snippets/sitemap_metadata';
 
@@ -84,14 +83,6 @@ export type RequestDemoPageModel = IContentItem<{
    * Codename: thank_you_message_alternative
    */
   thankYouMessageAlternative: Elements.RichTextElement;
-
-  /**
-   * Consent elements (modular_content)
-   * Required: false
-   * Id: cde5fb7f-8430-46f8-8f5f-45d01418e0d2
-   * Codename: consent_elements
-   */
-  consentElements: Elements.LinkedItemsElement<ConsentElementModel>;
 
   /**
    * Form next step info (rich_text)

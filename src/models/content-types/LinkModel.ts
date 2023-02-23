@@ -16,6 +16,14 @@ export type LinkModel = IContentItem<{
   title: Elements.TextElement;
 
   /**
+   * Asset (asset)
+   * Required: false
+   * Id: 0e42c1ac-fb05-4863-b75b-473452776834
+   * Codename: asset
+   */
+  asset: Elements.AssetsElement;
+
+  /**
    * URL (text)
    * Required: false
    * Id: 0046b9b5-ea3b-4c4d-87ba-3d6b9dc3ce3f

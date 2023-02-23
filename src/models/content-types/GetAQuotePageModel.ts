@@ -1,6 +1,5 @@
 import { IContentItem, Elements } from '@kontent-ai/delivery-sdk';
 import { Hero } from '../content-type-snippets/hero';
-import { ConsentElementModel } from './ConsentElementModel';
 import { Metadata } from '../content-type-snippets/metadata';
 import { SitemapMetadata } from '../content-type-snippets/sitemap_metadata';
 
@@ -19,14 +18,6 @@ export type GetAQuotePageModel = IContentItem<{
    * Codename: form_subscribe_to_newsletter
    */
   formSubscribeToNewsletter: Elements.TextElement;
-
-  /**
-   * Form Consent elements (modular_content)
-   * Required: false
-   * Id: 6d946264-787f-4c9e-9e9b-964a46dc5dbb
-   * Codename: form_consent_elements
-   */
-  formConsentElements: Elements.LinkedItemsElement<ConsentElementModel>;
 
   /**
    * Form Submit button text (text)

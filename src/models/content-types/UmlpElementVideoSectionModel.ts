@@ -11,7 +11,7 @@ import { ContentItemYoutubeVideoModel } from './ContentItemYoutubeVideoModel';
 export type UmlpElementVideoSectionModel = IContentItem<{
   /**
    * Heading (text)
-   * Required: true
+   * Required: false
    * Id: 9ccccae7-b140-41dd-9349-83d05d52a4e6
    * Codename: heading
    */
@@ -19,7 +19,7 @@ export type UmlpElementVideoSectionModel = IContentItem<{
 
   /**
    * Text (rich_text)
-   * Required: true
+   * Required: false
    * Id: d4b38066-e8e0-42bf-8d3d-cc66b993bf0f
    * Codename: text
    */
@@ -32,4 +32,14 @@ export type UmlpElementVideoSectionModel = IContentItem<{
    * Codename: video
    */
   video: Elements.LinkedItemsElement<ContentItemYoutubeVideoModel>;
+
+  /**
+   * Component version (multiple_choice)
+   * Required: true
+   * Id: 6330e62c-5bf6-4416-aa4c-2f1f037d30be
+   * Codename: component_version
+   *
+   * We have 2 visuals available for this component. Have a look at our visual guide under *UMLP element - Video Section* and pick accordingly to your preference.Guide URL: https://kontent-ai.atlassian.net/wiki/spaces/KMT/pages/24871043/Kontent.ai+UMLP+Components+overview
+   */
+  componentVersion: Elements.MultipleChoiceElement;
 }>;

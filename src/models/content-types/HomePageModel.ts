@@ -33,12 +33,12 @@ import { UmlpElementResourceCardsSectionModel } from './UmlpElementResourceCards
  */
 export type HomePageModel = IContentItem<{
   /**
-   * Hero headline (rich_text)
-   * Required: false
-   * Id: d9da5688-1c8f-4a78-b956-c718c2170f3b
+   * Hero headline (text)
+   * Required: true
+   * Id: 81c19543-74b6-4fa1-a2a0-9543b3fd3411
    * Codename: hero_headline
    */
-  heroHeadline: Elements.RichTextElement;
+  heroHeadline: Elements.TextElement;
 
   /**
    * Hero lead paragraph (rich_text)

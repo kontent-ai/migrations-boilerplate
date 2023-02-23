@@ -19,7 +19,7 @@ export type EventTalkModel = IContentItem<{
 
   /**
    * Author (modular_content)
-   * Required: true
+   * Required: false
    * Id: 97ad906d-9850-487f-bc54-53cdc5a8d9ff
    * Codename: author
    */
@@ -34,4 +34,30 @@ export type EventTalkModel = IContentItem<{
    * Duration of the talk in minutes.
    */
   duration: Elements.NumberElement;
+
+  /**
+   * YouTube Video ID (text)
+   * Required: false
+   * Id: fa132e13-3ae2-4093-9252-90fb9a879a93
+   * Codename: youtube_video_id
+   *
+   * Supported ID format - BZYuEniknLg
+   */
+  youtubeVideoId: Elements.TextElement;
+
+  /**
+   * Video poster (asset)
+   * Required: false
+   * Id: 34196a0c-bbdc-4428-bf8d-66ba047e92d5
+   * Codename: video_poster
+   */
+  videoPoster: Elements.AssetsElement;
+
+  /**
+   * Expand button text (text)
+   * Required: false
+   * Id: aedb967b-0dee-40a8-b11c-68833e4a4c2b
+   * Codename: expand_button_text
+   */
+  expandButtonText: Elements.TextElement;
 }>;

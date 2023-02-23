@@ -1,5 +1,4 @@
 import { IContentItem, Elements } from '@kontent-ai/delivery-sdk';
-import { ConsentElementModel } from './ConsentElementModel';
 import { OptInUnlessOptOutFormElementModel } from './OptInUnlessOptOutFormElementModel';
 import { ModularItemCardElementModel } from './ModularItemCardElementModel';
 import { Metadata } from '../content-type-snippets/metadata';
@@ -59,34 +58,6 @@ export type GartnerCaasLpModel = IContentItem<{
    * Codename: form___title
    */
   formTitle: Elements.RichTextElement;
-
-  /**
-   * Consent elements (modular_content)
-   * Required: false
-   * Id: b7abac57-0a55-44c0-bf9e-1edb4c75c0e4
-   * Codename: consent_elements
-   */
-  consentElements: Elements.LinkedItemsElement<IContentItem>;
-
-  /**
-   * Form - Consent elements - EU (modular_content)
-   * Required: false
-   * Id: 8d6d5cbe-f4bb-446a-bdf3-a07e11a1a4fa
-   * Codename: form___consent_elements___eu
-   *
-   * !OBSOLETE!
-   */
-  formConsentElementsEu: Elements.LinkedItemsElement<ConsentElementModel>;
-
-  /**
-   * Form - Consent elements - Non EU (modular_content)
-   * Required: false
-   * Id: dc9c7159-e0d4-4c1a-b750-4d808fd3a082
-   * Codename: form___consent_elements___non_eu
-   *
-   * !OBSOLETE!
-   */
-  formConsentElementsNonEu: Elements.LinkedItemsElement<ConsentElementModel>;
 
   /**
    * Opt in unless opt out form element (modular_content)

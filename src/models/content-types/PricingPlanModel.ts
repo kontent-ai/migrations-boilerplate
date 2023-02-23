@@ -40,6 +40,14 @@ export type PricingPlanModel = IContentItem<{
   environments: Elements.NumberElement;
 
   /**
+   * Spaces (number)
+   * Required: true
+   * Id: 051ba34d-23e0-45e2-bab0-bdb955a5dbbc
+   * Codename: spaces
+   */
+  spaces: Elements.NumberElement;
+
+  /**
    * Collections (number)
    * Required: true
    * Id: 2434f53b-64de-4da3-bce5-3d43d4c31711
