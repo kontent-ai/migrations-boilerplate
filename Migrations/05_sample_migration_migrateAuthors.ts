@@ -22,7 +22,7 @@ const migration: MigrationModule = {
       .toPromise();
 
     const authorElementId = contentTypeResponse.data.elements.filter(
-      (r) => "codename" in r && r.codename === "author"
+      (r) => "codename" in r && r.codename === "author",
     )[0].id;
 
     // Get all Blog language variants
@@ -56,14 +56,18 @@ const migration: MigrationModule = {
           .upsertLanguageVariant()
           .byItemId(authorItem.data.id)
           .byLanguageCodename("default")
-          .withData((builder) => [
-            builder.textElement({
-              element: {
-                codename: "name",
-              },
-              value: author,
-            }),
-          ])
+          .withData((builder) => {
+            return {
+              elements: [
+                builder.textElement({
+                  element: {
+                    codename: "name",
+                  },
+                  value: author,
+                }),
+              ],
+            };
+          })
           .toPromise();
 
         existingAuthors.push({
@@ -77,18 +81,23 @@ const migration: MigrationModule = {
         .upsertLanguageVariant()
         .byItemId(blogLanguageVariant.item.id!)
         .byLanguageCodename("default")
-        .withData((builder) => [
-          builder.linkedItemsElement({
-            element: {
-              codename: "linked_author",
-            },
-            value: [
-              {
-                id: existingAuthors.find((x) => x.author === author)!.itemId,
-              },
+        .withData((builder) => {
+          return {
+            elements: [
+              builder.linkedItemsElement({
+                element: {
+                  codename: "linked_author",
+                },
+                value: [
+                  {
+                    id: existingAuthors.find((x) => x.author === author)!
+                      .itemId,
+                  },
+                ],
+              }),
             ],
-          }),
-        ])
+          };
+        })
         .toPromise();
     }
   },

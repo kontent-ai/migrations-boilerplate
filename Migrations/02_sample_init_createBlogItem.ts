@@ -22,27 +22,31 @@ const migration: MigrationModule = {
       .upsertLanguageVariant()
       .byItemId(itemResponse.data.id)
       .byLanguageCodename("default")
-      .withData((builder) => [
-        builder.textElement({
-          element: {
-            codename: "title",
-          },
-          value: "About coffee",
-        }),
-        builder.textElement({
-          element: {
-            codename: "author",
-          },
-          value: "Coffee geek",
-        }),
-        builder.textElement({
-          element: {
-            codename: "text",
-          },
-          value:
-            "Coffee is a brewed drink prepared from roasted coffee beans, the seeds of berries from certain Coffee species.",
-        }),
-      ])
+      .withData((builder) => {
+        return {
+          elements: [
+            builder.textElement({
+              element: {
+                codename: "title",
+              },
+              value: "About coffee",
+            }),
+            builder.textElement({
+              element: {
+                codename: "author",
+              },
+              value: "Coffee geek",
+            }),
+            builder.textElement({
+              element: {
+                codename: "text",
+              },
+              value:
+                "Coffee is a brewed drink prepared from roasted coffee beans, the seeds of berries from certain Coffee species.",
+            }),
+          ],
+        };
+      })
       .toPromise();
   },
 };

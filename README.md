@@ -16,11 +16,11 @@ npm install
 
 Before you run your migrations, you need to store some information about the environment locally. 
 
-The environment is defined as a named pair of values. For example, "DEV" environment can be defined as a pair of a specific project ID and Management API key. This named pair of values is stored within your local repository in a configuration file named `.environments.json`.
+The environment is defined as a named pair of values. For example, "DEV" environment can be defined as a pair of a specific environment ID and Management API key. This named pair of values is stored within your local repository in a configuration file named `.environments.json`.
 
 ```sh
 # Adds a 'DEV' environment reference.
-kontent environment add --name DEV --project-id "<YOUR_PROJECT_GUID>" --api-key "<YOUR_MANAGAMENT_API_KEY>"
+kontent environment add --name DEV --environment-id "<YOUR_ENVIRONMENT_GUID>" --api-key "<YOUR_MANAGAMENT_API_KEY>"
 ```
 
 ## Usage
