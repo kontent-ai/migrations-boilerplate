@@ -94,14 +94,14 @@ export type CaseStudyModel = IContentItem<{
   title: Elements.TextElement;
 
   /**
-   * Card image text (text)
-   * Required: false
+   * Project teaser (text)
+   * Required: true
    * Id: 9d53ff93-79b4-4109-897d-ae2287b7e449
-   * Codename: card_image_text
+   * Codename: project_teaser
    *
-   * Optional card image text strip (max. 120 characters)
+   * max. 120 characters
    */
-  cardImageText: Elements.TextElement;
+  projectTeaser: Elements.TextElement;
 
   /**
    * Goal (rich_text)

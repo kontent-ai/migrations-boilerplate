@@ -32,4 +32,12 @@ export type Metadata = IContentItem<{
    * Ideally 1200px wide
    */
   metadataMetadataImage: Elements.AssetsElement;
+
+  /**
+   * Exclude from global search (multiple_choice)
+   * Required: false
+   * Id: 6acf77d8-0888-4c5d-9037-650f86fab166
+   * Codename: metadata__exclude_from_global_search
+   */
+  metadataExcludeFromGlobalSearch: Elements.MultipleChoiceElement;
 }>;

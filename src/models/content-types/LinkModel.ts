@@ -16,6 +16,16 @@ export type LinkModel = IContentItem<{
   title: Elements.TextElement;
 
   /**
+   * Text (rich_text)
+   * Required: false
+   * Id: 75a307d3-8c64-4369-b58f-bae9e00d58f5
+   * Codename: text
+   *
+   * Optional text. Used on e.g. cards
+   */
+  text: Elements.RichTextElement;
+
+  /**
    * Asset (asset)
    * Required: false
    * Id: 0e42c1ac-fb05-4863-b75b-473452776834

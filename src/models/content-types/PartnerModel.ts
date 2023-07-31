@@ -1,8 +1,5 @@
 import { IContentItem, Elements } from '@kontent-ai/delivery-sdk';
 import { AddressModel } from './AddressModel';
-import { CaseStudyModel } from './CaseStudyModel';
-import { PartnerProjectModel } from './PartnerProjectModel';
-import { BlogPostModel } from './BlogPostModel';
 import { SitemapMetadata } from '../content-type-snippets/sitemap_metadata';
 
 /**
@@ -124,16 +121,6 @@ export type PartnerModel = IContentItem<{
   anchorText: Elements.TextElement;
 
   /**
-   * Case studies (modular_content)
-   * Required: false
-   * Id: 8e8da6d0-5c84-1b06-0dde-707a78587093
-   * Codename: case_studies
-   */
-  caseStudies: Elements.LinkedItemsElement<
-    CaseStudyModel | PartnerProjectModel | BlogPostModel
-  >;
-
-  /**
    * Metadata - title (text)
    * Required: false
    * Id: 079d4223-6794-c666-b29b-e31ed0d3b9ae
@@ -160,6 +147,16 @@ export type PartnerModel = IContentItem<{
    * Codename: url_slug
    */
   urlSlug: Elements.UrlSlugElement;
+
+  /**
+   * URL Slug history (custom)
+   * Required: false
+   * Id: f1eef4aa-3dfb-4400-962b-b6fa9a3fee4d
+   * Codename: url_slug_history
+   *
+   * This handles redirects if the URL slug changed. No need to touch this otherwise.
+   */
+  urlSlugHistory: Elements.CustomElement;
 
   /**
    * Opengraph Image (asset)

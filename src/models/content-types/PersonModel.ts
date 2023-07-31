@@ -32,6 +32,24 @@ export type PersonModel = IContentItem<{
   photo: Elements.AssetsElement;
 
   /**
+   * Region (text)
+   * Required: false
+   * Id: cb8d87ca-ee5f-4640-b71e-d6c391c55328
+   * Codename: region
+   *
+   * Optional (used in partner space for sales), e.g Australia/Asia
+   */
+  region: Elements.TextElement;
+
+  /**
+   * Email (text)
+   * Required: false
+   * Id: 7799b1ea-a21b-4bcb-a709-62fc390ff89b
+   * Codename: email
+   */
+  email: Elements.TextElement;
+
+  /**
    * GitHub URL (text)
    * Required: false
    * Id: 9e3e93e1-820a-415e-9112-bb1e94034412

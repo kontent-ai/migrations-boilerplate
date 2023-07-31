@@ -1,8 +1,8 @@
 import { IContentItem, Elements } from '@kontent-ai/delivery-sdk';
 import { HeroKK } from '../content-type-snippets/hero_kk';
-import { PartnerSpaceSectionModel } from './PartnerSpaceSectionModel';
-import { PartnerPlanModel } from './PartnerPlanModel';
-import { PartnerSpaceContactsModel } from './PartnerSpaceContactsModel';
+import { LinkGroupModel } from './LinkGroupModel';
+import { LinkModel } from './LinkModel';
+import { PersonModel } from './PersonModel';
 import { Metadata } from '../content-type-snippets/metadata';
 
 /**
@@ -14,44 +14,60 @@ import { Metadata } from '../content-type-snippets/metadata';
  */
 export type PartnerSpaceModel = IContentItem<{
   /**
+   * Hero image - authenticated (asset)
+   * Required: true
+   * Id: 3610049b-cc07-4909-9cf2-abe775309acd
+   * Codename: hero_image___authenticated
+   */
+  heroImageAuthenticated: Elements.AssetsElement;
+
+  /**
+   * Support heading (text)
+   * Required: true
+   * Id: 6a188b3c-e809-4d7c-bcee-ed73673193c1
+   * Codename: support_heading
+   */
+  supportHeading: Elements.TextElement;
+
+  /**
+   * Resource groups (modular_content)
+   * Required: true
+   * Id: 3b6d8773-9899-46cb-a377-354ce8446cda
+   * Codename: resource_groups
+   */
+  resourceGroups: Elements.LinkedItemsElement<LinkGroupModel>;
+
+  /**
    * Heading (text)
-   * Required: false
-   * Id: a0ad9d75-a9ac-4a7c-a5be-da984225f21b
-   * Codename: heading_resources
+   * Required: true
+   * Id: 5a52878a-b6d6-4f6b-8f26-351a5bcb44b9
+   * Codename: heading
    */
-  headingResources: Elements.TextElement;
+  heading: Elements.TextElement;
 
   /**
-   * Resources (modular_content)
-   * Required: false
-   * Id: 59b49bd8-bc0b-4796-9ffe-df46c146df17
-   * Codename: resources
+   * Text (rich_text)
+   * Required: true
+   * Id: 6a2c6c15-56e6-4e48-a7b8-8ea253f4849d
+   * Codename: text
    */
-  resources: Elements.LinkedItemsElement<PartnerSpaceSectionModel>;
+  text: Elements.RichTextElement;
 
   /**
-   * Onboarding journey (rich_text)
-   * Required: false
-   * Id: 16321b8b-6ff1-4b31-be28-2316eec53f91
-   * Codename: onboarding_journey
+   * Image (asset)
+   * Required: true
+   * Id: 20b236d6-d739-4263-937f-3601bf70ea02
+   * Codename: image
    */
-  onboardingJourney: Elements.RichTextElement;
+  image: Elements.AssetsElement;
 
   /**
-   * Heading (text)
-   * Required: false
-   * Id: 31d00c98-ed5d-401e-ad71-d5ba6c270685
-   * Codename: heading_levels
+   * Links (modular_content)
+   * Required: true
+   * Id: 344acd60-9f17-4aba-93ca-ec032ba990e9
+   * Codename: links
    */
-  headingLevels: Elements.TextElement;
-
-  /**
-   * Partner levels (modular_content)
-   * Required: false
-   * Id: c9a2c73f-0886-40eb-93ee-18b3f25fa5e8
-   * Codename: partner_levels
-   */
-  partnerLevels: Elements.LinkedItemsElement<PartnerPlanModel>;
+  links: Elements.LinkedItemsElement<LinkModel>;
 
   /**
    * Heading (text)
@@ -62,12 +78,22 @@ export type PartnerSpaceModel = IContentItem<{
   headingContacts: Elements.TextElement;
 
   /**
-   * Contacts (modular_content)
-   * Required: false
-   * Id: 9bd65f25-9c9e-41c0-8a55-afa26c6465bc
-   * Codename: contacts
+   * Partner program (text)
+   * Required: true
+   * Id: 494bd327-7aa9-4cc8-bb1f-daedb35a6bf6
+   * Codename: partner_program
+   *
+   * Partner team email address
    */
-  contacts: Elements.LinkedItemsElement<PartnerSpaceContactsModel>;
+  partnerProgram: Elements.TextElement;
+
+  /**
+   * Sales (modular_content)
+   * Required: true
+   * Id: c7bc5bdf-cccb-4fcc-9584-711ee9dcde1d
+   * Codename: sales
+   */
+  sales: Elements.LinkedItemsElement<PersonModel>;
 
   /**
    * Login button text (text)

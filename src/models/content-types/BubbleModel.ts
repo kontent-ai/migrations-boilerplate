@@ -42,6 +42,16 @@ export type BubbleModel = IContentItem<{
   link: Elements.TextElement;
 
   /**
+   * Link text (text)
+   * Required: false
+   * Id: 97ec1381-e702-4e66-8090-c2be458c34ac
+   * Codename: link_text
+   *
+   * Custom link text. Defaults to "Learn more" if nothing is filled in.
+   */
+  linkText: Elements.TextElement;
+
+  /**
    * Icon picker (custom)
    * Required: false
    * Id: 84e1ca29-b13c-4846-aa8d-aac41c62bd9d

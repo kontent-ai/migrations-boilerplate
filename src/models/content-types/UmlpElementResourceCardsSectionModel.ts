@@ -32,4 +32,12 @@ export type UmlpElementResourceCardsSectionModel = IContentItem<{
    * Codename: resources
    */
   resources: Elements.LinkedItemsElement<ResourceModel>;
+
+  /**
+   * Hide dates on cards (multiple_choice)
+   * Required: true
+   * Id: d0b42612-ff26-40c8-b6a9-82ca6da1c1cb
+   * Codename: hide_dates_on_cards
+   */
+  hideDatesOnCards: Elements.MultipleChoiceElement;
 }>;

@@ -36,4 +36,12 @@ export type ContentItemYoutubeVideoModel = IContentItem<{
    * Optional overlay image displayed over the video iframe before the user presses play
    */
   videoPoster: Elements.AssetsElement;
+
+  /**
+   * Video Schema.org (custom)
+   * Required: false
+   * Id: 7bc6af72-daa6-4a4e-9fca-602eb9572be3
+   * Codename: video_schema_org
+   */
+  videoSchemaOrg: Elements.CustomElement;
 }>;

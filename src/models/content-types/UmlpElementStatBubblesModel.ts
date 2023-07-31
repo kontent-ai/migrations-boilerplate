@@ -10,6 +10,14 @@ import { StatModel } from './StatModel';
  */
 export type UmlpElementStatBubblesModel = IContentItem<{
   /**
+   * Heading (text)
+   * Required: false
+   * Id: 44ecfc38-0b4a-4a27-a20b-b5c5154a5175
+   * Codename: heading
+   */
+  heading: Elements.TextElement;
+
+  /**
    * Bubbles (modular_content)
    * Required: true
    * Id: 4fe41dac-d235-4b96-8f28-d2c75a95e1ab

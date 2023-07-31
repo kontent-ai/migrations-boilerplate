@@ -12,4 +12,5 @@ export type PageType =
   | 'industry'
   | 'use_case'
   | 'horizons_location'
-  | 'feature';
+  | 'feature'
+  | 'mvp_program_subpage';

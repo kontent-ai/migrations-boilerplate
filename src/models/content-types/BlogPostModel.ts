@@ -262,6 +262,16 @@ export type BlogPostModel = IContentItem<{
   displayOnSites: Elements.MultipleChoiceElement;
 
   /**
+   * Exclude from blog listing (multiple_choice)
+   * Required: false
+   * Id: 4d3b3dfb-8e72-4113-a69d-45a4fecdf7f8
+   * Codename: exclude_from_blog_listing
+   *
+   * If ticked, the blog post card won't be available in the blog post listing on /blog and will be excluded from the blog search on /blog as well
+   */
+  excludeFromBlogListing: Elements.MultipleChoiceElement;
+
+  /**
    * Netlify Preview - Beta (custom)
    * Required: false
    * Id: efb6a204-7a2d-4c79-8adb-384149f30c27

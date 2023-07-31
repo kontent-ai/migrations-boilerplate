@@ -2,7 +2,7 @@ import { IContentItem, Elements } from '@kontent-ai/delivery-sdk';
 import { ResourceModel } from './ResourceModel';
 import { CaseStudyModel } from './CaseStudyModel';
 import { BlogPostModel } from './BlogPostModel';
-import { WebinarTopicModel } from './WebinarTopicModel';
+import { WebinarModel } from './WebinarModel';
 import { EventModel } from './EventModel';
 
 /**
@@ -30,10 +30,6 @@ export type UmlpElementResourceTileGridModel = IContentItem<{
    * Codename: tiles
    */
   tiles: Elements.LinkedItemsElement<
-    | ResourceModel
-    | CaseStudyModel
-    | BlogPostModel
-    | WebinarTopicModel
-    | EventModel
+    ResourceModel | CaseStudyModel | BlogPostModel | WebinarModel | EventModel
   >;
 }>;

@@ -39,6 +39,16 @@ export type AddressModel = IContentItem<{
   building: Elements.TextElement;
 
   /**
+   * Floor (text)
+   * Required: false
+   * Id: e9b29294-a327-4f28-9ca9-06d70f657435
+   * Codename: floor
+   *
+   * Floor or other building specific information
+   */
+  floor: Elements.TextElement;
+
+  /**
    * Postal code (text)
    * Required: true
    * Id: c5f17c87-ca50-454b-a882-02fd5475c613

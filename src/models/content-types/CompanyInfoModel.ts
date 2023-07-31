@@ -26,7 +26,7 @@ export type CompanyInfoModel = IContentItem<{
   logoPrimary: Elements.AssetsElement;
 
   /**
-   * Logo Vertical (asset)
+   * Logo Vertical - white text (asset)
    * Required: true
    * Id: 24123d0d-f4e8-459e-ab0c-e4e5382b08be
    * Codename: logo_vertical
@@ -34,6 +34,14 @@ export type CompanyInfoModel = IContentItem<{
    * Vertical SVG logo
    */
   logoVertical: Elements.AssetsElement;
+
+  /**
+   * Logo Vertical - black text (asset)
+   * Required: true
+   * Id: 800d06da-4ec3-42dc-a32d-c8c12504c53c
+   * Codename: logo_vertical___black_text
+   */
+  logoVerticalBlackText: Elements.AssetsElement;
 
   /**
    * URL (text)
