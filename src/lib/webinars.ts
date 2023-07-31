@@ -89,7 +89,7 @@ export const updateWebinarsPageContentType = async (
                 codename: contentTypes.event.codename,
               },
               {
-                codename: contentTypes.webinar_topic.codename,
+                codename: contentTypes.webinar.codename,
               },
             ],
             content_group: {
@@ -113,7 +113,7 @@ export const updateWebinarTopicContentType = async (
   try {
     await apiClient
       .modifyContentType()
-      .byTypeCodename(contentTypes.webinar_topic.codename)
+      .byTypeCodename(contentTypes.webinar.codename)
       .withData([
         // { op: "replace", path: "/name", value: "Webinar" },
         // {
@@ -442,34 +442,34 @@ export const updateEventDateContentType = async (
       .modifyContentType()
       .byTypeCodename(contentTypes.event_date.codename)
       .withData([
-        {
-          op: 'addInto',
-          path: '/elements',
-          value: {
-            name: 'Registration open',
-            type: 'multiple_choice',
-            is_required: true,
-            mode: 'single',
-            content_group: {
-              codename: 'basic_info',
-            },
-            options: [
-              {
-                name: 'Yes',
-                codename: 'yes',
-              },
-            ],
-            default: {
-              global: {
-                value: [
-                  {
-                    codename: 'yes',
-                  },
-                ],
-              },
-            },
-          },
-        },
+        // {
+        //   op: 'addInto',
+        //   path: '/elements',
+        //   value: {
+        //     name: 'Registration open',
+        //     type: 'multiple_choice',
+        //     is_required: true,
+        //     mode: 'single',
+        //     content_group: {
+        //       codename: 'basic_info',
+        //     },
+        //     options: [
+        //       {
+        //         name: 'Yes',
+        //         codename: 'yes',
+        //       },
+        //     ],
+        //     default: {
+        //       global: {
+        //         value: [
+        //           {
+        //             codename: 'yes',
+        //           },
+        //         ],
+        //       },
+        //     },
+        //   },
+        // },
         // {
         // 	op: "remove",
         // 	path: `/elements/codename:${contentTypes.event_date.elements.consent.codename}`,
@@ -619,69 +619,69 @@ export const updateEventContentType = async (apiClient: ManagementClient) => {
         // 		},
         // 	},
         // },
-        {
-          op: 'addInto',
-          path: '/content_groups',
-          after: {
-            codename: 'general',
-          },
-          value: {
-            name: 'Images',
-            codename: 'images',
-          },
-        },
-        {
-          op: 'addInto',
-          path: '/elements',
-          value: {
-            name: 'Card image',
-            type: 'asset',
-            is_required: true,
-            asset_count_limit: {
-              value: 1,
-              condition: 'exactly',
-            },
-            guidelines:
-              'A smaller image used for the card on the webinars page',
-            content_group: {
-              codename: 'images',
-            },
-          },
-        },
-        {
-          op: 'addInto',
-          path: '/elements',
-          value: {
-            name: 'Image strip image',
-            type: 'asset',
-            asset_count_limit: {
-              value: 1,
-              condition: 'at_most',
-            },
-            guidelines:
-              'Optional full-width image black and white image used on the webinar detail page.',
-            content_group: {
-              codename: 'images',
-            },
-          },
-        },
-        {
-          op: 'addInto',
-          path: '/elements',
-          value: {
-            name: 'Hero image',
-            type: 'asset',
-            asset_count_limit: {
-              value: 1,
-              condition: 'at_most',
-            },
-            guidelines:
-              "Optional hero image used on the webinar detail page with a petal (if there's no image strip). If no image strip or hero image is provided, only the petal will be shown.",
-            content_group: {
-              codename: 'images',
-            },
-          },
-        },
+        // {
+        //   op: 'addInto',
+        //   path: '/content_groups',
+        //   after: {
+        //     codename: 'general',
+        //   },
+        //   value: {
+        //     name: 'Images',
+        //     codename: 'images',
+        //   },
+        // },
+        // {
+        //   op: 'addInto',
+        //   path: '/elements',
+        //   value: {
+        //     name: 'Card image',
+        //     type: 'asset',
+        //     is_required: true,
+        //     asset_count_limit: {
+        //       value: 1,
+        //       condition: 'exactly',
+        //     },
+        //     guidelines:
+        //       'A smaller image used for the card on the webinars page',
+        //     content_group: {
+        //       codename: 'images',
+        //     },
+        //   },
+        // },
+        // {
+        //   op: 'addInto',
+        //   path: '/elements',
+        //   value: {
+        //     name: 'Image strip image',
+        //     type: 'asset',
+        //     asset_count_limit: {
+        //       value: 1,
+        //       condition: 'at_most',
+        //     },
+        //     guidelines:
+        //       'Optional full-width image black and white image used on the webinar detail page.',
+        //     content_group: {
+        //       codename: 'images',
+        //     },
+        //   },
+        // },
+        // {
+        //   op: 'addInto',
+        //   path: '/elements',
+        //   value: {
+        //     name: 'Hero image',
+        //     type: 'asset',
+        //     asset_count_limit: {
+        //       value: 1,
+        //       condition: 'at_most',
+        //     },
+        //     guidelines:
+        //       "Optional hero image used on the webinar detail page with a petal (if there's no image strip). If no image strip or hero image is provided, only the petal will be shown.",
+        //     content_group: {
+        //       codename: 'images',
+        //     },
+        //   },
+        // },
       ])
       .toPromise();
   } catch (error) {
