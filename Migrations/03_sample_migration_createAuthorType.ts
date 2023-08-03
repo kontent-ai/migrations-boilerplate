@@ -19,7 +19,7 @@ const migration: MigrationModule = {
 };
 
 const BuildAuthorTypeData = (
-  builder: ContentTypeElementsBuilder
+  builder: ContentTypeElementsBuilder,
 ): ContentTypeModels.IAddContentTypeData => {
   return {
     name: "Author",
