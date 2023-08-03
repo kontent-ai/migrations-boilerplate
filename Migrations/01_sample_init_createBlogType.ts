@@ -20,7 +20,7 @@ const migration: MigrationModule = {
 };
 
 const BuildBlogPostTypeData = (
-  builder: ContentTypeElementsBuilder
+  builder: ContentTypeElementsBuilder,
 ): ContentTypeModels.IAddContentTypeData => {
   return {
     name: "Blog",
