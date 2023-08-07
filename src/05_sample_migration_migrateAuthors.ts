@@ -55,16 +55,17 @@ const migration: MigrationModule = {
         await apiClient
           .upsertLanguageVariant()
           .byItemId(authorItem.data.id)
-          .byLanguageCodename("default")
+          .byLanguageCodename('default')
+          // @ts-ignore
           .withData((builder) => [
             builder.textElement({
               element: {
-                codename: "name",
+                codename: 'name',
               },
               value: author,
             }),
           ])
-          .toPromise();
+          .toPromise()
 
         existingAuthors.push({
           author: author,
@@ -76,11 +77,12 @@ const migration: MigrationModule = {
       await apiClient
         .upsertLanguageVariant()
         .byItemId(blogLanguageVariant.item.id!)
-        .byLanguageCodename("default")
+        .byLanguageCodename('default')
+        // @ts-ignore
         .withData((builder) => [
           builder.linkedItemsElement({
             element: {
-              codename: "linked_author",
+              codename: 'linked_author',
             },
             value: [
               {
@@ -89,7 +91,7 @@ const migration: MigrationModule = {
             ],
           }),
         ])
-        .toPromise();
+        .toPromise()
     }
   },
 };

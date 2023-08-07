@@ -50,6 +50,7 @@ export const changePageTypeToIndustry = async (apiClient: ManagementClient) => {
         .upsertLanguageVariant()
         .byItemCodename(codename)
         .byLanguageCodename('default')
+        // @ts-ignore
         .withData((builder) => [
           builder.taxonomyElement({
             element: {
@@ -58,7 +59,7 @@ export const changePageTypeToIndustry = async (apiClient: ManagementClient) => {
             value: [{ codename: 'industry' }],
           }),
         ])
-        .toPromise();
+        .toPromise()
 
       // Publishing the new version
       await apiClient

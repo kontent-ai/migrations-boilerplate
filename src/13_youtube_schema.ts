@@ -93,13 +93,14 @@ const migration: MigrationModule = {
               .upsertLanguageVariant()
               .byItemId(video.item.id)
               .byLanguageId(video.language.id)
+              // @ts-ignore
               .withData((builder) => [
                 builder.customElement({
                   element: { codename: 'video_schema_org' },
                   value: videoData,
                 }),
               ])
-              .toPromise();
+              .toPromise()
           }
 
           // TODO: If PUBLISHED do this
@@ -114,13 +115,14 @@ const migration: MigrationModule = {
               .upsertLanguageVariant()
               .byItemId(video.item.id)
               .byLanguageId(video.language.id)
+              // @ts-ignore
               .withData((builder) => [
                 builder.customElement({
                   element: { codename: 'video_schema_org' },
                   value: videoData,
                 }),
               ])
-              .toPromise();
+              .toPromise()
 
             // TODO: Move element to Ready for publish workflow step
             await apiClient

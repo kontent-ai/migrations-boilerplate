@@ -21,29 +21,30 @@ const migration: MigrationModule = {
     await apiClient
       .upsertLanguageVariant()
       .byItemId(itemResponse.data.id)
-      .byLanguageCodename("default")
+      .byLanguageCodename('default')
+			// @ts-ignore
       .withData((builder) => [
         builder.textElement({
           element: {
-            codename: "title",
+            codename: 'title',
           },
-          value: "About coffee",
+          value: 'About coffee',
         }),
         builder.textElement({
           element: {
-            codename: "author",
+            codename: 'author',
           },
-          value: "Coffee geek",
+          value: 'Coffee geek',
         }),
         builder.textElement({
           element: {
-            codename: "text",
+            codename: 'text',
           },
           value:
-            "Coffee is a brewed drink prepared from roasted coffee beans, the seeds of berries from certain Coffee species.",
+            'Coffee is a brewed drink prepared from roasted coffee beans, the seeds of berries from certain Coffee species.',
         }),
       ])
-      .toPromise();
+      .toPromise()
   },
 };
 

@@ -29,13 +29,14 @@ const migration: MigrationModule = {
             .upsertLanguageVariant()
             .byItemId(bubble.system.id)
             .byLanguageCodename('default')
+            // @ts-ignore
             .withData((builder) => [
               builder.customElement({
                 element: { codename: 'link_text' },
                 value: 'Learn more',
               }),
             ])
-            .toPromise();
+            .toPromise()
         }
         // Item in published state
         if (bubble.system.workflowStep === PUBLISHED) {
@@ -49,13 +50,14 @@ const migration: MigrationModule = {
             .upsertLanguageVariant()
             .byItemId(bubble.system.id)
             .byLanguageCodename('default')
+            // @ts-ignore
             .withData((builder) => [
               builder.customElement({
                 element: { codename: 'link_text' },
                 value: 'Learn more',
               }),
             ])
-            .toPromise();
+            .toPromise()
 
           await apiClient
             .publishLanguageVariant()

@@ -48,22 +48,23 @@ const upsertBlogPostLangVariant = async (
 ) => {
 	try {
 		return await apiClient
-			.upsertLanguageVariant()
-			.byItemCodename(blogPost.system.codename)
-			.byLanguageCodename("default")
-			.withData((builder) => [
-				builder.linkedItemsElement({
-					element: {
-						codename: topicCodename,
-					},
-					value: [
-						{
-							codename: blogTopic.system.codename,
-						},
-					],
-				}),
-			])
-			.toPromise();
+      .upsertLanguageVariant()
+      .byItemCodename(blogPost.system.codename)
+      .byLanguageCodename('default')
+      // @ts-ignore
+      .withData((builder) => [
+        builder.linkedItemsElement({
+          element: {
+            codename: topicCodename,
+          },
+          value: [
+            {
+              codename: blogTopic.system.codename,
+            },
+          ],
+        }),
+      ])
+      .toPromise()
 	} catch (error) {
 		console.error(error);
 	}
