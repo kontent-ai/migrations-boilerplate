@@ -44,6 +44,22 @@ export type CompanyInfoModel = IContentItem<{
   logoVerticalBlackText: Elements.AssetsElement;
 
   /**
+   * Logo Vertical - White (asset)
+   * Required: true
+   * Id: c595fcea-617e-4106-a996-f92baddd7dc1
+   * Codename: logo_vertical___white
+   */
+  logoVerticalWhite: Elements.AssetsElement;
+
+  /**
+   * Logo Horizontal - White (asset)
+   * Required: true
+   * Id: a02eb2cb-7673-4af1-9b55-44dbf2c1105e
+   * Codename: logo_horizontal___white
+   */
+  logoHorizontalWhite: Elements.AssetsElement;
+
+  /**
    * URL (text)
    * Required: true
    * Id: 4be99456-71b8-4dfa-a38a-faa4cc6bcb50

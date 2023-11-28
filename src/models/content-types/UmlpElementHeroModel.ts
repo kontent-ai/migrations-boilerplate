@@ -54,6 +54,22 @@ export type UmlpElementHeroModel = IContentItem<{
   image: Elements.AssetsElement;
 
   /**
+   * Video URL (text)
+   * Required: false
+   * Id: 0813c810-938c-4e04-9a71-23340d8d41d1
+   * Codename: video_url
+   */
+  videoUrl: Elements.TextElement;
+
+  /**
+   * Video Poster (asset)
+   * Required: false
+   * Id: 50aa58ef-d8ea-4e47-b816-bf0dbeb79a20
+   * Codename: video_poster
+   */
+  videoPoster: Elements.AssetsElement;
+
+  /**
    * Image type (multiple_choice)
    * Required: false
    * Id: 88841543-93c0-4ded-9214-563f65dd3896

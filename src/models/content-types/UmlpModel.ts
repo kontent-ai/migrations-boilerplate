@@ -58,7 +58,6 @@ import { CtaBannerComponentModel } from './CtaBannerComponentModel';
 import { HorizonsSpeakersModel } from './HorizonsSpeakersModel';
 import { UmlpElementLogosCustomModel } from './UmlpElementLogosCustomModel';
 import { UmlpElementCtaBannerModel } from './UmlpElementCtaBannerModel';
-import { HorizonsLocationsModel } from './HorizonsLocationsModel';
 import { UmlpElementStatisticsModel } from './UmlpElementStatisticsModel';
 import { UmlpElementCaseStudiesModel } from './UmlpElementCaseStudiesModel';
 import { HorizonsVenueSectionModel } from './HorizonsVenueSectionModel';
@@ -110,7 +109,16 @@ import { UmlpElementFaqModel } from './UmlpElementFaqModel';
 import { UmlpElementColoredCardsModel } from './UmlpElementColoredCardsModel';
 import { UmlpElementBubbleCardsModel } from './UmlpElementBubbleCardsModel';
 import { NewsletterSectionModel } from './NewsletterSectionModel';
-import { ConsultingFeedbackHeroFormModel } from './ConsultingFeedbackHeroFormModel';
+import { UmlpElementConsultingFeedbackHeroFormModel } from './UmlpElementConsultingFeedbackHeroFormModel';
+import { UmlpElementSchemaOrgSnippetModel } from './UmlpElementSchemaOrgSnippetModel';
+import { UmlpElementRocPillarsModel } from './UmlpElementRocPillarsModel';
+import { UmlpElementRocTeiResultsModel } from './UmlpElementRocTeiResultsModel';
+import { UmlpElementRocIntroSectionModel } from './UmlpElementRocIntroSectionModel';
+import { UmlpElementRocPillarCustomerTestimonialsModel } from './UmlpElementRocPillarCustomerTestimonialsModel';
+import { UmlpElementRocVendorYouCanTrustModel } from './UmlpElementRocVendorYouCanTrustModel';
+import { UmlpElementRocDemoFormModel } from './UmlpElementRocDemoFormModel';
+import { UmlpElementElementGroupsModel } from './UmlpElementElementGroupsModel';
+import { UmlpElementGreenCardsModel } from './UmlpElementGreenCardsModel';
 import { Metadata } from '../content-type-snippets/metadata';
 import { SitemapMetadata } from '../content-type-snippets/sitemap_metadata';
 
@@ -204,7 +212,6 @@ export type UmlpModel = IContentItem<{
     | HorizonsSpeakersModel
     | UmlpElementLogosCustomModel
     | UmlpElementCtaBannerModel
-    | HorizonsLocationsModel
     | UmlpElementStatisticsModel
     | UmlpElementCaseStudiesModel
     | HorizonsVenueSectionModel
@@ -256,7 +263,16 @@ export type UmlpModel = IContentItem<{
     | UmlpElementColoredCardsModel
     | UmlpElementBubbleCardsModel
     | NewsletterSectionModel
-    | ConsultingFeedbackHeroFormModel
+    | UmlpElementConsultingFeedbackHeroFormModel
+    | UmlpElementSchemaOrgSnippetModel
+    | UmlpElementRocPillarsModel
+    | UmlpElementRocTeiResultsModel
+    | UmlpElementRocIntroSectionModel
+    | UmlpElementRocPillarCustomerTestimonialsModel
+    | UmlpElementRocVendorYouCanTrustModel
+    | UmlpElementRocDemoFormModel
+    | UmlpElementElementGroupsModel
+    | UmlpElementGreenCardsModel
   >;
 
   /**

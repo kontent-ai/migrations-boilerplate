@@ -10,6 +10,16 @@ import { ModularItemCardElementModel } from './ModularItemCardElementModel';
  */
 export type UmlpElementLargeCardGridModel = IContentItem<{
   /**
+   * Heading (text)
+   * Required: false
+   * Id: 084296a8-0782-44aa-a268-1305f9da30f3
+   * Codename: heading
+   *
+   * An optional heading
+   */
+  heading: Elements.TextElement;
+
+  /**
    * Cards (modular_content)
    * Required: true
    * Id: 61174ec0-635f-4495-ab4d-0633ccfaf210

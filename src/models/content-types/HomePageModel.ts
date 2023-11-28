@@ -14,6 +14,7 @@ import { ReleaseProjects } from '../taxonomies/release_projects';
 import { SitemapMetadata } from '../content-type-snippets/sitemap_metadata';
 import { CtaBannerComponentModel } from './CtaBannerComponentModel';
 import { UmlpElementLogoStripModel } from './UmlpElementLogoStripModel';
+import { UmlpElementTextImageBlockModel } from './UmlpElementTextImageBlockModel';
 import { UmlpElementLargeCardGridModel } from './UmlpElementLargeCardGridModel';
 import { UmlpElementContentFlowInfographicModel } from './UmlpElementContentFlowInfographicModel';
 import { UmlpElementFeaturedCustomerSuccessStoriesModel } from './UmlpElementFeaturedCustomerSuccessStoriesModel';
@@ -209,8 +210,16 @@ export type HomePageModel = IContentItem<{
   logos06980c0: Elements.LinkedItemsElement<UmlpElementLogoStripModel>;
 
   /**
+   * Promo section (modular_content)
+   * Required: false
+   * Id: 4780a5fd-c72b-4141-900a-a10ab3d49803
+   * Codename: promo_section
+   */
+  promoSection: Elements.LinkedItemsElement<UmlpElementTextImageBlockModel>;
+
+  /**
    * Lead cards (modular_content)
-   * Required: true
+   * Required: false
    * Id: 70332d69-15e3-49eb-afc7-2ab17640dc86
    * Codename: lead_cards
    */
@@ -258,7 +267,7 @@ export type HomePageModel = IContentItem<{
 
   /**
    * Integrations (modular_content)
-   * Required: true
+   * Required: false
    * Id: 10b5badc-e89e-4020-bba7-3fc7911b7393
    * Codename: integrations
    */

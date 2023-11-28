@@ -20,6 +20,14 @@ export type ModularItemCardElementModel = IContentItem<{
   image: Elements.AssetsElement;
 
   /**
+   * Icon (custom)
+   * Required: false
+   * Id: 01e54810-4e19-4e83-acc2-fcff13078fea
+   * Codename: icon
+   */
+  icon: Elements.CustomElement;
+
+  /**
    * Title (text)
    * Required: false
    * Id: 9a000be3-e90a-eb4d-f627-17511bdb5fcf
@@ -34,6 +42,16 @@ export type ModularItemCardElementModel = IContentItem<{
    * Codename: text
    */
   text: Elements.RichTextElement;
+
+  /**
+   * Additional text (rich_text)
+   * Required: false
+   * Id: 38ab1ba9-6071-4881-aa58-677c604146a1
+   * Codename: additional_text
+   *
+   * Text used for disclaimers, notes etc.
+   */
+  additionalText: Elements.RichTextElement;
 
   /**
    * Image alt (text)

@@ -18,6 +18,14 @@ export type UmlpElementLogosCustomModel = IContentItem<{
   heading: Elements.TextElement;
 
   /**
+   * Logo size (multiple_choice)
+   * Required: true
+   * Id: a003af48-d3fd-49db-ab4f-458dbeaa0a13
+   * Codename: logo_size
+   */
+  logoSize: Elements.MultipleChoiceElement;
+
+  /**
    * Logos (modular_content)
    * Required: true
    * Id: fd5d5b1f-312a-4265-a9cd-b6e8ce61cdf2

@@ -1,6 +1,7 @@
 import { IContentItem, Elements } from '@kontent-ai/delivery-sdk';
 import { Hero } from '../content-type-snippets/hero';
 import { CtaBannerComponentModel } from './CtaBannerComponentModel';
+import { Metadata } from '../content-type-snippets/metadata';
 import { SitemapMetadata } from '../content-type-snippets/sitemap_metadata';
 
 /**
@@ -11,6 +12,14 @@ import { SitemapMetadata } from '../content-type-snippets/sitemap_metadata';
  * Codename: resource_page
  */
 export type ResourcePageModel = IContentItem<{
+  /**
+   * Image (asset)
+   * Required: true
+   * Id: 563092e0-b7d5-4c5e-b9b2-20b15936120f
+   * Codename: image
+   */
+  image: Elements.AssetsElement;
+
   /**
    * No resources found message (text)
    * Required: false
@@ -26,22 +35,7 @@ export type ResourcePageModel = IContentItem<{
    * Codename: cta_banner
    */
   ctaBanner: Elements.LinkedItemsElement<CtaBannerComponentModel>;
-
-  /**
-   * Metadata Title (text)
-   * Required: false
-   * Id: 4ff05522-fbf6-4381-a796-2d8ce4f254f5
-   * Codename: metadata_title
-   */
-  metadataTitle: Elements.TextElement;
-
-  /**
-   * Metadata Description (text)
-   * Required: false
-   * Id: b650b988-bc53-4999-a18a-b5e7890cecb9
-   * Codename: metadata_description
-   */
-  metadataDescription: Elements.TextElement;
 }> &
   Hero &
+  Metadata &
   SitemapMetadata;

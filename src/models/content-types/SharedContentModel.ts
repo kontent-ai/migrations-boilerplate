@@ -27,6 +27,14 @@ export type SharedContentModel = IContentItem<{
   type: Elements.MultipleChoiceElement;
 
   /**
+   * Open in new tab (multiple_choice)
+   * Required: false
+   * Id: 383d1df5-1ad1-4676-878a-96e15916633d
+   * Codename: open_in_new_tab
+   */
+  openInNewTab: Elements.MultipleChoiceElement;
+
+  /**
    * URL (text)
    * Required: true
    * Id: f19304e0-1922-3d4b-12aa-b0d595253d46

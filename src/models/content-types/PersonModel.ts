@@ -9,7 +9,7 @@ import { IContentItem, Elements } from '@kontent-ai/delivery-sdk';
 export type PersonModel = IContentItem<{
   /**
    * Name (text)
-   * Required: false
+   * Required: true
    * Id: 3c08fa40-bd0a-4b21-b3b7-4883954c9af7
    * Codename: name
    */
@@ -25,7 +25,7 @@ export type PersonModel = IContentItem<{
 
   /**
    * Photo (asset)
-   * Required: false
+   * Required: true
    * Id: 45938d6f-ce9d-4cb8-bcad-3d7d30f249e1
    * Codename: photo
    */

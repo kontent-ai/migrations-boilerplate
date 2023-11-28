@@ -272,24 +272,20 @@ export type BlogPostModel = IContentItem<{
   excludeFromBlogListing: Elements.MultipleChoiceElement;
 
   /**
-   * Netlify Preview - Beta (custom)
+   * Include in press releases (multiple_choice)
    * Required: false
-   * Id: efb6a204-7a2d-4c79-8adb-384149f30c27
-   * Codename: untitled_custom_element
-   *
-   * IN TESTING - do not use.
+   * Id: 699e6758-5832-4ad8-a498-66e54394ff21
+   * Codename: include_in_press_releases
    */
-  untitledCustomElement: Elements.CustomElement;
+  includeInPressReleases: Elements.MultipleChoiceElement;
 
   /**
-   * GA Button (custom)
+   * Voiceover link (text)
    * Required: false
-   * Id: ba9a9bf8-6dd3-44f2-af78-1f86aa71fd62
-   * Codename: ga_button
-   *
-   * Opens a new window with Google Analytics for this element
+   * Id: f9cb7be8-6fc6-44cd-be4f-7e61b4edbacd
+   * Codename: voiceover_link
    */
-  gaButton: Elements.CustomElement;
+  voiceoverLink: Elements.TextElement;
 }> &
   ContentBrief &
   SitemapMetadata;

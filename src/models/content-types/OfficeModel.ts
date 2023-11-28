@@ -34,12 +34,20 @@ export type OfficeModel = IContentItem<{
   photo: Elements.AssetsElement;
 
   /**
-   * Address (modular_content)
+   * Billing address (modular_content)
    * Required: true
    * Id: 3fd48a17-525c-49d7-8cec-1384cac084f5
    * Codename: address_3fd48a1
    */
   address3fd48a1: Elements.LinkedItemsElement<AddressModel>;
+
+  /**
+   * Mailing address (modular_content)
+   * Required: false
+   * Id: 2d6147c1-2701-4333-ab74-04e46a27bac6
+   * Codename: mailing_address
+   */
+  mailingAddress: Elements.LinkedItemsElement<AddressModel>;
 
   /**
    * Address (rich_text)
@@ -51,13 +59,21 @@ export type OfficeModel = IContentItem<{
 
   /**
    * Phone (sales) (text)
-   * Required: true
+   * Required: false
    * Id: 38258c77-dd84-4e56-8dbe-1064fb5c4e0f
    * Codename: phone__sales_
    *
    * E.g. +31-682144594
    */
   phoneSales: Elements.TextElement;
+
+  /**
+   * Phone (office) (text)
+   * Required: false
+   * Id: 27cb339b-19fb-4aa8-89c1-b1ae456419be
+   * Codename: phone__office_
+   */
+  phoneOffice: Elements.TextElement;
 
   /**
    * Phone (sales - alt) (text)

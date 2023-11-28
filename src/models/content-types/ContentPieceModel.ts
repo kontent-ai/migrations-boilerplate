@@ -22,36 +22,4 @@ export type ContentPieceModel = IContentItem<{
    * Codename: text
    */
   text: Elements.RichTextElement;
-
-  /**
-   * Link text (text)
-   * Required: false
-   * Id: 8791673f-1ccb-4ad5-a460-3fb9c427ac1b
-   * Codename: link_text
-   */
-  linkText: Elements.TextElement;
-
-  /**
-   * Link URL (text)
-   * Required: false
-   * Id: d69ad875-c474-4fb9-9c39-1ed166e731e6
-   * Codename: link_url
-   */
-  linkUrl: Elements.TextElement;
-
-  /**
-   * Image (asset)
-   * Required: false
-   * Id: 5e13279c-6be8-477b-9358-d44024045a00
-   * Codename: image
-   */
-  image: Elements.AssetsElement;
-
-  /**
-   * Coming soon (multiple_choice)
-   * Required: false
-   * Id: b665918e-0dec-4f2c-bd24-cf62e007fb96
-   * Codename: coming_soon
-   */
-  comingSoon: Elements.MultipleChoiceElement;
 }>;

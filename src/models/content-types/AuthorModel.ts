@@ -72,5 +72,13 @@ export type AuthorModel = IContentItem<{
    * Codename: linkedin_url
    */
   linkedinUrl: Elements.TextElement;
+
+  /**
+   * Email (text)
+   * Required: false
+   * Id: b886f385-80b0-4abd-9dcd-f47d43709274
+   * Codename: email
+   */
+  email: Elements.TextElement;
 }> &
   SitemapMetadata;

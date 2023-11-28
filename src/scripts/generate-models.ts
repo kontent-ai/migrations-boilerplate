@@ -12,11 +12,11 @@ const fixNumberPrefixElementResolver = (elementName) => {
 };
 
 const runAsync = async () => {
-	rmSync("../models", { recursive: true });
-	mkdirSync("../models");
+	rmSync('./src/models', { recursive: true, force: true })
+  mkdirSync('./src/models', { recursive: true })
 
-	// change working directory to models
-	process.chdir("./src/models");
+  // change working directory to models
+  process.chdir('./src/models')
 
 	await generateModelsAsync({
 		sdkType: "delivery",
