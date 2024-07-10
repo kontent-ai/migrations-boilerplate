@@ -1,11 +1,11 @@
-import { MigrationModule } from "@kontent-ai/cli";
-import { ManagementClient } from "@kontent-ai/management-sdk";
+import { MigrationModule } from "@kontent-ai/data-ops";
+
 /**
  * Creates a sample content item of type Blog.
  */
 const migration: MigrationModule = {
   order: 2,
-  run: async (apiClient: ManagementClient) => {
+  run: async (apiClient) => {
     // Create content item
     const itemResponse = await apiClient
       .addContentItem()

@@ -1,9 +1,5 @@
-import { MigrationModule } from "@kontent-ai/cli";
-import {
-  ContentTypeElementsBuilder,
-  ContentTypeModels,
-  ManagementClient,
-} from "@kontent-ai/management-sdk";
+import { MigrationModule } from "@kontent-ai/data-ops";
+import { ContentTypeElementsBuilder, ContentTypeModels } from "@kontent-ai/management-sdk";
 
 /**
  * Creates content type called Blog.
@@ -11,7 +7,7 @@ import {
  */
 const migration: MigrationModule = {
   order: 1,
-  run: async (apiClient: ManagementClient) => {
+  run: async (apiClient) => {
     await apiClient
       .addContentType()
       .withData(BuildBlogPostTypeData)

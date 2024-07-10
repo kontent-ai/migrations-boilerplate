@@ -1,9 +1,5 @@
-import { MigrationModule } from "@kontent-ai/cli";
-import {
-  ContentTypeElementsBuilder,
-  ContentTypeModels,
-  ManagementClient,
-} from "@kontent-ai/management-sdk";
+import { MigrationModule } from "@kontent-ai/data-ops";
+import { ContentTypeElementsBuilder, ContentTypeModels } from "@kontent-ai/management-sdk";
 
 /**
  * Creates new content type called Author.
@@ -13,7 +9,7 @@ import {
  */
 const migration: MigrationModule = {
   order: 3,
-  run: async (apiClient: ManagementClient) => {
+  run: async (apiClient) => {
     await apiClient.addContentType().withData(BuildAuthorTypeData).toPromise();
   },
 };

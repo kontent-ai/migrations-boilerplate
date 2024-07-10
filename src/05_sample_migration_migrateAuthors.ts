@@ -1,5 +1,4 @@
-import { MigrationModule } from "@kontent-ai/cli";
-import { ManagementClient } from "@kontent-ai/management-sdk";
+import { MigrationModule } from "@kontent-ai/data-ops";
 
 interface IAuthorsMap {
   author: string;
@@ -15,7 +14,7 @@ interface IAuthorsMap {
  */
 const migration: MigrationModule = {
   order: 5,
-  run: async (apiClient: ManagementClient) => {
+  run: async (apiClient) => {
     const contentTypeResponse = await apiClient
       .viewContentType()
       .byTypeCodename("blog")

@@ -1,18 +1,15 @@
 {
   "compilerOptions": {
-    "target": "es6",
-    "module": "commonjs",
+    "target": "ESNext",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "lib": [
       "esnext",
       "DOM"
     ],
-    "sourceMap": false,
     "allowJs": true,
     "outDir": "./Migrations/",
     "strict": true,
-    "declaration": false,
-    "rootDir": "./Migrations",
-    "moduleResolution": "node",
     "alwaysStrict": true,
     "strictPropertyInitialization": true,
     "forceConsistentCasingInFileNames": true,
@@ -20,7 +17,6 @@
     "noUnusedLocals": true,
     "strictFunctionTypes": true,
     "noImplicitAny": true,
-    "noImplicitReturns": true,
     "declarationMap": false,
     "typeRoots": [
       "./node_modules/@types"
