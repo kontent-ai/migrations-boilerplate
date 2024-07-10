@@ -1,8 +1,5 @@
-import { MigrationModule } from "@kontent-ai/cli";
-import {
-  ContentTypeModels,
-  ManagementClient,
-} from "@kontent-ai/management-sdk";
+import { MigrationModule } from "@kontent-ai/data-ops";
+import { ContentTypeModels } from "@kontent-ai/management-sdk";
 
 /**
  * Adds new linked items element to content type Blog.
@@ -10,7 +7,7 @@ import {
  */
 const migration: MigrationModule = {
   order: 4,
-  run: async (apiClient: ManagementClient) => {
+  run: async (apiClient) => {
     const modification: ContentTypeModels.IModifyContentTypeData[] = [
       {
         op: "addInto",

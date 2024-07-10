@@ -1,8 +1,5 @@
-import { MigrationModule } from "@kontent-ai/cli";
-import {
-  ContentTypeModels,
-  ManagementClient,
-} from "@kontent-ai/management-sdk";
+import { MigrationModule } from "@kontent-ai/data-ops";
+import {ContentTypeModels } from "@kontent-ai/management-sdk";
 
 /**
  * Removes the old text element representing author.
@@ -11,7 +8,7 @@ import {
  */
 const migration: MigrationModule = {
   order: 6,
-  run: async (apiClient: ManagementClient) => {
+  run: async (apiClient) => {
     const modification: ContentTypeModels.IModifyContentTypeData[] = [
       {
         op: "remove",

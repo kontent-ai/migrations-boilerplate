@@ -3,15 +3,17 @@
   "version": "3.0.0",
   "description": "Boilerplate with migration samples",
   "main": "index.ts",
+  "type": "module",
   "scripts": {
-    "migrate:all": "tsc && kontent migration run --all --environment DEV",
-    "migrate:range": "tsc && kontent migration run --environment DEV --range",
-    "migrate": "tsc && kontent migration run --environment DEV -n",
-    "lint": "eslint --fix \"Migrations/*.ts\" && prettier --write \"Migrations/**/*.ts\"",
-    "lint-check": "eslint \"Migrations/*.ts\" && prettier --check \"Migrations/**/*.ts\"",
-    "build": "tsc",
-    "watch": "tsc -w",
-    "prepare": "husky install"
+    "migrate:all": "tsc && data-ops migrations run --configFile ./migrationsParams.json --all",
+    "migrate:range": "tsc && data-ops migrations run --configFile ./migrationsParams.json --range",
+    "migrate:next": "tsc && data-ops migrations run --configFile ./migrationsParams.json --next",
+    "migrate": "tsc && data-ops migration run --configFile ./migrationsParams.json -n",
+    "lint": "eslint --fix \"src/*.ts\"",
+    "lint:check": "eslint \"src/*.ts\"",
+    "fmt": "dprint fmt",
+    "fmt:check": "dprint check",
+    "build": "tsc"
   },
   "lint-staged": {
     "*.ts": [
@@ -27,18 +29,14 @@
   "author": "Kontent s.r.o.",
   "license": "MIT",
   "dependencies": {
-    "@kontent-ai/cli": "^0.8.1",
-    "@kontent-ai/management-sdk": "^5.0.0",
-    "dotenv": "^16.3.1"
+    "@kontent-ai/management-sdk": "^6.5.0",
+    "dotenv": "^16.4.5"
   },
   "devDependencies": {
-    "husky": "^8.0.3",
-    "lint-staged": "^13.2.3",
-    "prettier": "^3.0.0",
-    "@typescript-eslint/eslint-plugin": "^5.61.0",
-    "@typescript-eslint/parser": "^5.61.0",
-    "eslint": "^8.44.0",
-    "eslint-config-prettier": "^8.8.0",
-    "typescript": "^5.1.6"
+    "@kontent-ai/eslint-config": "^1.0.0",
+    "@types/node": "^20.14.10",
+    "dprint": "^0.47.1",
+    "lint-staged": "^15.2.7",
+    "typescript": "^5.5.3"
   }
 }
