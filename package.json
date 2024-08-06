@@ -29,7 +29,8 @@
   "author": "Kontent s.r.o.",
   "license": "MIT",
   "dependencies": {
-    "@kontent-ai/management-sdk": "^6.5.0",
+    "@kontent-ai/data-ops": "^1.4.1",
+    "@kontent-ai/management-sdk": "^7.0.0",
     "dotenv": "^16.4.5"
   },
   "devDependencies": {

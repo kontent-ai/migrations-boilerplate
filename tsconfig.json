@@ -11,6 +11,7 @@
     "outDir": "./Migrations/",
     "strict": true,
     "alwaysStrict": true,
+    "skipLibCheck": true,
     "strictPropertyInitialization": true,
     "forceConsistentCasingInFileNames": true,
     "noUnusedParameters": false,
@@ -26,7 +27,6 @@
   },
   "include": ["src/**/*"],
   "exclude": [
-    "node_modules",
     "Migrations/*.js"
   ]
 }
