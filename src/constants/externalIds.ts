@@ -19,6 +19,7 @@ export const typeAuthorExtIds = {
   entity: "type_author",
   elements: {
     name: "type_author_elements_name",
+    lastName: "type_author_elements_lastName",
   },
 };
 export const typeArticleExtIds = {
@@ -38,3 +39,4 @@ export const typeArticleExtIds = {
 
 export const itemJoeDoeExtId = "item_joeDoe";
 export const itemExampleArticleExtId = "item_exampleArticle";
+export const itemWebSpotlightExtId = "item_webSpotlight";
