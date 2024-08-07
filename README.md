@@ -1,46 +1,25 @@
-# Kontent.ai CLI migrations examples
+# Kontent.ai migrations examples
 
-The Kontent.ai CLI boilerplate aims to help with your first migration code. We've provided sample migration scripts in the `Migrations` folder. These scripts are written in Javascript and Typescript to show you the basic operations.
+The Kontent.ai migrations boilerplate aims to provide a exemplary introduction in developing migrations using [Kontent.ai data-ops](https://github.com/kontent-ai/data-ops). Migrations allow you to perform any operation supported by the [Management API](https://kontent.ai/learn/reference/management-api-v2) through smaller executable scripts. This repository showcases various migration scenarios, including the creation of different entities. Each migration also includes a rollback function to reverse the changes made by the migration.
 
-If you are missing your use case, you might find answers in the [Management API reference](https://kontent.ai/learn/reference/management-api-v2).
+> [!NOTE]
+> The migrations in this repository are written in `TypeScript` and must be transpiled before execution.
 
-The Kontent.ai CLI tool supports only Javascript files, so if you write your migrations in Typescript or any other language you have to transpile your code before running.
+## Quickstart
 
-## Installation
+1. Install required depencies 
+    ```sh
+    npm ci
+    ```
+1. Set up mandatory parameters for data-ops migrations:
+    * Copy `exampleParams.json` and rename it to `migrationsParams.json`
+    * Fill in the missing parameters for your environment.
+1. Inspect the migrations in the `src` folder.
+1. Examine prepared scripts in `package.json`.
+1. Try out the scripts
+    - e.g. `npm run migrate:all` to run all of the migrations
+> [!TIP]
+> You can add additional parameters using `--`. For example, to rollback next 5 migrations, use `npm run migrate:next -- 5 -b`.
 
-```sh
-npm install
-```
-
-## Setup
-
-Before you run your migrations, you need to store some information about the environment locally. 
-
-The environment is defined as a named pair of values. For example, "DEV" environment can be defined as a pair of a specific environment ID and Management API key. This named pair of values is stored within your local repository in a configuration file named `.environments.json`.
-
-```sh
-# Adds a 'DEV' environment reference.
-kontent environment add --name DEV --environment-id "<YOUR_ENVIRONMENT_GUID>" --api-key "<YOUR_MANAGAMENT_API_KEY>"
-```
-
-## Usage
-
-If you've set up an environment using the method above, you can use the prepared scripts to run all migrations in the `Migrations` directory.
-
-```sh
-# Executes all migration scripts in the 'Migrations' folder to the 'DEV' environment reference within your Kontent project. 
-npm run migrate:all
-```
-
-If you want to run a specific migration you can use also script defined in ```packages.json```
-
-```sh
-# Executes a migration script named 'my_migration'.
-npm run migrate "my_migration"
-```
-
-**Tip**: For more information about Kontent migrations, see the [Kontent.ai CLI documentation](https://github.com/kontent-ai/cli/blob/master/README.md).
-
-## Feedback & Contribution
-
-Feedback & Contributions are welcomed. Feel free to take/start an issue & submit PR.
+> [!TIP]
+> You can view all parameters by using `npm run data-ops -- migrations <command> --help`

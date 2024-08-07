@@ -9,6 +9,7 @@
     "migrate:range": "tsc && data-ops migrations run --configFile ./migrationsParams.json --range",
     "migrate:next": "tsc && data-ops migrations run --configFile ./migrationsParams.json --next",
     "migrate": "tsc && data-ops migration run --configFile ./migrationsParams.json -n",
+    "data-ops": "data-ops",
     "lint": "eslint --fix \"src/*.ts\"",
     "lint:check": "eslint \"src/*.ts\"",
     "fmt": "dprint fmt",
