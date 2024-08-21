@@ -33,7 +33,7 @@ const migration: MigrationModule = {
       {
         op: "remove",
         reference: { codename: "healthtech" },
-      } as unknown as CollectionModels.ISetCollectionData,
+      },
       {
         op: "replace",
         reference: { codename: "default" },

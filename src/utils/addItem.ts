@@ -4,7 +4,7 @@ export type AddItemParams = Readonly<{
   name: string;
   externalId: string;
   codename: string;
-  contentType: Readonly<{ codename: string } | { external_id: string }>;
+  contentType: Readonly<{ codename: string } | { external_id: string } | { id: string }>;
   languageCodename: string;
   collection: Readonly<{ codename: string } | { external_id: string }>;
   publish?: boolean;
