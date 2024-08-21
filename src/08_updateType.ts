@@ -22,7 +22,6 @@ const migration: MigrationModule = {
       .toPromise();
   },
   rollback: async client => {
-    // Using Catch to be able to rollback even partial migrations.
     await client
       .modifyContentType()
       .byTypeExternalId(typeAuthorExtIds.entity)

@@ -9,9 +9,10 @@
     "migrate:range": "tsc && data-ops migrations run --configFile ./migrationsParams.json --range",
     "migrate:next": "tsc && data-ops migrations run --configFile ./migrationsParams.json --next",
     "migrate": "tsc && data-ops migration run --configFile ./migrationsParams.json -n",
+    "migration:add": "data-ops migrations add --migrationsFolder=./src -n",
     "data-ops": "data-ops",
-    "lint": "eslint --fix \"src/*.ts\"",
-    "lint:check": "eslint \"src/*.ts\"",
+    "lint": "eslint \"src/*.ts\"",
+    "lint:fix": "eslint --fix \"src/*.ts\"",
     "fmt": "dprint fmt",
     "fmt:check": "dprint check",
     "build": "tsc"
@@ -30,15 +31,14 @@
   "author": "Kontent s.r.o.",
   "license": "MIT",
   "dependencies": {
-    "@kontent-ai/data-ops": "^1.4.1",
-    "@kontent-ai/management-sdk": "^7.0.0",
+    "@kontent-ai/data-ops": "^1.5.0",
+    "@kontent-ai/management-sdk": "^7.2.0",
     "dotenv": "^16.4.5"
   },
   "devDependencies": {
     "@kontent-ai/eslint-config": "^1.0.0",
     "@types/node": "^20.14.10",
     "dprint": "^0.47.1",
-    "lint-staged": "^15.2.7",
     "typescript": "^5.5.3"
   }
 }
