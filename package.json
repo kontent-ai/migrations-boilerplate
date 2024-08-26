@@ -17,12 +17,6 @@
     "fmt:check": "dprint check",
     "build": "tsc"
   },
-  "lint-staged": {
-    "*.ts": [
-      "npx eslint --fix",
-      "npx prettier --write"
-    ]
-  },
   "keywords": [
     "migrations",
     "kontent",
