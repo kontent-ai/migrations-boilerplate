@@ -8,7 +8,7 @@
     "migrate:all": "tsc && data-ops migrations run --configFile ./migrationsParams.json --all",
     "migrate:range": "tsc && data-ops migrations run --configFile ./migrationsParams.json --range",
     "migrate:next": "tsc && data-ops migrations run --configFile ./migrationsParams.json --next",
-    "migrate": "tsc && data-ops migration run --configFile ./migrationsParams.json -n",
+    "migrate": "tsc && data-ops migrations run --configFile ./migrationsParams.json -n",
     "migration:add": "data-ops migrations add --migrationsFolder=./src -n",
     "data-ops": "data-ops",
     "lint": "eslint \"src/*.ts\"",
